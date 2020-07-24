@@ -22,7 +22,7 @@ Mongoose
  # UML
  ![UML](https://drive.google.com/file/d/1is__qU-8BdzAASmllEOSBl5J_iZWo1Yi/view?usp=sharing)
  # Wireframe
- [Wireframe](https://wireframe.cc/pro/pp/49f64a3c7351904)
+ [Wireframe](https://www.figma.com/file/jkCweguIU7IoNsGqN1U3AG/EMS-Front?node-id=0%3A1)
  # Trello Board
  [Trello-Board](https://trello.com/b/UELv7lze/ems)
 # Routes
