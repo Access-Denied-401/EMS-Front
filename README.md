@@ -20,9 +20,9 @@ The Employee management system is a fully functional web application that
 Mongoose
 - This application uses the following method to create a new mongoose.Schema in the MongoDB DataBase. It is used to execute CRUD (create, read, update, and delete) operations on MongoDB documents.
  # UML
- ![UML](https://drive.google.com/file/d/1is__qU-8BdzAASmllEOSBl5J_iZWo1Yi/view?usp=sharing)
+ [UML](https://drive.google.com/file/d/1is__qU-8BdzAASmllEOSBl5J_iZWo1Yi/view?usp=sharing)
  # Wireframe
- [Wireframe](https://wireframe.cc/pro/pp/49f64a3c7351904)
+ [Wireframe](https://www.figma.com/file/jkCweguIU7IoNsGqN1U3AG/EMS-Front?node-id=0%3A1)
  # Trello Board
  [Trello-Board](https://trello.com/b/UELv7lze/ems)
 # Routes
@@ -152,3 +152,4 @@ Mongoose
  2. Raghad Al-Quran:[GitHub-link](https://github.com/raghadalquran)
  3. Ahlam Alefishat:[GitHub-link](https://github.com/ahlamalefishat96)
  4. Amer Majdi:[GitHub-link](https://github.com/Amer-bit)
+
