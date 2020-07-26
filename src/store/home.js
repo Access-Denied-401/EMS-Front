@@ -23,7 +23,6 @@ export default (state = initialState, action) => {
   // let payload = action.payload
   let products;   
   let productsTo;
-  let pepo;
   switch(type) {
   case 'activate':
     products = [...state.products];
