@@ -1,39 +1,42 @@
-import React from "react";
-import { Link } from "react-router-dom";
-
+import React from 'react';
+import { Link } from 'react-router-dom';
 
 const Header = (props) => {
   return (
     <>
-      <header>
-        <nav>
-          <ul>
-            <li>
-              <Link to="/">Home</Link>
+      <nav className="navbar navbar-expand-lg navbar-light bg-light">
+        <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+          <span className="navbar-toggler-icon"></span>
+        </button>
+        <div className="collapse navbar-collapse" id="navbarText">
+          <ul className="navbar-nav mr-auto">
+            <li className="nav-item">
+              <Link to="/" className="nav-link">Home </Link>
             </li>
-            <li>
-                <Link to="/Administration">Administration</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/Administration">Administration</Link>
             </li>
-            <li>
-                <Link to="/financials">Financia Manage</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/financials">Financial Management</Link>
             </li>
-            <li>
-                <Link to="/profile">Profile</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/profile">Profile</Link>
             </li>
-            <li>
-                <Link to="/signin">Sign-in</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signin">Sign-in</Link>
             </li>
-            <li>
-                <Link to="/signup">Sign-up</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/signup">Sign-up</Link>
             </li>
-            <li>
-                <Link to="/signout">Sign-out</Link>
+            <li className="nav-item">
+              <Link className="nav-link" to="/aboutus">About-us</Link>
             </li>
           </ul>
-        </nav>
-      </header>
+        </div>
+      </nav>
     </>
   );
 };
+
 
 export default Header;

@@ -1,7 +1,7 @@
 import React from 'react';
 import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
-import Routes from './router';
+// import Routes from './router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
@@ -10,10 +10,10 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 function App() {
   return (
     <>
-    <Header />
-    <Routes />
-    <Footer />
-  </>
+      <Header />
+      {/* <Routes /> */}
+      <Footer />
+    </>
   );
 }
 
