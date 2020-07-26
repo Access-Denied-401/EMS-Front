@@ -20,11 +20,7 @@ const Routes = (props) => {
         <Administration />
       </Route>
 
-<<<<<<< HEAD
-      <Route path="/financialManagement" exact>
-=======
       <Route path="/financials" exact>
->>>>>>> 48986eead5fc1d12d3ff43f1b2f6f13874e3768b
         <FinancialManagement />
       </Route>
 

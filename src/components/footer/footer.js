@@ -14,8 +14,7 @@ const Footer = () => {
               <div className="widget subscribe no-box">
                 <h5 className="widget-title">COMPANY NAME<span></span></h5>
                 <p>The Employee management system is a fully functional web application that
- organize the operation of managing employee data such as his salary, perks, Work Time, login,
- employee efficiency, employee personal information, generate his salary which depends on his overtime work also this system has administration capabilities of adding new employee deleting employee and the employee can also view his page and can give feedback, ask for a pay-rise and take scheduled days off. </p>
+ organize the operation of managing employee data. </p>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3">
@@ -49,7 +48,6 @@ const Footer = () => {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">Get Started<span></span></h5>
-                <p>Get access to your full Training and Marketing Suite.</p>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3">
