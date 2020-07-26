@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
+
+
+// .masthead {
+//     height: 100vh;
+//     min-height: 500px;
+//     background-image: url('https://images.unsplash.com/photo-1565688280018-b7893e3c9175?ixlib=rb-1.2.1&auto=format&fit=crop&w=833&q=80');
+//     background-size: cover;
+//     background-position: center;
+//     background-repeat: no-repeat;
+//     opacity: 0.8;
+//   }
+  h1 {
+    font-size: 2.5rem;
+    color: #746c69;
+    font-family: 'Amiri', serif;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    color: rgba(0,0,0,.5);
+    font-family: 'Amiri', serif;
+}
+.nav-link:hover {
+    font-size: large;
+    transition-duration: 2s;
+}
+
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.9);
+    font-family: 'Amiri', serif;
+}
+.carousel {
+    position: relative;
+    display: block;
+}
+.carousel-item.active {
+    display: block;
+    text-align: -webkit-center;
+}
