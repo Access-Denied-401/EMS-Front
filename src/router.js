@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Administration from './components/Administration/administration';
@@ -9,37 +10,37 @@ import Aboutus from './components/About-Us/aboutus';
 
 
 const Routes = (props) => {
-    return (
-        <>
-            <Route path="/" exact>
+  return (
+    <>
+      <Route path="/" exact>
                 how are you
-            </Route>
+      </Route>
 
-            <Route path="/administration" exact>
-                <Administration />
-            </Route>
+      <Route path="/administration" exact>
+        <Administration />
+      </Route>
 
-            <Route path="/financialManagement" exact>
-                <FinancialManagement />
-            </Route>
+      <Route path="/financials" exact>
+        <FinancialManagement />
+      </Route>
 
-            <Route path="/profile" exact>
-                <Profile />
-            </Route>
+      <Route path="/profile" exact>
+        <Profile />
+      </Route>
 
-            <Route path="/signin" exact>
-                <Signin />
-            </Route>
+      <Route path="/signin" exact>
+        <Signin />
+      </Route>
 
-            <Route path="/signup" exact>
-                <Signup />
-            </Route>
+      <Route path="/signup" exact>
+        <Signup />
+      </Route>
 
-            <Route path="/aboutus" exact>
-                <Aboutus />
-            </Route>
-        </>
-    )
-}
+      <Route path="/aboutus" exact>
+        <Aboutus />
+      </Route>
+    </>
+  );
+};
 
 export default Routes;
