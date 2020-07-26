@@ -134,17 +134,17 @@ const FinancialManagement = (props) => {
           <TextField
             id="standard-read-only-input"
             label="Overtime"
-            defaultValue="Overtime"
+            defaultValue="0"
             InputProps={{
-              readOnly: true,
+              readOnly: false,
             }}
           />
           <TextField
             id="standard-read-only-input"
             label="Living Allowance"
-            defaultValue="Living Allowance"
+            defaultValue="0"
             InputProps={{
-              readOnly: true,
+              readOnly: false,
             }}
           />
           <TextField
@@ -158,9 +158,17 @@ const FinancialManagement = (props) => {
           <TextField
             id="standard-read-only-input"
             label="Social Security"
-            defaultValue="0"
+            defaultValue="Social Security"
             InputProps={{
-              readOnly: false,
+              readOnly: true,
+            }}
+          />
+          <TextField
+            id="standard-read-only-input"
+            label="Net Salary"
+            defaultValue="Net Salary"
+            InputProps={{
+              readOnly: true,
             }}
           />
           <CardContent>
