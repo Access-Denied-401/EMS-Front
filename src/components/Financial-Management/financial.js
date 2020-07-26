@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },	
   root: {
     maxWidth: 345,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
   },
 }));
 
@@ -95,85 +99,89 @@ const FinancialManagement = (props) => {
         </Dialog>
       </div>
 
-      <Card className={classes.root}>
-        <CardActionArea>
-          <br></br>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
-          <br></br>
-          <Typography gutterBottom variant="h5" component="h2">
+      <div className = 'card'>
+
+
+        <Card className={classes.root}>
+          <CardActionArea>
+            <br></br>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
+            <br></br>
+            <Typography gutterBottom variant="h5" component="h2">
               Empolyee Name: {name}
-          </Typography>
-          <TextField
-            id="standard-read-only-input"
-            label="Basic Salary"
-            defaultValue="Basic Salary"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Working Hours"
-            defaultValue="Working Hours"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Overtime"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Living Allowance"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Rewards"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Social Security"
-            defaultValue="Social Security"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Net Salary"
-            defaultValue="Net Salary"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <CardContent>
+            </Typography>
+            <TextField
+              id="standard-read-only-input"
+              label="Basic Salary"
+              defaultValue="Basic Salary"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Working Hours"
+              defaultValue="Working Hours"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Overtime"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Living Allowance"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Rewards"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Social Security"
+              defaultValue="Social Security"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Net Salary"
+              defaultValue="Net Salary"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <CardContent>
            
-            <Typography variant="body2" color="textSecondary" component="p">
+              <Typography variant="body2" color="textSecondary" component="p">
             Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
             across all continents except Antarctica
-            </Typography>
-          </CardContent>
-        </CardActionArea>
+              </Typography>
+            </CardContent>
+          </CardActionArea>
         
-        <CardActions>
-          <Button size="small" color="primary">
+          <CardActions>
+            <Button size="small" color="primary">
           Print Salary
-          </Button>
-        </CardActions>
-      </Card>
+            </Button>
+          </CardActions>
+        </Card>
+      </div>
     </>
   );
 };
