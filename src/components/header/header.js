@@ -15,28 +15,26 @@ const Header = (props) => {
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav ml-auto">
-              <li className="nav-item active">
-                <a className="nav-link" href="#">Home
-                  <span className="sr-only">(current)</span>
-                </a>
+              <li className="nav-item">
+                <Link to="/" className="nav-link">Home </Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Financial Management</Link>
+                <Link className="nav-link" to="/Administration">Administration</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Administration</Link>
+                <Link className="nav-link" to="/financials">Financial Management</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Profile</Link>
+                <Link className="nav-link" to="/profile">Profile</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Sign in</Link>
+                <Link className="nav-link" to="/signin">Sign-in</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">Sign up</Link>
+                <Link className="nav-link" to="/signup">Sign-up</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="#">About us</Link>
+                <Link className="nav-link" to="/aboutus">About-us</Link>
               </li>
             </ul>
           </div>
@@ -46,9 +44,6 @@ const Header = (props) => {
       <header className="masthead">
         <div className="container h-100">
           <div className="row h-100 align-items-center">
-            {/* <div className="col-12 text-center">
-              <h1 className="font-weight-light">Employee Management System</h1>
-            </div> */}
           </div>
         </div>
       </header>
@@ -81,15 +76,7 @@ const Header = (props) => {
           </a>
         </div>
       </section>
-      
-
-
-      <section className="py-5">
-        <div className="container">
-          <h2 className="font-weight-light">Page Content</h2>
-          <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus ab nulla dolorum autem nisi officiis blanditiis voluptatem hic, assumenda aspernatur facere ipsam nemo ratione cumque magnam enim fugiat reprehenderit expedita.</p>
-        </div>
-      </section>
+    
 
     </>
   );
