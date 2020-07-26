@@ -30,21 +30,9 @@ const useStyles = makeStyles((theme) => ({
   formControl: {
     margin: theme.spacing(1),
     minWidth: 200,
-  },
-  '& .MuiCard-root': {
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
   },	
   root: {
     maxWidth: 345,
-    display: 'flex',
-    justifyContent: 'center',
-    flexDirection: 'column',
-  },
-  '& .MuiTextField-root': {
-    margin: theme.spacing(1),
-    width: '25ch',
   },
 }));
 
