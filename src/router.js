@@ -11,7 +11,7 @@ import EditProfile from './components/Profile/editProfile';
 import Feedback from './components/Profile/feedback';
 import Signin from './components/Sign-in/signin';
 import Signup from './components/Sign-up/signup';
-import Aboutus from './components/About-Us/aboutus';
+import About from './components/About-Us/aboutus';
 
 
 const Routes = (props) => {
@@ -37,7 +37,7 @@ const Routes = (props) => {
 
       <Route path="/signup" component={Signup} exact />
 
-      <Route path="/aboutus" component={Aboutus} exact />
+      <Route path="/aboutus" component={About} exact />
     </>
   );
 };
