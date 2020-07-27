@@ -1,6 +1,4 @@
-/* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -17,7 +15,6 @@ import CardActionArea from '@material-ui/core/CardActionArea';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
-
 
 const useStyles = makeStyles((theme) => ({
   container: {
@@ -37,8 +34,8 @@ const useStyles = makeStyles((theme) => ({
   },
 }));
 
+function AdminEditUser (props) {
 
-const AdministrationHome = (props) => {
   const classes = useStyles();
   const [open, setOpen] = React.useState(false);
   const [name, setName] = React.useState('');
@@ -55,7 +52,7 @@ const AdministrationHome = (props) => {
     setOpen(false);
   };
 
-  return (
+  return(
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1 className='administrationHome'>Administration</h1>
@@ -87,10 +84,10 @@ const AdministrationHome = (props) => {
           </DialogContent>
           <DialogActions>
             <Button onClick={handleClose} color="primary">
-            Cancel
+          Cancel
             </Button>
             <Button onClick={handleClose} color="primary">
-            Ok
+          Ok
             </Button>
           </DialogActions>
         </Dialog>
@@ -104,7 +101,7 @@ const AdministrationHome = (props) => {
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
             <br></br>
             <Typography gutterBottom variant="h5" component="h2">
-              Empolyee Name: {name}
+            Empolyee Name: {name}
             </Typography>
             <TextField
               id="standard-read-only-input"
@@ -141,25 +138,13 @@ const AdministrationHome = (props) => {
           </CardActionArea>
         </Card>
       </div>
-      <Link to='/administration/adduser'>
-        <Button variant="contained">
-         Add New User
-        </Button>
-      </Link>
 
-      <Link to='/administration/edituser'>
-        <Button variant="contained">
-          Edit User Profile
-        </Button>
-      </Link>
-
-      <Link to='/'>
-        <Button variant="contained">
-          Accept Users
-        </Button>
-      </Link>
+      <Button variant="contained">
+        Edit User Profile
+      </Button>
     </>
   );
-};
 
-export default AdministrationHome;
+}
+
+export default AdminEditUser;
