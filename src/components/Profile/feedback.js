@@ -58,7 +58,7 @@ const FinancialManagement = (props) => {
 
   return(
     <>
-      <main className="mainFinance">
+      <main className="mainFeedback">
         <br></br>            <br></br>            <br></br>            <br></br>
         <h1> Financial Management </h1>
      
