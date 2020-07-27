@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },	
   root: {
     maxWidth: 345,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
   },
 }));
 

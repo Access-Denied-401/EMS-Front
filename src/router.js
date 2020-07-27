@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Administration from './components/Administration/administration';
+import Administration from './components/Administration/administrationhome/administration';
 import Home from './components/Home/home';
 import FinancialManagement from './components/Financial-Management/financial';
 import Profile from './components/Profile/profile';
