@@ -13,33 +13,19 @@ import Aboutus from './components/About-Us/aboutus';
 const Routes = (props) => {
   return (
     <>
-      <Route path="/" exact>
-        <Home />
-      </Route>
+      <Route path="/" component={Home} exact />
 
-      <Route path="/administration" exact>
-        <Administration />
-      </Route>
+      <Route path="/administration" component={Administration} exact />
 
-      <Route path="/financials" exact>
-        <FinancialManagement />
-      </Route>
+      <Route path="/financials" component={FinancialManagement} exact />
 
-      <Route path="/profile" exact>
-        <Profile />
-      </Route>
+      <Route path="/profile" component={Profile} exact />
 
-      <Route path="/signin" exact>
-        <Signin />
-      </Route>
+      <Route path="/signin" component={Signin} exact />
 
-      <Route path="/signup" exact>
-        <Signup />
-      </Route>
+      <Route path="/signup" component={Signup} exact />
 
-      <Route path="/aboutus" exact>
-        <Aboutus />
-      </Route>
+      <Route path="/aboutus" component={Aboutus} exact />
     </>
   );
 };
