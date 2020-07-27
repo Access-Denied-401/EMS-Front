@@ -1,45 +1,31 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Route } from 'react-router-dom';
-import Administration from './components/Administration/administration';
+import Administration from './components/Administration/administrationhome/administration';
 import Home from './components/Home/home';
 import FinancialManagement from './components/Financial-Management/financial';
 import Profile from './components/Profile/profile';
 import Signin from './components/Sign-in/signin';
 import Signup from './components/Sign-up/signup';
-import Aboutus from './components/About-Us/aboutus';
+import About from './components/About-Us/aboutus';
 
 
 const Routes = (props) => {
   return (
     <>
-      <Route path="/" exact>
-        <Home />
-      </Route>
+      <Route path="/" component={Home} exact />
 
-      <Route path="/administration" exact>
-        <Administration />
-      </Route>
+      <Route path="/administration" component={Administration} exact />
 
-      <Route path="/financials" exact>
-        <FinancialManagement />
-      </Route>
+      <Route path="/financials" component={FinancialManagement} exact />
 
-      <Route path="/profile" exact>
-        <Profile />
-      </Route>
+      <Route path="/profile" component={Profile} exact />
 
-      <Route path="/signin" exact>
-        <Signin />
-      </Route>
+      <Route path="/signin" component={Signin} exact />
 
-      <Route path="/signup" exact>
-        <Signup />
-      </Route>
+      <Route path="/signup" component={Signup} exact />
 
-      <Route path="/aboutus" exact>
-        <Aboutus />
-      </Route>
+      <Route path="/aboutus" component={About} exact />
     </>
   );
 };

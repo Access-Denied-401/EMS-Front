@@ -25,7 +25,7 @@ import './financial.scss';
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
-    flexWrap: 'wrap',
+    // flexWrap: 'wrap',
   },
   formControl: {
     margin: theme.spacing(1),
@@ -33,6 +33,10 @@ const useStyles = makeStyles((theme) => ({
   },	
   root: {
     maxWidth: 345,
+    display:'flex',
+    justifyContent:'center',
+    alignItems:'center',
+    flexDirection:'column',
   },
 }));
 
@@ -56,124 +60,128 @@ const FinancialManagement = (props) => {
 
   return(
     <>
-      <h1> Financial Management </h1>
+      <main className="mainFinance">
+        <br></br>            <br></br>            <br></br>            <br></br>
+        <h1> Financial Management </h1>
      
-      <div>
-        <Button onClick={handleClickOpen}>Select Empolyee</Button>
-        <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-          <DialogTitle>Fill the form</DialogTitle>
-          <DialogContent>
-            <form className={classes.container}>
-              <FormControl className={classes.formControl}>
-                <InputLabel id="demo-dialog-select-label">Empolyee Name</InputLabel>
-                <Select
-                  labelId="demo-dialog-select-label"
-                  id="demo-dialog-select"
-                  value={name}
-                  onChange={handleChange}
-                  input={<Input />}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  <MenuItem value={'Amer'}>Amer</MenuItem>
-                  <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
-                  <MenuItem value={'Raghad'}>Raghad</MenuItem>
-                  <MenuItem value={'Ahlam'}>Ahlam</MenuItem>
-                </Select>
-              </FormControl>
-            </form>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
+        <div>
+          <Button onClick={handleClickOpen}>Select Empolyee</Button>
+          <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
+            <DialogTitle>Employee name</DialogTitle>
+            <DialogContent>
+              <form className={classes.container}>
+                <FormControl className={classes.formControl}>
+                  <InputLabel id="demo-dialog-select-label">Empolyee Name</InputLabel>
+                  <Select
+                    labelId="demo-dialog-select-label"
+                    id="demo-dialog-select"
+                    value={name}
+                    onChange={handleChange}
+                    input={<Input />}
+                  >
+                    <MenuItem value="">
+                      <em>None</em>
+                    </MenuItem>
+                    <MenuItem value={'Amer'}>Amer</MenuItem>
+                    <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
+                    <MenuItem value={'Raghad'}>Raghad</MenuItem>
+                    <MenuItem value={'Ahlam'}>Ahlam</MenuItem>
+                  </Select>
+                </FormControl>
+              </form>
+            </DialogContent>
+            <DialogActions>
+              <Button onClick={handleClose} color="primary">
             Cancel
-            </Button>
-            <Button onClick={handleClose} color="primary">
+              </Button>
+              <Button onClick={handleClose} color="primary">
             Ok
-            </Button>
-          </DialogActions>
-        </Dialog>
-      </div>
+              </Button>
+            </DialogActions>
+          </Dialog>
+        </div>
 
-      <Card className={classes.root}>
-        <CardActionArea>
-          <br></br>
-          <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
-          <br></br>
-          <Typography gutterBottom variant="h5" component="h2">
+        <Card className={classes.root} >
+          <CardActionArea id="card">
+            <br></br>
+            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} id="Avatar"/>
+            <br></br>
+            <Typography gutterBottom variant="h5" component="h2">
               Empolyee Name: {name}
-          </Typography>
-          <TextField
-            id="standard-read-only-input"
-            label="Basic Salary"
-            defaultValue="Basic Salary"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Working Hours"
-            defaultValue="Working Hours"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Overtime"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Living Allowance"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Rewards"
-            defaultValue="0"
-            InputProps={{
-              readOnly: false,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Social Security"
-            defaultValue="Social Security"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <TextField
-            id="standard-read-only-input"
-            label="Net Salary"
-            defaultValue="Net Salary"
-            InputProps={{
-              readOnly: true,
-            }}
-          />
-          <CardContent>
-           
-            <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
             </Typography>
-          </CardContent>
-        </CardActionArea>
+            <TextField
+              id="standard-read-only-input"
+              label="Basic Salary"
+              defaultValue="Basic Salary"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Working Hours"
+              defaultValue="Working Hours"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Overtime"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Living Allowance"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Rewards"
+              defaultValue="0"
+              InputProps={{
+                readOnly: false,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Social Security"
+              defaultValue="Social Security"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Net Salary"
+              defaultValue="Net Salary"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <CardContent>
+           
+              <Typography variant="body2" color="textSecondary" component="p">
+              * Our policy is to always give the employees more than they deserve.
+              </Typography>
+            </CardContent>
+          </CardActionArea>
         
-        <CardActions>
-          <Button size="small" color="primary">
+          <CardActions>
+            <Button size="small" color="primary">
           Print Salary
-          </Button>
-        </CardActions>
-      </Card>
+            </Button>
+          </CardActions>
+        </Card>
+        <br></br>
+        <br></br>
+      </main>
     </>
   );
 };
