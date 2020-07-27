@@ -57,6 +57,7 @@ const FinancialManagement = (props) => {
   return(
     <>
       <main className="mainFinance">
+        <br></br>            <br></br>            <br></br>            <br></br>
         <h1> Financial Management </h1>
      
         <div>
@@ -163,8 +164,7 @@ const FinancialManagement = (props) => {
             <CardContent>
            
               <Typography variant="body2" color="textSecondary" component="p">
-            Lizards are a widespread group of squamate reptiles, with over 6,000 species, ranging
-            across all continents except Antarctica
+              * Our policy is to always give the employees more than they deserve.
               </Typography>
             </CardContent>
           </CardActionArea>
@@ -175,6 +175,8 @@ const FinancialManagement = (props) => {
             </Button>
           </CardActions>
         </Card>
+        <br></br>
+        <br></br>
       </main>
     </>
   );
