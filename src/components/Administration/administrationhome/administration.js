@@ -57,6 +57,7 @@ const AdministrationHome = (props) => {
 
   return (
     <>
+      <br></br>            <br></br>            <br></br>            <br></br>
       <h1 className='administrationHome'>Administration</h1>
       <div>
         <Button onClick={handleClickOpen}>Select Empolyee</Button>
@@ -140,13 +141,13 @@ const AdministrationHome = (props) => {
           </CardActionArea>
         </Card>
       </div>
-      <Link to='/adduser'>
+      <Link to='/administration/adduser'>
         <Button variant="contained">
          Add New User
         </Button>
       </Link>
 
-      <Link to='/'>
+      <Link to='/administration/edituser'>
         <Button variant="contained">
           Edit User Profile
         </Button>

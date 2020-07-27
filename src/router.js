@@ -3,6 +3,7 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import Administration from './components/Administration/administrationhome/administration';
 import AdminAddUser from './components/Administration/admin-add-user/admin-add-user';
+import AdminEditUser from './components/Administration/admin-edit-user/admin-edit-user';
 import Home from './components/Home/home';
 import FinancialManagement from './components/Financial-Management/financial';
 import Profile from './components/Profile/profile';
@@ -15,9 +16,12 @@ const Routes = (props) => {
   return (
     <>
       <Route path="/" component={Home} exact />
+
       <Route path="/administration" component={Administration} exact />
      
-      <Route path='/adduser' component= {AdminAddUser} />
+      <Route path='/administration/adduser' component= {AdminAddUser} />
+
+      <Route path='/administration/edituser' component= {AdminEditUser} />
 
       <Route path="/financials" component={FinancialManagement} exact />
 
