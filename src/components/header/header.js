@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
 
 
@@ -9,7 +9,7 @@ const Header = (props) => {
     <>
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
-          <a className="navbar-brand" href="#">EMS</a>
+          <a className="navbar-brand" href="/">EMS</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
