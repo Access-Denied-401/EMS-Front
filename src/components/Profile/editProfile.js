@@ -89,14 +89,7 @@ const FinancialManagement = (props) => {
                 readOnly: true,
               }}
             />
-            <TextField
-              id="standard-read-only-input"
-              label="Gender"
-              defaultValue="male"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
+
             <TextField
               id="standard-read-only-input"
               label="Birth date"
@@ -107,8 +100,16 @@ const FinancialManagement = (props) => {
             />
             <TextField
               id="standard-read-only-input"
-              label="Regester date"
-              defaultValue="01/02/2020"
+              label="Password"
+              defaultValue="******"
+              InputProps={{
+                readOnly: true,
+              }}
+            />
+            <TextField
+              id="standard-read-only-input"
+              label="Gender"
+              defaultValue="male"
               InputProps={{
                 readOnly: true,
               }}
@@ -121,22 +122,8 @@ const FinancialManagement = (props) => {
                 readOnly: true,
               }}
             />
-            <TextField
-              id="standard-read-only-input"
-              label="Role"
-              defaultValue="Admen"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              label="Net salary" 
-              defaultValue="20000$"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
+
+
             <CardContent>
            
               {/* <Typography variant="body2" color="textSecondary" component="p">
@@ -147,10 +134,7 @@ const FinancialManagement = (props) => {
         
           <CardActions>
             <Button size="small" color="primary">
-              <Link to="/profile/EditProfile" className="link">Edit profile </Link>
-            </Button>
-            <Button size="small" color="primary">
-              <Link to="/profile/Feedback" className="link">Send feedback</Link>
+              <Link to="/profile/EditProfile" className="link">Save</Link>
             </Button>
           </CardActions>
         </Card>

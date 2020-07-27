@@ -7,6 +7,8 @@ import AdminEditUser from './components/Administration/admin-edit-user/admin-edi
 import Home from './components/Home/home';
 import FinancialManagement from './components/Financial-Management/financial';
 import Profile from './components/Profile/profile';
+import EditProfile from './components/Profile/editProfile';
+import Feedback from './components/Profile/feedback';
 import Signin from './components/Sign-in/signin';
 import Signup from './components/Sign-up/signup';
 import Aboutus from './components/About-Us/aboutus';
@@ -26,6 +28,10 @@ const Routes = (props) => {
       <Route path="/financials" component={FinancialManagement} exact />
 
       <Route path="/profile" component={Profile} exact />
+
+      <Route path="/profile/EditProfile" component={EditProfile} exact />
+
+      <Route path="/profile/Feedback" component={Feedback} exact />
 
       <Route path="/signin" component={Signin} exact />
 
