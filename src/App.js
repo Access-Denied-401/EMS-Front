@@ -2,12 +2,9 @@
 import React from 'react';
 import Header from './components/Header/header';
 import Footer from './components/Footer/footer';
-import Home from './components/Home/home';
 import Routes from './router';
 import Signin from './components/Sign-in/signin';
 import 'bootstrap/dist/css/bootstrap.min.css';
-
-
 
 
 function App() {
@@ -15,7 +12,6 @@ function App() {
     <>
       <Header />
       <Routes />
-      <Signin />
       <Footer />
     </>
   );
