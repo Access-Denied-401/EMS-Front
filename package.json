@@ -2,7 +2,7 @@
   "name": "ems-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Access-Denied-401.github.io/EMS-Front/",
+  "homepage": "https://Access-Denied-401.github.io/EMS-Front",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
