@@ -1,35 +1,9 @@
 import React from 'react';
-// import { makeStyles } from '@material-ui/core/styles';
-// import Button from '@material-ui/core/Button';
-// import FormControl from '@material-ui/core/FormControl';
-// import Card from '@material-ui/core/Card';
-// import CardActionArea from '@material-ui/core/CardActionArea';
-// import Avatar from '@material-ui/core/Avatar';
-// import TextField from '@material-ui/core/TextField';
+import { Link } from 'react-router-dom';
 import './admin-add-user.scss';
 
 
-// const useStyles = makeStyles((theme) => ({
-//   container: {
-//     display: 'flex',
-//     flexWrap: 'wrap',
-//   },
-//   formControl: {
-//     margin: theme.spacing(1),
-//     minWidth: 200,
-//   },
-//   root: {
-//     maxWidth: 345,
-//     display: 'flex',
-//     justifyContent: 'center',
-//     alignItems: 'center',
-//     flexDirection: 'column',
-//   },
-// }));
-
-
 function AdminAddUser(props) {
-  // const classNamees = useStyles();
   return (
     <>
       <div className="row">
@@ -52,87 +26,17 @@ function AdminAddUser(props) {
             </div>
             <button className="btn btn-info btn-block " type="submit">ADD NEW USER</button>
           </form>
+
+          <Link to='/administration'>
+            <button className="btn btn-info btn-block " type="submit">Back</button>
+          </Link>
+          
         </div>
+        
         <div className="col-sm-8 xyz text-center" > <i className="fa fa-user-circle fa-5x" aria-hidden="true"></i>
           <h2 className="account-text">Create New User Account</h2>
         </div>
       </div>
-      {/* <br></br>            <br></br>            <br></br>            <br></br>
-      <h1 classNameName='newemployee'>New Employee</h1>
-      <div>
-        <form classNameName={classNamees.container}>
-          <FormControl classNameName={classNamees.formControl}>
-            <div classNameName = 'card'>
-
-              <Card classNameName={classNamees.root}>
-                <CardActionArea>
-                  <br></br>
-                  <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" classNameName={classNamees.large} />
-                  <br></br>
-                  <TextField
-                    id="standard-read-only-input"
-                    label="Employee Name"
-                    defaultValue=''
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                  <TextField
-                    id="standard-read-only-input"
-                    label="E-mail"
-                    defaultValue=""
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                  <TextField
-                    id="standard-read-only-input"
-                    label="Password"
-                    defaultValue=""
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                  <TextField
-                    id="standard-read-only-input"
-                    label="Position"
-                    defaultValue=""
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                  <TextField
-                    id="standard-read-only-input"
-                    label="Role"
-                    defaultValue=""
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                  <TextField
-                    id="standard-read-only-input"
-                    label="Birthdate"
-                    defaultValue=""
-                    InputProps={{
-                      readOnly: false,
-                    }}
-                  />
-
-                </CardActionArea>
-              </Card>
-
-            </div>
-            <Button variant="contained">
-                Add New User
-            </Button>
-          </FormControl>
-        </form>
-      </div> */}
     </>
   );
 }
