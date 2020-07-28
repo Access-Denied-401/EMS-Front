@@ -1,8 +1,6 @@
 let initialState = {
-  categories: [
-    { name: 'electronics', displayName: 'Elecronics' ,description:'Pla Pla Pla'},
-    { name: 'food', displayName: 'Food',description:'Pla Pla Pla' },
-    { name: 'clothing', displayName: 'Clothing',description:'Pla Pla Pla' },
+  users: [
+  
   ],
   activeCategory: '',
 };
