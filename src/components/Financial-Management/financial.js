@@ -73,7 +73,7 @@ const FinancialManagement = (props) => {
                     <li className="mt-2"><a href="#" className="hide-search text-secondary" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i className="fa fa-search"></i></a></li>
                   </ul>
                 </div>
-                <div className="row search-div">
+                <div className="row-financial search-div">
                   <div className="col-md-12 col-12">
                     <div className="search-input">
                       <input type="text" className="form-control rounded-0" placeholder="Search user" aria-label="Recipient's username" aria-describedby="basic-addon2" id="user-list-search"/>
@@ -82,9 +82,9 @@ const FinancialManagement = (props) => {
                 </div>
                 <ul className="list-group" id="user-list">
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image2.png" alt="Seth Frazier" className="img-responsive img-circle rounded-circle" />
                           </div>
@@ -100,9 +100,9 @@ const FinancialManagement = (props) => {
                     </div>
                   </li>
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image3.jpg" alt="Jean Myers" className="img-responsive img-circle rounded-circle" />
                           </div>
@@ -118,9 +118,9 @@ const FinancialManagement = (props) => {
                     </div>
                   </li>
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image4.jpg" alt="Todd Shelton" className="img-responsive img-circle rounded-circle" />
                           </div>
@@ -136,9 +136,9 @@ const FinancialManagement = (props) => {
                     </div>
                   </li>
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image5.jpg" alt="Rosemary Porter" className="img-responsive img-circle rounded-circle" />
                           </div>
@@ -154,9 +154,9 @@ const FinancialManagement = (props) => {
                     </div>
                   </li>
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image6.jpg" alt="Debbie Schmidt" className="img-responsive img-circle rounded-circle" />
                           </div>
@@ -172,9 +172,9 @@ const FinancialManagement = (props) => {
                     </div>
                   </li>
                   <li className="list-group-item">
-                    <div className="row">
+                    <div className="row-financial">
                       <div className="col-md-12 col-12">
-                        <div className="row">
+                        <div className="row-financial">
                           <div className="col-md-4 col-4 user-img text-center pt-1">
                             <img src="http://nicesnippets.com/demo/cs-image7.jpg" alt="Glenda Patterson" className="img-responsive img-circle rounded-circle" />
                           </div>
