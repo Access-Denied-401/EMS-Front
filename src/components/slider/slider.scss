@@ -1,6 +1,13 @@
+body {
+    background-color: white;
+    font-family: 'Fira Sans', sans-serif;
+
+}
 .carousel {
     position: relative;
     display: block;
+    font-family: 'Fira Sans', sans-serif;
+
 }
 .carousel-item.active {
     display: block;
@@ -9,13 +16,17 @@
 .d-block {
     width: 50%!important;
     opacity: 0.8;
-    box-shadow: 5px 10px 8px 10px #888888;
-    margin-top: 9%;
-    margin-bottom: 9%;
+    box-shadow: 5px 6px 5px 6px #cecec3d1;
+    margin-top: 2%;
+    margin-bottom: 5%;
 }
 
 .adv {
     margin-bottom: 7.5rem;
     font-weight: 500;
     line-height: 1.2;
+}
+.w-90 {
+    margin-top: 5%;
+    height: 70vh;
 }

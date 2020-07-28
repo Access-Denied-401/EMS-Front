@@ -4,17 +4,20 @@ import { Link, NavLink } from 'react-router-dom';
 import './header.scss';
 
 
+
 const Header = (props) => {
   return (
     <>
+
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
+          <img id="logo" src="https://files.slack.com/files-pri/TNGRRLUMA-F017N0QDW4W/logo_e.m.s.png" alt="logo" />
           <a className="navbar-brand" href="/">EMS</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
-            <ul className="navbar-nav ml-auto">
+            <ul className="navbar-nav">
               <li className="nav-item">
                 <Link to="/" className="nav-link">Home </Link>
               </li>
@@ -47,6 +50,7 @@ const Header = (props) => {
           </div>
         </div>
       </header>
+     
     </>
   );
 };

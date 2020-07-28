@@ -71,7 +71,7 @@ const Footer = () => {
       </div>
       <div className="footer-copyright">
         <div className="container">
-          <div className="row">
+          <div className="row-footer">
             <div className="col-md-12 text-center">
               <p>Copyright Company Name © 2020. All rights reserved.</p>
             </div>
