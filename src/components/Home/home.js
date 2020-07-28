@@ -45,10 +45,6 @@ const Home = (props) => {
         </div>
 
       </div>
-      
-      <script>{jQuery(document).ready(function($){
-        $('.animated').addClass('delay-1s');
-      })}</script>
     </>
   );
 };

@@ -4,7 +4,7 @@ let signUpUrl = 'https://ems-access-denied.herokuapp.com/signup';
 let signInUrl = 'https://ems-access-denied.herokuapp.com/signin';
 
 // SignUp Action
-export const userSignUp = user => async dispatch => {
+export const userSignUp = user => dispatch => {
   return superagent.post(signUpUrl)
     .send(user)
     .then(res => {

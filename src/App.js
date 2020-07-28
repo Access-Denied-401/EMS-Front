@@ -6,13 +6,12 @@ import Routes from './router';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 
-
 function App() {
   return (
     <>
       <Header />
       <Routes />
-      <Footer />
+      <Footer />     
     </>
   );
 }
