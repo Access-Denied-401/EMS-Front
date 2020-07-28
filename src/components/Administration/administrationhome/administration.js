@@ -1,5 +1,6 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
+import cookie from 'react-cookies';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -40,8 +41,31 @@ const useStyles = makeStyles((theme) => ({
 
 const AdministrationHome = (props) => {
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const [name, setName] = React.useState('');
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [users, setUsers] = useState([]);
+  const [selecteduser, setSelecteduser] = useState('');
+ 
+  const getUsers = async () => {
+    const token = cookie.load('auth');
+    const response = await fetch('https://ems-access-denied.herokuapp.com/admincheckuser', {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    console.log(data);
+    return data;
+  };
+
+  const fillForm = (event) => {
+    console.log(event.target.value);
+    setSelecteduser(String(event.target.value) || 'dsdsddsda');
+    console.log(selecteduser);
+  };
   
   const handleChange = (event) => {
     setName(String(event.target.value) || '');
@@ -54,33 +78,39 @@ const AdministrationHome = (props) => {
   const handleClose = () => {
     setOpen(false);
   };
+  useEffect(()=>{
+    let data = getUsers().then(r => setUsers(r) );
+  },[]);
 
   return (
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1 className='administrationHome'>Administration</h1>
+      {users.map (value => <li on={fillForm} value={value}> {value.username}</li>)}
       <div>
         <Button onClick={handleClickOpen}>Select Empolyee</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
           <DialogTitle>Fill the form</DialogTitle>
           <DialogContent>
-            <form className={classes.container}>
+            <form  className={classes.container}>
               <FormControl className={classes.formControl}>
                 <InputLabel id="demo-dialog-select-label">Empolyee Name</InputLabel>
                 <Select
                   labelId="demo-dialog-select-label"
                   id="demo-dialog-select"
                   value={name}
-                  onChange={handleChange}
+                  // onChange={handleChange}
+                  onChange={fillForm}
                   input={<Input />}
                 >
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={'Amer'}>Amer</MenuItem>
+                  {/* <MenuItem value={'Amer'}>Amer</MenuItem>
                   <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
                   <MenuItem value={'Raghad'}>Raghad</MenuItem>
-                  <MenuItem value={'Ahlam'}>Ahlam</MenuItem>
+                <MenuItem value={'Ahlam'}>Ahlam</MenuItem> */}
+                  {users.map(value => <MenuItem value={value}>{value.username}</MenuItem>)}                 
                 </Select>
               </FormControl>
             </form>
@@ -109,7 +139,7 @@ const AdministrationHome = (props) => {
             <TextField
               id="standard-read-only-input"
               label="E-mail"
-              defaultValue="E-mail"
+              defaultValue={users.username}
               InputProps={{
                 readOnly: true,
               }}
@@ -117,7 +147,7 @@ const AdministrationHome = (props) => {
             <TextField
               id="standard-read-only-input"
               label="Position"
-              defaultValue="Position"
+              defaultValue={selecteduser.username}
               InputProps={{
                 readOnly: true,
               }}
