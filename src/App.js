@@ -5,7 +5,7 @@ import Footer from './components/Footer/footer';
 import About from './components/About-Us/aboutus';
 import Routes from './router';
 import Signin from './components/Sign-in/signin';
-import 'bootstrap/dist/css/bootstrap.min.css';
+import Slider from './components/slider/slider';
 
 
 function App() {
@@ -13,8 +13,8 @@ function App() {
     <>
       <Header />
       <Routes />
-     
       <Footer />
+
      
     </>
   );
