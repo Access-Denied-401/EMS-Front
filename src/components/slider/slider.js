@@ -13,7 +13,7 @@ const Slider = (props) => {
       <Carousel>
         <Carousel.Item>
           <img
-            className="d-block w-50"
+            className="d-block w-90"
             src="https://images.unsplash.com/photo-1520607162513-77705c0f0d4a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=749&q=80"
             alt="First slide"
           />
@@ -24,7 +24,7 @@ const Slider = (props) => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-50"
+            className="d-block w-90"
             src="https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=702&q=80"
             alt="Third slide"
           />
@@ -36,7 +36,7 @@ const Slider = (props) => {
         </Carousel.Item>
         <Carousel.Item>
           <img
-            className="d-block w-50"
+            className="d-block w-90"
             src="https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?ixlib=rb-1.2.1&auto=format&fit=crop&w=750&q=80"
             alt="Third slide"
           />
