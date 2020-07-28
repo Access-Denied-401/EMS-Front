@@ -16,12 +16,6 @@ export default (state = initialState, action) => {
   let  categories;
   switch(type) {
   case 'activate':
-    // let products = state.products.map(product=> {
-    //   if (product.category === payload) {
-    //     return { name: product.name, category: product.category, price: product.price, inStock: product.inStock };
-    //   }
-    //   return product;
-    // });
     activeCategory = payload;
     categories = state.categories;  
     return {categories,activeCategory};

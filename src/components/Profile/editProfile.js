@@ -19,7 +19,7 @@ import CardContent from '@material-ui/core/CardContent';
 import Typography from '@material-ui/core/Typography';
 import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
-import './profile.scss';
+import './editProfile.scss';
 
 
 
@@ -61,7 +61,7 @@ const FinancialManagement = (props) => {
 
   return(
     <>
-      <main className="mainFinance">
+      <main className="mainEditProfile">
         <br></br>            <br></br>            <br></br>            <br></br>
         <h1> Users profiles </h1>
      

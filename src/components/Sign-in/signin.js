@@ -1,5 +1,5 @@
 /* eslint-disable no-unused-vars */
-import React, {useState} from 'react';
+import React, {useState,useEffect} from 'react';
 import {connect} from 'react-redux';
 import {userSignUp, userSignIn} from '../../store/actions';
 import './signin.scss';
@@ -31,7 +31,9 @@ function Signin(props) {
     event.target.reset();
     props.userSignIn(userSignIn);
   };
-
+  useEffect (() => {
+    props.userSignIn();
+  },[]);
   return (
     <>
       <div className="row">
