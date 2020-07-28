@@ -1,4 +1,5 @@
 import React from 'react';
+import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -142,6 +143,12 @@ function AdminEditUser (props) {
       <Button variant="contained">
         Edit User Profile
       </Button>
+
+      <Link to='/administration'>
+        <Button variant="contained">
+          Back
+        </Button>
+      </Link>
     </>
   );
 
