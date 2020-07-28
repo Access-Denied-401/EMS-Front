@@ -20,18 +20,18 @@ import Avatar from '@material-ui/core/Avatar';
 import TextField from '@material-ui/core/TextField';
 import './financial.scss';
 
-
 const useStyles = makeStyles((theme) => ({
   container: {
     display: 'flex',
     // flexWrap: 'wrap',
+  
   },
   formControl: {
     margin: theme.spacing(1),
     minWidth: 200,
   },	
   root: {
-    maxWidth: 345,
+    maxWidth: 400,
     display:'flex',
     justifyContent:'center',
     alignItems:'center',
@@ -55,59 +55,152 @@ const FinancialManagement = (props) => {
   const handleClose = () => {
     setOpen(false);
   };
-  
+
+
 
   return(
     <>
-      <main className="mainFinance">
+      <div className="something">
         <br></br>            <br></br>            <br></br>            <br></br>
         <h1> Financial Management </h1>
-     
-        <div>
-          <Button onClick={handleClickOpen}>Select Empolyee</Button>
-          <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-            <DialogTitle>Employee name</DialogTitle>
-            <DialogContent>
-              <form className={classes.container}>
-                <FormControl className={classes.formControl}>
-                  <InputLabel id="demo-dialog-select-label">Empolyee Name</InputLabel>
-                  <Select
-                    labelId="demo-dialog-select-label"
-                    id="demo-dialog-select"
-                    value={name}
-                    onChange={handleChange}
-                    input={<Input />}
-                  >
-                    <MenuItem value="">
-                      <em>None</em>
-                    </MenuItem>
-                    <MenuItem value={'Amer'}>Amer</MenuItem>
-                    <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
-                    <MenuItem value={'Raghad'}>Raghad</MenuItem>
-                    <MenuItem value={'Ahlam'}>Ahlam</MenuItem>
-                  </Select>
-                </FormControl>
-              </form>
-            </DialogContent>
-            <DialogActions>
-              <Button onClick={handleClose} color="primary">
-            Cancel
-              </Button>
-              <Button onClick={handleClose} color="primary">
-            Ok
-              </Button>
-            </DialogActions>
-          </Dialog>
-        </div>
-
-        <Card className={classes.root} >
-          <CardActionArea id="card">
+        <div className="containerList">
+          <div className="rowFinancial">
+            <div className="col-md-4 offset-md-4 col-12">
+              <div className="card">
+                <div className="card-header p-0">
+                  <h4 className="m-0">Employee List</h4>
+                  <ul className="pull-right m-0">
+                    <li className="mt-2"><a href="#" className="hide-search text-secondary" data-command="toggle-search" data-toggle="tooltip" data-placement="top" title="Toggle Search"><i className="fa fa-search"></i></a></li>
+                  </ul>
+                </div>
+                <div className="row search-div">
+                  <div className="col-md-12 col-12">
+                    <div className="search-input">
+                      <input type="text" className="form-control rounded-0" placeholder="Search user" aria-label="Recipient's username" aria-describedby="basic-addon2" id="user-list-search"/>
+                    </div>
+                  </div>
+                </div>
+                <ul className="list-group" id="user-list">
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image2.png" alt="Seth Frazier" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">Nick Daniel</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image3.jpg" alt="Jean Myers" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">John Tokio</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image4.jpg" alt="Todd Shelton" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">Xavier Filton</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image5.jpg" alt="Rosemary Porter" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">Abraham Doherty</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image6.jpg" alt="Debbie Schmidt" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">Debbie Scoomin</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                  <li className="list-group-item">
+                    <div className="row">
+                      <div className="col-md-12 col-12">
+                        <div className="row">
+                          <div className="col-md-4 col-4 user-img text-center pt-1">
+                            <img src="http://nicesnippets.com/demo/cs-image7.jpg" alt="Glenda Patterson" className="img-responsive img-circle rounded-circle" />
+                          </div>
+                          <div className="col-md-8 col-8">
+                            <h5 className="font-weight-bold mb-1">Glenda Favier</h5>
+                            <div className="user-detail">
+                              <p className="m-0"><i className="fa fa-phone mr-1" aria-hidden="true"></i> +91 1234567890</p>
+                              <p className="m-0"><i className="fa fa-envelope mr-1" aria-hidden="true"></i> example@gmail.com</p>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </li>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <Card className={classes.root} >
+            {/* <CardActionArea id="card"> */}
             <br></br>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} id="Avatar"/>
-            <br></br>
-            <Typography gutterBottom variant="h5" component="h2">
+            {/* <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} id="Avatar"/>
+          <br></br>
+          <Typography gutterBottom variant="h5" component="h2">
               Empolyee Name: {name}
-            </Typography>
+          </Typography> */}
             <TextField
               id="standard-read-only-input"
               label="Basic Salary"
@@ -170,17 +263,26 @@ const FinancialManagement = (props) => {
               * Our policy is to always give the employees more than they deserve.
               </Typography>
             </CardContent>
-          </CardActionArea>
+      
         
-          <CardActions>
-            <Button size="small" color="primary">
+            <CardActions>
+              <Button size="small" color="primary">
           Print Salary
-            </Button>
-          </CardActions>
-        </Card>
-        <br></br>
-        <br></br>
-      </main>
+              </Button>
+            </CardActions>
+          </Card>
+          <br></br>
+          <br></br>
+        </div>
+
+      </div>
+      
+       
+     
+      
+
+        
+    
     </>
   );
 };
