@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route } from 'react-router-dom';
 import Administration from './components/Administration/administrationhome/administration';
 import AdminAddUser from './components/Administration/admin-add-user/admin-add-user';
 import AdminEditUser from './components/Administration/admin-edit-user/admin-edit-user';
@@ -35,7 +35,7 @@ const Routes = (props) => {
 
       <Route path="/signin" component={Signin} exact />
 
-      <Route path="/signup" component={Signup} exact />
+      {/* <Route path="/signup" component={Signup} exact /> */}
 
       <Route path="/aboutus" component={About} exact />
     </>
