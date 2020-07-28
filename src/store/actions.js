@@ -4,21 +4,21 @@ let signInUrl = 'https://ems-access-denied.herokuapp.com/signin';
 
 // SignUp Action
 export const userSignUp = user => {
-  console.log(user);
-  return dispatch => {
-    return fetch (signUpUrl, {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-      },
-      body: JSON.stringify(user),
-    })
-      .then(res => {
-        console.log(res);
-      })
-      .catch(error => console.log(error));
-  };
+  console.log(user,'llllllllllllllllllllllllllllllllll');
+    // return dispatch => {
+    //   return fetch (signUpUrl, {
+    //     method: 'POST',
+    //     headers: {
+    //       'Content-Type': 'application/json',
+    //       Accept: 'application/json',
+    //     },
+    //     body: JSON.stringify(user),
+    //   })
+    //     .then(res => {
+    //       console.log(res);
+    //     })
+    //     .catch(error => console.log(error));
+    // };
 };
 
 
