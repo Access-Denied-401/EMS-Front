@@ -1,19 +1,22 @@
-
+// import loginUser from './actions';
 
 let initialState = {
-  isLoggedIn: false,
+  loggedIn: false,
   token: '',
-  currentUser:{},
+  user:{},
 };
 
-export default function logInReducer(state= initialState, action){
-  switch(action.type){
+export default (state= initialState, action) => {
+  let {type, payload} = action;
+  console.log('im in the reducer', action);
+  switch(type){
   case 'SET_LOGIN':
-    return {...state};
+    console.log('Im in the reducer at the moment ');
+    return {...state, 'loggedIn':payload.loggedIn, 'token':payload.token, 'user':payload.user};
 
   default:
     return state;
   }
-}
+};
 
 

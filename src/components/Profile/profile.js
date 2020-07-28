@@ -61,7 +61,7 @@ const FinancialManagement = (props) => {
 
   return(
     <>
-      <main className="mainFinance">
+      <main className="mainProfile">
         <br></br>            <br></br>            <br></br>            <br></br>
         <h1> Users profiles </h1>
      
