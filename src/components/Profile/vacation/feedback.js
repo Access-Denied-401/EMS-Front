@@ -39,7 +39,6 @@ const Feedback = (props) => {
           </div>
         </form>
       </div>
-
     </>
   );
 };
