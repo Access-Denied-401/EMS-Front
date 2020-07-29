@@ -1,6 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import { Link, NavLink } from 'react-router-dom';
+import Auth from './../../store/auth';
 import './header.scss';
 
 
@@ -21,9 +22,12 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link to="/" className="nav-link">Home </Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/Administration">Administration</Link>
-              </li>
+              <Auth capability='read'>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/Administration">Administration</Link>
+                </li>
+              </Auth>
+              
               <li className="nav-item">
                 <Link className="nav-link" to="/financials">Financial Management</Link>
               </li>

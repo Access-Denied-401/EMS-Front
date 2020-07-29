@@ -67,8 +67,6 @@ export const userSignIn = user => async dispatch => {
   const cookieToken = cookie.load('auth');
   const token = cookieToken || null; 
   validateToken(token);
-
-  
 };
 
 // export const onReLoad = user => async dispatch => {
