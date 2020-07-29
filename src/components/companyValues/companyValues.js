@@ -15,7 +15,7 @@ const CompanyValues = (props) => {
               data-aos-duration="1000">
               <div className="card-header bg-white mt-4 border-0">
                 <div className="media ">
-                  <img className="align-self-center rounded-circle outside img-fluid" src="https://icons-for-free.com/iconfiles/png/512/finance+market+market+vision+vision+icon-1320167739794647785.png" width="70" height="70" />
+                  <img className="align-self-center rounded-circle outside img-fluid" src="https://icons-for-free.com/iconfiles/png/512/finance+market+market+vision+vision+icon-1320167739794647785.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
                     <p className="font-weight-bold mb-0 ">VISION</p><small className="text-muted font-italic">Employee Management System</small>
                   </div>
@@ -31,7 +31,8 @@ const CompanyValues = (props) => {
               <div className=" py-0 my-0 bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo " src="https://files.slack.com/files-pri/TNGRRLUMA-F017N0QDW4W/logo_e.m.s.png" width="60" height="60" /></div>
+                    <img className="img-fluid-logo " src="../assest/ems.png" width="60" height="60" alt='' />
+                  </div>
                 </div>
               </div>
             </div>
@@ -44,7 +45,7 @@ const CompanyValues = (props) => {
               data-aos-duration="1000">
               <div className="card-header bg-white mt-4 border-0">
                 <div className="media ">
-                  <img className="align-self-center rounded-circle outside img-fluid" src="https://toppng.com/uploads/preview/mission-and-vision-icon-vision-and-mission-icon-11553526851cxivzxompa.png" width="70" height="70" />
+                  <img className="align-self-center rounded-circle outside img-fluid" src="https://toppng.com/uploads/preview/mission-and-vision-icon-vision-and-mission-icon-11553526851cxivzxompa.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
                     <p className="font-weight-bold mb-0 ">MISION</p><small className="text-muted font-italic ">Employee Management System</small>
                   </div>
@@ -60,7 +61,8 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="https://files.slack.com/files-pri/TNGRRLUMA-F017N0QDW4W/logo_e.m.s.png" width="60" height="60" /> </div>
+                    <img className="img-fluid-logo" src="../../assest/ems.png" width="60" height="60" alt='' />
+                  </div>
                 </div>
               </div>
             </div>
@@ -73,7 +75,7 @@ const CompanyValues = (props) => {
               data-aos-duration="1000">
               <div className="card-header bg-white mt-4 border-0">
                 <div className="media ">
-                  <img className="align-self-center rounded-circle outside img-fluid" src="https://pp.netclipart.com/pp/s/136-1365618_goal-clipart-personal-goal-transparent-goals-png.png" width="70" height="70" />
+                  <img className="align-self-center rounded-circle outside img-fluid" src="https://pp.netclipart.com/pp/s/136-1365618_goal-clipart-personal-goal-transparent-goals-png.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
                     <p className="font-weight-bold mb-0 ">GOALS</p><small className="text-muted font-italic ">Employee Management System</small>
                   </div>
@@ -89,19 +91,16 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="https://files.slack.com/files-pri/TNGRRLUMA-F017N0QDW4W/logo_e.m.s.png" width="60" height="60" /> </div>
+                    <img className="img-fluid-logo" src="src\assest\ems.png" width="60" height="60" alt ='' />
+                  </div>
                 </div>
               </div>
             </div>
-
 
           </div>
         </div>
         
       </div>
-
-      
-      
     </>
   );
 };
