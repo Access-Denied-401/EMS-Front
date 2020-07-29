@@ -44,6 +44,7 @@ const FinancialManagement = (props) => {
     <>
       <div className="cardFinancial">
         <div className="rowFinanc">
+          
           <div className="col-md-8 cart">
             <div className="title">
               <div className="row">
