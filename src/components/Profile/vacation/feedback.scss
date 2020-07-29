@@ -11,6 +11,8 @@ body{
     background-repeat: no-repeat;
     background-size: cover;
     opacity: 0.8;
+    font-family: 'Fira Sans', sans-serif;
+
 
 }
 .contact-form .form-control{
@@ -39,8 +41,13 @@ body{
     margin-bottom: 8%;
     margin-top: -10%;
     text-align: center;
-    color: #143546c7;
+    color: #143546;
     font-weight: bold;
+    background-color: #ffffff54;
+    padding: 3%;
+    width: 31vw;
+    margin-left: 20%;
+    border-radius: 12px;
 }
 .contact-form .btnContact {
     width: 50%;
