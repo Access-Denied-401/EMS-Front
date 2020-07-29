@@ -1,4 +1,6 @@
-import React from 'react';
+/* eslint-disable no-unused-vars */
+import React, {useState, useEffect} from 'react';
+import cookie from 'react-cookies';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -38,8 +40,59 @@ const useStyles = makeStyles((theme) => ({
 function AdminEditUser (props) {
 
   const classes = useStyles();
-  const [open, setOpen] = React.useState(false);
-  const [name, setName] = React.useState('');
+  const [open, setOpen] = useState(false);
+  const [name, setName] = useState('');
+  const [users, setUsers] = useState([]);
+  const [selectedUser, setSelectedUser] = useState({});
+
+  let API = 'https://ems-access-denied.herokuapp.com';
+
+  const getUsers = async () => {
+    const token = cookie.load('auth');
+    const response = await fetch(`${API}/adminpermanent`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
+  function editUser (user) {
+    console.log(user);
+    const token = cookie.load('auth');
+    fetch( `${API}/adminedit/${user._id}`, {
+      method: 'patch',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ 
+        'email': `${user.email}`,
+        'position' : `${user.position}`,
+        'role': `${user.role}`,
+      }),
+    }); 
+  }
+
+  const handleInputChange = (event) => {
+    if(event.target.name) setSelectedUser({...selectedUser ,[event.target.name]:event.target.value});
+    else  setSelectedUser(event.target.value);
+    console.log(selectedUser);
+  }; 
+
+  const handleSubmit = (event) => {
+    if(event) event.preventDefault();
+    event.target.reset();
+    console.log(selectedUser);
+    // editUser (event.target.value);
+  };
   
   const handleChange = (event) => {
     setName(String(event.target.value) || '');
@@ -52,6 +105,10 @@ function AdminEditUser (props) {
   const handleClose = () => {
     setOpen(false);
   };
+
+  useEffect(()=>{
+    getUsers().then(dbUsers => setUsers(dbUsers) );
+  },[]);
 
   return(
     <>
@@ -68,17 +125,15 @@ function AdminEditUser (props) {
                 <Select
                   labelId="demo-dialog-select-label"
                   id="demo-dialog-select"
-                  value={name}
-                  onChange={handleChange}
+                  // value={selectedUser.username}
+                  // onChange={handleChange}
+                  onChange={handleInputChange}
                   input={<Input />}
                 >
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  <MenuItem value={'Amer'}>Amer</MenuItem>
-                  <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
-                  <MenuItem value={'Raghad'}>Raghad</MenuItem>
-                  <MenuItem value={'Ahlam'}>Ahlam</MenuItem>
+                  {users.map(value => <MenuItem key={value._id} value={value}>{value.username}</MenuItem>)}
                 </Select>
               </FormControl>
             </form>
@@ -94,55 +149,55 @@ function AdminEditUser (props) {
         </Dialog>
       </div>
 
-      <div className = 'card'>
+      <form onSubmit={handleSubmit}>
+        <div className = 'card'>
+          <Card className={classes.root}>
+            <CardActionArea>
+              <br></br>
+              <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
+              <br></br>
+              <Typography gutterBottom variant="h5" component="h2">
+            Empolyee Name: {selectedUser.username}
+              </Typography>
+              <TextField
+                id="standard-read-only-input"
+                // label="E-mail"
+                name='email'
+                onChange={handleInputChange}
+                value={selectedUser.email}
+                InputProps={{
+                  readOnly: false,
+                }}
+              />
+              <TextField
+                id="standard-read-only-input"
+                // label="Position"
+                name='position'
+                onChange={handleInputChange}
+                value={selectedUser.position}
+                InputProps={{
+                  readOnly: false,
+                }}
+              />
+              <TextField
+                id="standard-read-only-input"
+                // label="Role"
+                name='role'
+                onChange={handleInputChange}
+                value={selectedUser.role}
+                InputProps={{
+                  readOnly: false,
+                }}
+              />
 
-        <Card className={classes.root}>
-          <CardActionArea>
-            <br></br>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
-            <br></br>
-            <Typography gutterBottom variant="h5" component="h2">
-            Empolyee Name: {name}
-            </Typography>
-            <TextField
-              id="standard-read-only-input"
-              label="E-mail"
-              defaultValue="E-mail"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              label="Position"
-              defaultValue="Position"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              label="Role"
-              defaultValue="Role"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              label="Gender"
-              defaultValue="Gender"
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-          </CardActionArea>
-        </Card>
-      </div>
-
-      <Button variant="contained">
+            </CardActionArea>
+          </Card>
+        </div>
+        <Button type='submit' variant="contained">
         Edit User Profile
-      </Button>
+        </Button>
+      </form>
+
 
       <Link to='/administration'>
         <Button variant="contained">

@@ -21,7 +21,16 @@ function AdminAcceptUser (props) {
   };
 
   function acceptUser (user) {
+    let myUser = { 
+      '_id':`${user._id}`,
+      'username': `${user.username}`,
+      'email': `${user.email}`,
+      'password': `${user.password}`,
+      'position': `developer`,
+      'role': `${user.role}`,
+    };
     const token = cookie.load('auth');
+    
     fetch( `${API}/accept`, {
       method: 'post',
       mode: 'cors',
@@ -31,27 +40,20 @@ function AdminAcceptUser (props) {
         Accept: 'application/json',
         'Authorization': `Bearer ${token}`,
       },
-      body: JSON.stringify({ 
-        'username': `${user.username}`,
-        'email': `${user.email}`,
-        'password': `${user.password}`,
-        'birthday': `${user.birthday}`,
-        'role': `user`,
-      }),
+      body: JSON.stringify(myUser),
     }); 
   }
- 
 
   useEffect(()=> {
     getUsers().then(tempUsers => setUsers(tempUsers) );
-  },[]);
+  },[users]);
 
   return(
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1>Accept User</h1>
       {users.map (value => <li value={value}>
-        {value.username} <button onClick={acceptUser(value)}>Add New User</button>
+        {value.username} <button onClick={()=> acceptUser(value)}>Add New User</button>
       </li>)}
     </>
   );

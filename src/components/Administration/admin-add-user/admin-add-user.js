@@ -1,18 +1,23 @@
 import React, {useState} from 'react';
+import cookie from 'react-cookies';
 import { Link } from 'react-router-dom';
 import './admin-add-user.scss';
 
 
 function AdminAddUser(props) {
-
   let [newUser, setNewUser] = useState({});
-  let API = 'https://ems-access-denied.herokuapp.com/adduser';
+  let API = 'https://ems-access-denied.herokuapp.com';
   function addUser (user) {
-    fetch( `${API}/signup`, {
+    const token = cookie.load('auth');
+    fetch( `${API}/adduser`, {
       method: 'post',
       mode: 'cors',
       cache: 'no-cache',
-      headers: { 'Content-Type': 'application/json' },
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
       body: JSON.stringify({ 
         'username': `${user.username}`,
         'email': `${user.email}`,

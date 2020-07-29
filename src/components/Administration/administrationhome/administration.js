@@ -75,6 +75,7 @@ const AdministrationHome = (props) => {
   const handleClose = () => {
     setOpen(false);
   };
+
   useEffect(()=>{
     getUsers().then(dbUsers => setUsers(dbUsers) );
   },[]);
@@ -126,7 +127,7 @@ const AdministrationHome = (props) => {
             <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
             <br></br>
             <Typography gutterBottom variant="h5" component="h2">
-              Empolyee Name: {name}
+              Empolyee Name: {selecteduser.username}
             </Typography>
             <TextField
               id="standard-read-only-input"
