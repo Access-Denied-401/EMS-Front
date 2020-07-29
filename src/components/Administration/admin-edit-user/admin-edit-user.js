@@ -47,19 +47,7 @@ function AdminEditUser (props) {
 
   let API = 'https://ems-access-denied.herokuapp.com';
 
-  const getUsers = async () => {
-    const token = cookie.load('auth');
-    const response = await fetch(`${API}/adminpermanent`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
-    return data;
-  };
+
 
   function editUser (user) {
     console.log(user);
@@ -107,6 +95,20 @@ function AdminEditUser (props) {
   };
 
   useEffect(()=>{
+    let API = 'https://ems-access-denied.herokuapp.com';
+    const getUsers = async () => {
+      const token = cookie.load('auth');
+      const response = await fetch(`${API}/adminpermanent`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      return data;
+    };
     getUsers().then(dbUsers => setUsers(dbUsers) );
   },[]);
 
