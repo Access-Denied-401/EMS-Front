@@ -7,9 +7,9 @@ import AdminEditUser from './components/Administration/admin-edit-user/admin-edi
 import AdminAcceptUser from './components/Administration/admin-accept-user/admin-accept-user';
 import Home from './components/Home/home';
 import FinancialManagement from './components/Financial-Management/financial';
-import Profile from './components/Profile/profile';
-import EditProfile from './components/Profile/editProfile';
-import Feedback from './components/Profile/feedback';
+import Profile from './components/Profile/profile/profile';
+import EditProfile from './components/Profile/edit-profile/editProfile';
+import Feedback from './components/Profile/vacation/feedback';
 import Signin from './components/Sign-in/signin';
 import About from './components/About-Us/aboutus';
 

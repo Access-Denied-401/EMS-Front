@@ -12,7 +12,7 @@ const Feedback = (props) => {
         data-aos-delay="100"
         data-aos-duration="1500">
         <div class="contact-image">
-          <img src="../../assest/ems.png" alt="rocket_contact"/>
+          <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
         </div>
         <form method="post">
           <h3>Vacation Request</h3>
@@ -22,7 +22,7 @@ const Feedback = (props) => {
                 <input type="text" name="txtName" class="form-control" placeholder="Your Name *" />
               </div>
               <div class="form-group">
-                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *" />
+                <input type="text" name="txtEmail" class="form-control" placeholder="Your Email *"  />
               </div>
               <div class="form-group">
                 <input type="text" name="txtPhone" class="form-control" placeholder="Your Phone Number *" />
