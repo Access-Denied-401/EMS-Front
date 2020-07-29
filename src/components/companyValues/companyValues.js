@@ -31,7 +31,7 @@ const CompanyValues = (props) => {
               <div className=" py-0 my-0 bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo " src="../assest/ems.png" width="60" height="60" /></div>
+                    <img className="img-fluid-logo " src="" width="60" height="60" /></div>
                 </div>
               </div>
             </div>
@@ -60,7 +60,7 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="../../assest/ems.png" width="60" height="60" /> </div>
+                    <img className="img-fluid-logo" src="" width="60" height="60" /> </div>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="src\assest\ems.png" width="60" height="60" /> </div>
+                    <img className="img-fluid-logo" src="" width="60" height="60" /> </div>
                 </div>
               </div>
             </div>
