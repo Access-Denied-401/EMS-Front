@@ -12,7 +12,7 @@ const Feedback = (props) => {
         data-aos-delay="100"
         data-aos-duration="1500">
         <div class="contact-image">
-          <img src="https://image.ibb.co/kUagtU/rocket_contact.png" alt="rocket_contact"/>
+          <img src="../../assest/ems.png" alt="rocket_contact"/>
         </div>
         <form method="post">
           <h3>Vacation Request</h3>
