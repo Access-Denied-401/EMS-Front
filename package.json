@@ -2,7 +2,7 @@
   "name": "ems-front",
   "version": "0.1.0",
   "private": true,
-  "homepage": "https://Access-Denied-401.github.io/",
+  "homepage": "/",
   "dependencies": {
     "@material-ui/core": "^4.11.0",
     "@material-ui/icons": "^4.9.1",
@@ -31,7 +31,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "predeploy": "npm run build",
+    "predeploy": "yarn run build",
     "deploy": "gh-pages -d build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"

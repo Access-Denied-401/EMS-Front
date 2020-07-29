@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 body {
-    background: #ffffff;
+    background: #f8f9fa;
 }
   h1 {
     font-size: 2.5rem;
@@ -15,7 +15,7 @@ body {
     
 }
 .nav-link:hover {
-    font-size: large;
+    font-size: 20px;
     transition-duration: 1.5s;
     
 }
@@ -39,8 +39,13 @@ body {
 }
 
 #logo {
-    width: 25px;
-    margin-left: -6%;
-    
-
+    width: 30px;
+    margin-left: -5%;
+}
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin-left: 43%;
+}
+a.navbar-brand {
+    margin-left: -1%;
 }

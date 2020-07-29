@@ -5,6 +5,7 @@ import Slider from '../slider/slider';
 import HomeInfo from '../HomeInfo/homeInfo';
 import CompanyValues from '../companyValues/companyValues';
 import './home.scss';
+import HomePosts from '../homePosts/homePosts';
 
 
 
@@ -14,6 +15,7 @@ const Home = (props) => {
       <Slider />
       <CompanyValues />
       <HomeInfo />
+      <HomePosts />
     </>
   );
 };
