@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 
-// import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import './footer.scss';
 
 
@@ -14,8 +14,8 @@ const Footer = () => {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget subscribe no-box">
                 <h5 className="widget-title">COMPANY NAME<span></span></h5>
-                <p>The Employee management system is a fully functional web application that
- organize the operation of managing employee data. </p>
+                <p className="txt">The Employee management system is a fully functional web application that
+              organize the operation of managing employee data. </p>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3">
@@ -23,25 +23,24 @@ const Footer = () => {
                 <h5 className="widget-title">Quick Links<span></span></h5>
                 <ul className="thumbnail-widget">
                   <li>
-                    <div className="thumb-content"><a href="#.">Get Started</a></div>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/Administration">Administration</Link></div>
                   </li>
                   <li>
-                    <div className="thumb-content"><a href="#.">Top Leaders</a></div>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/financials">Financial Management</Link></div>
                   </li>
                   <li>
-                    <div className="thumb-content"><a href="#.">Success Stories</a></div>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/profile">Profile</Link></div>
+                  </li>
+                  
+                  <li>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/aboutus">About-us</Link></div>
                   </li>
                   <li>
-                    <div className="thumb-content"><a href="#.">Event/Tickets</a></div>
-                  </li>
-                  <li>
-                    <div className="thumb-content"><a href="#.">News</a></div>
-                  </li>
-                  <li>
-                    <div className="thumb-content"><a href="#.">Lifestyle</a></div>
-                  </li>
-                  <li>
-                    <div className="thumb-content"><a href="#.">About</a></div>
+                    
                   </li>
                 </ul>
               </div>
@@ -49,6 +48,17 @@ const Footer = () => {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">Get Started<span></span></h5>
+                <ul className="thumbnail-widget">
+                  <li>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/signin">Sign in</Link></div>
+                  </li>
+                  <li>
+                    <div className="thumb-content">
+                      <Link className="nav-link" to="/signup">Sign up</Link></div>
+                  </li>
+
+                </ul>
               </div>
             </div>
             <div className="col-xs-12 col-sm-6 col-md-3">
@@ -73,7 +83,7 @@ const Footer = () => {
         <div className="container">
           <div className="row-footer">
             <div className="col-md-12 text-center">
-              <p>Copyright Company Name © 2020. All rights reserved.</p>
+              <p>Copyright EMS © 2020. All rights reserved.</p>
             </div>
           </div>
         </div>
