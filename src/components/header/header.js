@@ -12,7 +12,7 @@ const Header = (props) => {
 
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
-          <img id="logo" src="" alt="logo" />
+          <img id="logo" src="../../../assest/ems.png" alt="logo" />
           <a className="navbar-brand" href="/">EMS</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
@@ -35,13 +35,13 @@ const Header = (props) => {
                 <Link className="nav-link" to="/profile">Profile</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signin">Sign-in</Link>
+                <Link className="nav-link" to="/signin">Sign In</Link>
               </li>
               {/* <li className="nav-item">
                 <Link className="nav-link" to="/signup">Sign-up</Link>
               </li> */}
               <li className="nav-item">
-                <Link className="nav-link" to="/aboutus">About-us</Link>
+                <Link className="nav-link" to="/aboutus">About Us</Link>
               </li>
             </ul>
           </div>
