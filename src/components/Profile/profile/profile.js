@@ -10,7 +10,7 @@ const Profile = (props) => {
     <>
       <div className="container d-flex justify-content-center">
         <div className="card-Profile p-3 py-4">
-          <div className="text-center"> <img src="https://i.imgur.com/stD0Q19.jpg" width="100" className="rounded-circle" />
+          <div className="text-center"> <img src="https://i.imgur.com/stD0Q19.jpg" width="100" className="rounded-circle" alt='' />
             <h3 className="mt-2 mb-4">Raghad Al-Quran</h3> 
             <div className="col mt-3 mb-3">
               <div className="row-md-4">

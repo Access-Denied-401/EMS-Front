@@ -55,7 +55,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -66,7 +66,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -77,7 +77,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -89,7 +89,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -101,7 +101,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -113,7 +113,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
@@ -125,7 +125,7 @@ const FinancialManagement = (props) => {
             </div>
             <div className="row border-top border-bottom">
               <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg"/></div>
+                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
                 <div className="col">
                   <div className="row text-muted">IT department</div>
                   <div className="row">Amer</div>
