@@ -1,19 +1,18 @@
-.mainFinance{
-    background: url("../../assest/finance2.jpg") no-repeat center center fixed ; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
+h1{
+    
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
     text-align: center;
 }
-#card{
-
+.something{
     display: flex;
-    justify-content: center;
+    flex-direction: row;
+}
+#card{
+    
+    // justify-content: center;
     flex-direction: column;
 }
 .MuiCardActions-root {
@@ -23,3 +22,56 @@
     width: 75px;
     height: 75px;
 }
+body {
+    font-family: 'Ropa Sans', sans-serif;
+}
+.list-group-item{
+    padding: 5px 20px;
+}
+.list-group-item:hover{
+    background: #f1f1f1;
+}
+.user-img img{
+    height: 70px;
+    width: 70px;
+}
+.card-header h4{
+    display: inline-block;
+    padding: 12px 15px 8px 15px;
+}
+.card-header ul{
+    list-style: none;
+}
+.card-header ul li a{
+    font-size: 25px;
+    padding: 15px 10px 9px;
+    outline: none;
+}
+.search-div{
+    display: none;
+}
+.user-detail{
+    font-size: 14px;
+}
+.containerList{
+   margin-left: -20%;
+   display: flex;
+}
+
+.fa-envelope:before {
+    content: "\f0e0";
+    color: rgb(50, 100, 98);
+}
+.fa-phone:before {
+    content: "\f095";
+    color: rgb(50, 100, 98);
+}
+.fa-search:before {
+    content: "\f002";
+    color: gray;
+}
+
+.offset-md-4 {
+    margin-left: -39.666667%;
+}
+
