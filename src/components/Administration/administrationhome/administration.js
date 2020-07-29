@@ -44,11 +44,11 @@ const AdministrationHome = (props) => {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [users, setUsers] = useState([]);
-  const [selecteduser, setSelecteduser] = useState('');
+  const [selecteduser, setSelecteduser] = useState({});
  
   const getUsers = async () => {
     const token = cookie.load('auth');
-    const response = await fetch('https://ems-access-denied.herokuapp.com/admincheckuser', {
+    const response = await fetch('https://ems-access-denied.herokuapp.com/adminpermanent', {
       method: 'GET',
       headers: {
         'Content-Type': 'application/json',
@@ -57,14 +57,11 @@ const AdministrationHome = (props) => {
       },
     });
     const data = await response.json();
-    console.log(data);
     return data;
   };
 
   const fillForm = (event) => {
-    console.log(event.target.value);
-    setSelecteduser(String(event.target.value) || 'dsdsddsda');
-    console.log(selecteduser);
+    setSelecteduser(event.target.value);
   };
   
   const handleChange = (event) => {
@@ -79,14 +76,14 @@ const AdministrationHome = (props) => {
     setOpen(false);
   };
   useEffect(()=>{
-    let data = getUsers().then(r => setUsers(r) );
+    getUsers().then(dbUsers => setUsers(dbUsers) );
   },[]);
 
   return (
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1 className='administrationHome'>Administration</h1>
-      {users.map (value => <li on={fillForm} value={value}> {value.username}</li>)}
+      {/* {users.map (value => <li on={fillForm} value={value}> {value.username}</li>)} */}
       <div>
         <Button onClick={handleClickOpen}>Select Empolyee</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
@@ -106,11 +103,7 @@ const AdministrationHome = (props) => {
                   <MenuItem value="">
                     <em>None</em>
                   </MenuItem>
-                  {/* <MenuItem value={'Amer'}>Amer</MenuItem>
-                  <MenuItem value={'Abdallah'}>Abdallah</MenuItem>
-                  <MenuItem value={'Raghad'}>Raghad</MenuItem>
-                <MenuItem value={'Ahlam'}>Ahlam</MenuItem> */}
-                  {users.map(value => <MenuItem value={value}>{value.username}</MenuItem>)}                 
+                  {users.map(value => <MenuItem key={value._id} value={value}>{value.username}</MenuItem>)}                 
                 </Select>
               </FormControl>
             </form>
@@ -127,7 +120,6 @@ const AdministrationHome = (props) => {
       </div>
 
       <div className = 'card'>
-
         <Card className={classes.root}>
           <CardActionArea>
             <br></br>
@@ -138,24 +130,24 @@ const AdministrationHome = (props) => {
             </Typography>
             <TextField
               id="standard-read-only-input"
-              label="E-mail"
-              defaultValue={users.username}
+              // label="E-mail"
+              value={selecteduser.email}
               InputProps={{
                 readOnly: true,
               }}
             />
             <TextField
               id="standard-read-only-input"
-              label="Position"
-              defaultValue={selecteduser.username}
+              // label="Position"
+              value={selecteduser.position}
               InputProps={{
-                readOnly: true,
+                readOnly: false,
               }}
             />
             <TextField
               id="standard-read-only-input"
-              label="Role"
-              defaultValue="Role"
+              // label="Role"
+              value={selecteduser.role}
               InputProps={{
                 readOnly: true,
               }}
@@ -163,7 +155,7 @@ const AdministrationHome = (props) => {
             <TextField
               id="standard-read-only-input"
               label="Gender"
-              defaultValue="Gender"
+              value={selecteduser.gender}
               InputProps={{
                 readOnly: true,
               }}
@@ -183,7 +175,7 @@ const AdministrationHome = (props) => {
         </Button>
       </Link>
 
-      <Link to='/'>
+      <Link to='/administration/acceptuser'>
         <Button variant="contained">
           Accept Users
         </Button>
