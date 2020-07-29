@@ -31,13 +31,13 @@ const Header = (props) => {
                 <Link className="nav-link" to="/profile">Profile</Link>
               </li>
               <li className="nav-item">
-                <Link className="nav-link" to="/signin">Sign-in</Link>
+                <Link className="nav-link" to="/signin">Sign In</Link>
               </li>
               {/* <li className="nav-item">
                 <Link className="nav-link" to="/signup">Sign-up</Link>
               </li> */}
               <li className="nav-item">
-                <Link className="nav-link" to="/aboutus">About-us</Link>
+                <Link className="nav-link" to="/aboutus">About Us</Link>
               </li>
             </ul>
           </div>

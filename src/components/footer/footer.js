@@ -64,7 +64,7 @@ const Footer = () => {
             <div className="col-xs-12 col-sm-6 col-md-3">
               <div className="widget no-box">
                 <h5 className="widget-title">Contact Us<span></span></h5>
-                <p><a href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
+                <p><a className="a-footer" href="mailto:info@domain.com" title="glorythemes">info@domain.com</a></p>
                 <ul className="social-footer2">
                  
                 
