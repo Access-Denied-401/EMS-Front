@@ -28,6 +28,7 @@ function AdminAcceptUser (props) {
       'password': `${user.password}`,
       'position': `developer`,
       'role': `${user.role}`,
+    
     };
     const token = cookie.load('auth');
     
@@ -42,6 +43,20 @@ function AdminAcceptUser (props) {
       },
       body: JSON.stringify(myUser),
     }); 
+
+  }
+  function rejectUser (user) {
+    const token = cookie.load('auth');
+    fetch( `${API}/reject/${user._id}`, {
+      method: 'delete',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    }); 
   }
 
   useEffect(()=> {
@@ -52,103 +67,45 @@ function AdminAcceptUser (props) {
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1>Accept User</h1>
-        
-      <div className="liiii">
-        {users.map (value => <li value={value}>
-          {value.username} <button onClick={()=> acceptUser(value)}>Add New User</button>
-        </li>)}
-      </div>
+  
 
-      <div class="container mt-5">
-        <table class="table table-borderless table-responsive card-1 p-4">
+      <div className="container mt-5">
+        <table className="table table-borderless table-responsive card-1 p-4">
           <thead>
-            <tr class="border-bottom">
-              <th> <span class="ml-2">Image</span> </th>
-              <th> <span class="ml-2">User Name</span> </th>
-              <th> <span class="ml-2"></span> </th>
-              <th> <span class="ml-2"></span> </th>
-              <th> <span class="ml-4">Action</span> </th>
+            <tr className="border-bottom">
+              <th> <span className="ml-2">Image</span> </th>
+              <th> <span className="ml-2">User Name</span> </th>
+              <th> <span className="ml-2"></span> </th>
+              <th> <span className="ml-2"></span> </th>
+              <th> <span className="ml-4">Action</span> </th>
             </tr>
           </thead>
           <tbody>
-            <tr class="border-bottom">
+            {users.map (value =><tr className="border-bottom"> 
               <td>
-                <div class="p-2"> <span class="d-block font-weight-bold"><img src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" width="40" class="rounded-circle"/></span> </div>
+                <div className="p-2"> <span className="d-block font-weight-bold"><img src={value.image} width="40" className="rounded-circle"/></span> </div>
               </td>
               <td>
-                <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{users.map (value => <li class="d-block font-weight-bold" value={value}>
+                <div className="p-2 d-flex flex-row align-items-center mb-2"> 
+                  <div className="d-flex flex-column ml-2"> <span className="d-block font-weight-bold"> <li className="d-block font-weight-bold" value={value}>
                     {value.username} 
-                  </li>)}</span></div>
+                  </li></span></div>
                 </div>
               </td>
               <td>
-                <div class="p-2"> <span class="font-weight-bold">Ammy Song</span> </div>
+                <div className="p-2"> <span className="font-weight-bold">{value.position}</span> </div>
               </td>
               <td>
-                <div class="p-2 d-flex flex-column"> <span>1 City point,#2A</span> <span> Brooklyn,NY</span> </div>
+                <div className="p-2 d-flex flex-column"> <span>{value.email}</span>  </div>
               </td>
               <td>
-                <div class="p-2 icons"> <i class="fa fa-phone text-danger"></i> <i class="fa fa-adjust text-danger"></i> <i class="fa fa-share"></i> </div>
+                <div className="p-2 icons"> <button onClick={()=> acceptUser(value)}>Add User</button>
+
+                  <button onClick={()=> rejectUser(value)}>Remove User</button> </div>
               </td>
-            </tr>
-            <tr class="border-bottom">
-              <td>
-                <div class="p-2"> <span class="d-block font-weight-bold"><img src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" class="rounded-circle" width="40"/></span> <small></small> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
-                </div>
-              </td>
-              <td>
-                <div class="p-2"> <span class="font-weight-bold">David Clark</span> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-column"> <span>205 2ndst,#2A,</span> <span> Brooklyn,NY</span> </div>
-              </td>
-              <td>
-                <div class="p-2 icons"> <i class="fa fa-phone text-danger"></i> <i class="fa fa-adjust text-danger"></i> <i class="fa fa-share"></i> </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td>
-                <div class="p-2"> <span class="d-block font-weight-bold"><img src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" class="rounded-circle" width="40"/></span> <small></small> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
-                </div>
-              </td>
-              <td>
-                <div class="p-2"> <span class="font-weight-bold">Mary Kingston</span> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-column"> <span>199 Bowery,#7A</span> <span> Brooklyn,NY</span> </div>
-              </td>
-              <td>
-                <div class="p-2 icons"> <i class="fa fa-adjust text-danger"></i><span></span> <i class="fa fa-share"></i> </div>
-              </td>
-            </tr>
-            <tr class="border-bottom">
-              <td>
-                <div class="p-2"> <span class="d-block font-weight-bold"><img src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" class="rounded-circle" width="40"/></span> <small></small> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
-                </div>
-              </td>
-              <td>
-                <div class="p-2"> <span class="font-weight-bold"></span> </div>
-              </td>
-              <td>
-                <div class="p-2 d-flex flex-column"> <span>123 Clinton Ave,#2A</span> <span> Brooklyn,NY</span> </div>
-              </td>
-              <td>
-                <div class="p-2 icons"> <i class="fa fa-check-circle-o" aria-hidden="true"></i> <i class="fa fa-adjust text-danger"></i> <i class="fa fa-share"></i> </div>
-              </td>
-            </tr>
+            </tr>, 
+            )}
+            
           </tbody>
         </table>
       </div>
