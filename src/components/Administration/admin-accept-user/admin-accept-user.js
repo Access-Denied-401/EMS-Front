@@ -77,9 +77,9 @@ function AdminAcceptUser (props) {
               </td>
               <td>
                 <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{users.map (value => <li value={value}>
+                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">{users.map (value => <li class="d-block font-weight-bold" value={value}>
                     {value.username} 
-                  </li>)}</span> <small class="text-muted">Jasmine Owner Reality group</small> </div>
+                  </li>)}</span></div>
                 </div>
               </td>
               <td>
@@ -98,7 +98,7 @@ function AdminAcceptUser (props) {
               </td>
               <td>
                 <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">David Smith</span> <small class="text-muted">Jasmine Owner Reality group</small> </div>
+                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
                 </div>
               </td>
               <td>
@@ -117,7 +117,7 @@ function AdminAcceptUser (props) {
               </td>
               <td>
                 <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">Emmily johnson</span> <small class="text-muted">Jasmine Owner Reality group</small> </div>
+                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
                 </div>
               </td>
               <td>
@@ -127,7 +127,7 @@ function AdminAcceptUser (props) {
                 <div class="p-2 d-flex flex-column"> <span>199 Bowery,#7A</span> <span> Brooklyn,NY</span> </div>
               </td>
               <td>
-                <div class="p-2 icons"> <i class="fa fa-adjust text-danger"></i> <i class="fa fa-share"></i> </div>
+                <div class="p-2 icons"> <i class="fa fa-adjust text-danger"></i><span></span> <i class="fa fa-share"></i> </div>
               </td>
             </tr>
             <tr class="border-bottom">
@@ -136,11 +136,11 @@ function AdminAcceptUser (props) {
               </td>
               <td>
                 <div class="p-2 d-flex flex-row align-items-center mb-2"> 
-                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold">Nick Jones</span> <small class="text-muted">Jasmine Owner Reality group</small> </div>
+                  <div class="d-flex flex-column ml-2"> <span class="d-block font-weight-bold"></span> <small class="text-muted"></small> </div>
                 </div>
               </td>
               <td>
-                <div class="p-2"> <span class="font-weight-bold">James Smith</span> </div>
+                <div class="p-2"> <span class="font-weight-bold"></span> </div>
               </td>
               <td>
                 <div class="p-2 d-flex flex-column"> <span>123 Clinton Ave,#2A</span> <span> Brooklyn,NY</span> </div>
