@@ -1,5 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
+import {connect} from 'react-redux';
+import {userSignIn} from '../../../store/actions';
+
 import cookie from 'react-cookies';
 import { Link } from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
@@ -77,7 +80,12 @@ const AdministrationHome = (props) => {
   };
 
   useEffect(()=>{
-    getUsers().then(dbUsers => setUsers(dbUsers) );
+    try {
+      props.userSignIn();
+      getUsers().then(dbUsers => setUsers(dbUsers) );
+    } catch (error) {
+      console.log(error);
+    }
   },[]);
 
   return (
@@ -185,4 +193,7 @@ const AdministrationHome = (props) => {
   );
 };
 
-export default AdministrationHome;
+const mapDispatchToProps = {userSignIn};
+
+
+export default connect(null, mapDispatchToProps) (AdministrationHome);
