@@ -30,7 +30,7 @@ function AdminAcceptUser (props) {
       'role': `${user.role}`,
     };
     const token = cookie.load('auth');
-    
+
     fetch( `${API}/accept`, {
       method: 'post',
       mode: 'cors',
@@ -44,6 +44,21 @@ function AdminAcceptUser (props) {
     }); 
   }
 
+  function rejetUser (user) {
+    const token = cookie.load('auth');
+    fetch( `${API}/reject/${user._id}`, {
+      method: 'delete',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    }); 
+  }
+
+
   useEffect(()=> {
     getUsers().then(tempUsers => setUsers(tempUsers) );
   },[users]);
@@ -53,7 +68,9 @@ function AdminAcceptUser (props) {
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1>Accept User</h1>
       {users.map (value => <li value={value}>
-        {value.username} <button onClick={()=> acceptUser(value)}>Add New User</button>
+        {value.username}   
+        <button onClick={()=> acceptUser(value)}>Add User</button>
+        <button onClick={()=> rejetUser(value)}>Remove User</button>  
       </li>)}
     </>
   );
