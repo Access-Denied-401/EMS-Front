@@ -1,67 +1,20 @@
 import React, { useEffect, useState } from 'react';
-import cookie from 'react-cookies';
+import useAjax from '../../hooks/ajaxHook';
 
 
 function AdminAcceptUser (props) {
-  let API ='https://ems-access-denied.herokuapp.com';
   let [users, setUsers] = useState([]);
+  const {getTempUsers, acceptUser, rejectUser} = useAjax();
 
-  const getUsers = async () => {
-    const token = cookie.load('auth');
-    const response = await fetch(`${API}/admincheckuser`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
-    return data;
-  };
-
-  function acceptUser (user) {
-    let myUser = { 
-      '_id':`${user._id}`,
-      'username': `${user.username}`,
-      'email': `${user.email}`,
-      'password': `${user.password}`,
-      'position': `developer`,
-      'role': `${user.role}`,
-    
-    };
-    const token = cookie.load('auth');
-    
-    fetch( `${API}/accept`, {
-      method: 'post',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify(myUser),
-    }); 
-
-  }
-  function rejectUser (user) {
-    const token = cookie.load('auth');
-    fetch( `${API}/reject/${user._id}`, {
-      method: 'delete',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    }); 
-  }
 
   useEffect(()=> {
-    getUsers().then(tempUsers => setUsers(tempUsers) );
-  },[users]);
+    try {
+      console.log('adminAcceptUser');
+      getTempUsers().then(tempUsers => setUsers(tempUsers) );
+    } catch (error) {
+      console.error(error);
+    }
+  },[getTempUsers]);
 
   return(
     <>
@@ -83,7 +36,7 @@ function AdminAcceptUser (props) {
           <tbody>
             {users.map (value =><tr className="border-bottom"> 
               <td>
-                <div className="p-2"> <span className="d-block font-weight-bold"><img src={value.image} width="40" className="rounded-circle"/></span> </div>
+                <div className="p-2"> <span className="d-block font-weight-bold"><img src={value.image} width="40" className="rounded-circle" alt='' /></span> </div>
               </td>
               <td>
                 <div className="p-2 d-flex flex-row align-items-center mb-2"> 

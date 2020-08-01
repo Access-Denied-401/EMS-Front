@@ -69,39 +69,18 @@ export const userSignIn = user => async dispatch => {
   validateToken(token);
 };
 
-// export const onReLoad = user => async dispatch => {
-  
-//   const cookieToken = cookie.load('auth');
-//   const token = cookieToken || null; 
-//   validateToken(token);
 
-//   function validateToken (token) {
-//     try {
-//       let user = jwt.verify(token, process.env.REACT_APP_SECRET || 'ysecrettokenkey');
-//       setLoginState(true, token, user);
-//     } catch (error) {
-//       logout();
-//       console.log(error);
-//     }
-//   }
-  
-//   function setLoginState (loggedIn, token, user){
-//     cookie.save('auth', token);
-//     dispatch(loginUser({loggedIn, token, user}));
-//   }
-  
-//   function logout (){
-//     setLoginState(false, null, {});
-//   }
-
-
-  
-// };
+export const userSignOut = () => {
+  function setLoginState (loggedIn, token, user){
+    cookie.save('auth', token);
+    return loginUser({loggedIn, token, user});
+  }
+  return setLoginState(false, null, {});
+};
 
 
 
 export const loginUser = userObj => {
-  console.log('hellooooooooooooooooooo');
   return (
     {
       type: 'SET_LOGIN',
