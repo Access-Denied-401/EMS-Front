@@ -156,9 +156,9 @@ const FinancialManagement = (props) => {
               </div>
             </form>
             <div className="row rowrow">
-              <button className="btn">Net Salary</button>
+              <button className="btn-financial">Net Salary</button>
               
-            </div> <button className="btn">Print Salary Slip</button>
+            </div> <button className="btn-financial">Print Salary Slip</button>
           </div>
         </div>
       </div>

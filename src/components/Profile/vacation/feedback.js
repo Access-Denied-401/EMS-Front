@@ -3,9 +3,21 @@ import React from 'react';
 import './feedback.scss';
 import JqueryPart from './jquery/jquerytest';
 import Button from 'react-bootstrap/Button';
+import Swal from 'sweetalert2';
 // import Clock from '../../Home/clockPart/clock';
 
 const Feedback = (props) => {
+  function alert() {
+    Swal.fire({
+      title: 'We got your request',
+      text: 'Have a nice day <3 ',
+      imageUrl: 'https://unsplash.it/400/200',
+      imageWidth: 400,
+      imageHeight: 200,
+      imageAlt: 'Custom image',
+    });
+
+  }
   return (
     <>
       <section className="contact-section my-5">
@@ -63,6 +75,10 @@ const Feedback = (props) => {
                     </div>
                   </div>
 
+                  <div className="JqueryPart">
+                    <Button className="alret-button" onClick={alert}>Send</Button>
+                  </div>
+
                 </div>
               </div>
             </div>
@@ -108,7 +124,7 @@ const Feedback = (props) => {
         </div>
       </section>
 
-      < JqueryPart />
+      {/* < JqueryPart /> */}
       {/* < Clock /> */}
     </>
   );

@@ -4,7 +4,7 @@ import Swal from 'sweetalert2';
 import Button from 'react-bootstrap/Button';
 
 class JqueryPart extends React.Component {
-  componentDidMount() {
+  alert() {
     Swal.fire({
       title: 'We got your request',
       text: 'Have a nice day <3 ',
@@ -18,7 +18,7 @@ class JqueryPart extends React.Component {
   render() {
     return (
       <div className="JqueryPart">
-        <Button className="alret-button" onClick={this.componentDidMount}>Send</Button>
+        <Button className="alret-button" onClick={this.alert}>Send</Button>
       </div>
     );
   }
