@@ -1,33 +1,12 @@
 import React, {useState} from 'react';
-import cookie from 'react-cookies';
+import useAjax from '../../hooks/ajaxHook';
 import { Link } from 'react-router-dom';
 import './admin-add-user.scss';
 
 
 function AdminAddUser(props) {
-  let [newUser, setNewUser] = useState({});
-  let API = 'https://ems-access-denied.herokuapp.com';
-  function addUser (user) {
-    const token = cookie.load('auth');
-    fetch( `${API}/adduser`, {
-      method: 'post',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ 
-        'username': `${user.username}`,
-        'email': `${user.email}`,
-        'password': `${user.password}`,
-        'birthday': `${user.birthday}`,
-        'position' : `${user.position}`,
-        'role': `${user.role}`,
-      }),
-    }); 
-  }
+  const [newUser, setNewUser] = useState({});
+  const {addUser} = useAjax();
   const handleInputChage = event => {
     setNewUser({...newUser, [event.target.name]: event.target.value });
   };

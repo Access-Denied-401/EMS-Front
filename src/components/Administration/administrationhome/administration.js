@@ -2,9 +2,9 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import {userSignIn} from '../../../store/actions';
-
-import cookie from 'react-cookies';
+import useAjax from '../../hooks/ajaxHook';
 import { Link } from 'react-router-dom';
+
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
 import Dialog from '@material-ui/core/Dialog';
@@ -44,24 +44,15 @@ const useStyles = makeStyles((theme) => ({
 
 const AdministrationHome = (props) => {
   const classes = useStyles();
+
+  const {userSignIn} = props;
+  const {getUsers} = useAjax();
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [users, setUsers] = useState([]);
   const [selecteduser, setSelecteduser] = useState({});
  
-  const getUsers = async () => {
-    const token = cookie.load('auth');
-    const response = await fetch('https://ems-access-denied.herokuapp.com/adminpermanent', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
-    return data;
-  };
+ 
 
   const fillForm = (event) => {
     setSelecteduser(event.target.value);
@@ -81,7 +72,7 @@ const AdministrationHome = (props) => {
 
   useEffect(()=>{
     try {
-      props.userSignIn();
+      userSignIn();
       getUsers().then(dbUsers => setUsers(dbUsers) );
     } catch (error) {
       console.log(error);
@@ -92,7 +83,6 @@ const AdministrationHome = (props) => {
     <>
       <br></br>            <br></br>            <br></br>            <br></br>
       <h1 className='administrationHome'>Administration</h1>
-      {/* {users.map (value => <li on={fillForm} value={value}> {value.username}</li>)} */}
       <div>
         <Button onClick={handleClickOpen}>Select Empolyee</Button>
         <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
