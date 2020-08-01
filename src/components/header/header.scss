@@ -1,31 +1,51 @@
-@import url('https://fonts.googleapis.com/css2?family=Amiri:wght@700&display=swap');
-
-
-// .masthead {
-//     height: 100vh;
-//     min-height: 500px;
-//     background-image: url('https://images.unsplash.com/photo-1565688280018-b7893e3c9175?ixlib=rb-1.2.1&auto=format&fit=crop&w=833&q=80');
-//     background-size: cover;
-//     background-position: center;
-//     background-repeat: no-repeat;
-//     opacity: 0.8;
-//   }
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
+body {
+    background: #f8f9fa;
+}
   h1 {
     font-size: 2.5rem;
     color: #746c69;
-    font-family: 'Amiri', serif;
+    font-family: 'Fira Sans', sans-serif;
+
 }
 
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.5);
-    font-family: 'Amiri', serif;
+    font-family: 'Fira Sans', sans-serif;
+    
 }
 .nav-link:hover {
-    font-size: large;
-    transition-duration: 2s;
+    font-size: 20px;
+    transition-duration: 1.5s;
+    
 }
 
 .navbar-light .navbar-brand {
     color: rgba(0,0,0,.9);
-    font-family: 'Amiri', serif;
+    font-family: 'Fira Sans', sans-serif;
+    
+}
+
+.tabBlock
+{
+    background-color:#57574f;
+    border:solid 0px #FFA54F;
+    border-radius:5px; -moz-border-radius:5px; -webkit-border-radius:5px;
+    max-width:200px;
+    width:100%;
+    overflow:hidden;
+    display:block;
+    
+}
+
+#logo {
+    width: 30px;
+    margin-left: -5%;
+}
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin-left: 43%;
+}
+a.navbar-brand {
+    margin-left: -1%;
 }

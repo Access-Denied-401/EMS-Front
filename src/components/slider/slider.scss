@@ -1,8 +1,48 @@
+body {
+    background-color: white;
+    font-family: 'Fira Sans', sans-serif;
+
+}
 .carousel {
     position: relative;
     display: block;
+    font-family: 'Fira Sans', sans-serif;
+    margin-top: 10%;
+    margin-bottom: 8%;
 }
 .carousel-item.active {
     display: block;
     text-align: -webkit-center;
+}
+.d-block {
+    width: 50%!important;
+    opacity: 0.8;
+    box-shadow: 4px 5px 4px 5px #cecec378;
+    margin-top: 2%;
+    margin-bottom: 5%;
+}
+
+.adv {
+    margin-bottom: 7.5rem;
+    font-weight: 500;
+    line-height: 1.2;
+}
+.w-90 {
+    margin-top: 5%;
+    height: 70vh;
+}
+.carousel-caption {
+    position: absolute;
+    right: 15%;
+    bottom: -97px;
+    left: 15%;
+    z-index: 10;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    color: #fff;
+    text-align: center;
+}
+.carousel-control-next-icon,
+.carousel-control-prev-icon {
+  filter: invert(1);
 }
