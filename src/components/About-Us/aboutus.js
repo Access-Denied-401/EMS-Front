@@ -8,7 +8,7 @@ const About = (props) => {
     <>
       <section className="team section">
         <div className="container-about">
-          <h1 className="section-title">Our Team Section</h1>
+          <h1 className="section-title">Our Team Section</h1><img className="img-logo" src="../../../assest/ems.png" alt="logo" />
           <div className="row">
             <div className="col-md-4 col-sm-6 col-xs-12">
               <div className="team-item">
