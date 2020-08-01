@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 import React, {useState} from 'react';
 import useAjax from '../../hooks/ajaxHook';
 import { Link } from 'react-router-dom';
