@@ -79,7 +79,7 @@ const AdministrationHome = (props) => {
     } catch (error) {
       console.log(error);
     }
-  },[getUsers, userSignIn]);
+  },[userSignIn]);
 
   return (
     <>

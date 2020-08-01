@@ -75,7 +75,7 @@ function AdminEditUser (props) {
   useEffect(()=>{
     console.log('adminAddUser'); 
     getUsers().then(dbUsers => setUsers(dbUsers) );
-  },[getUsers]);
+  },[]);
 
   return(
     <>

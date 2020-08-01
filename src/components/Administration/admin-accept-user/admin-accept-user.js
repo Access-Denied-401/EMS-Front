@@ -15,7 +15,7 @@ function AdminAcceptUser (props) {
     } catch (error) {
       console.error(error);
     }
-  },[getTempUsers]);
+  },[]);
 
   return(
     <>

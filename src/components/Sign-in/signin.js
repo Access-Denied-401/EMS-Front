@@ -3,7 +3,7 @@ import React, {useState,useEffect} from 'react';
 import {connect} from 'react-redux';
 import {userSignUp, userSignIn} from '../../store/actions';
 import './signin.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
+// import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 
