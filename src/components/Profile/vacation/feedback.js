@@ -57,7 +57,7 @@ const Feedback = (props) => {
                     <div className="md-form mb-0">
                       <label for="form-contact-message">Your message</label>
                       <textarea id="form-contact-message" className="form-control md-textarea" rows="3"></textarea>
-                      <a className="btn-floating btn-lg blue">
+                      <a href className="btn-floating btn-lg blue">
                         <i className="far fa-paper-plane"></i>
                       </a>
                     </div>
@@ -86,17 +86,17 @@ const Feedback = (props) => {
                 <hr className="hr-light my-4" />
                 <ul className="list-inline text-center list-unstyled">
                   <li className="list-inline-item">
-                    <a className="p-2 fa-lg tw-ic">
+                    <a href className="p-2 fa-lg tw-ic">
                       <i className="fab fa-twitter"></i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="p-2 fa-lg li-ic">
+                    <a href className="p-2 fa-lg li-ic">
                       <i className="fab fa-linkedin-in"> </i>
                     </a>
                   </li>
                   <li className="list-inline-item">
-                    <a className="p-2 fa-lg ins-ic">
+                    <a href className="p-2 fa-lg ins-ic">
                       <i className="fab fa-instagram"> </i>
                     </a>
                   </li>

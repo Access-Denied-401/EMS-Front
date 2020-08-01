@@ -72,9 +72,10 @@ function AdminEditUser (props) {
     setOpen(false);
   };
 
-  useEffect(()=>{ 
+  useEffect(()=>{
+    console.log('adminAddUser'); 
     getUsers().then(dbUsers => setUsers(dbUsers) );
-  },[]);
+  },[getUsers]);
 
   return(
     <>

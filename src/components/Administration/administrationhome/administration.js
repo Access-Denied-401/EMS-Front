@@ -1,9 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
+import { Link } from 'react-router-dom';
+
 import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
-import { Link } from 'react-router-dom';
 
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -72,12 +73,13 @@ const AdministrationHome = (props) => {
 
   useEffect(()=>{
     try {
+      console.log('adminHome');
       userSignIn();
       getUsers().then(dbUsers => setUsers(dbUsers) );
     } catch (error) {
       console.log(error);
     }
-  },[]);
+  },[getUsers, userSignIn]);
 
   return (
     <>

@@ -8,8 +8,13 @@ function AdminAcceptUser (props) {
 
 
   useEffect(()=> {
-    getTempUsers().then(tempUsers => setUsers(tempUsers) );
-  },[users]);
+    try {
+      console.log('adminAcceptUser');
+      getTempUsers().then(tempUsers => setUsers(tempUsers) );
+    } catch (error) {
+      console.error(error);
+    }
+  },[getTempUsers]);
 
   return(
     <>
@@ -31,7 +36,7 @@ function AdminAcceptUser (props) {
           <tbody>
             {users.map (value =><tr className="border-bottom"> 
               <td>
-                <div className="p-2"> <span className="d-block font-weight-bold"><img src={value.image} width="40" className="rounded-circle"/></span> </div>
+                <div className="p-2"> <span className="d-block font-weight-bold"><img src={value.image} width="40" className="rounded-circle" alt='' /></span> </div>
               </td>
               <td>
                 <div className="p-2 d-flex flex-row align-items-center mb-2"> 

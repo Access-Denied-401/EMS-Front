@@ -108,7 +108,20 @@ const useAjax = cb => {
     }); 
   }
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers};
+  const getUserProfile = async () => {
+    const response = await fetch(`${API}/getuserprofile`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile};
 };
 
 export default useAjax;
