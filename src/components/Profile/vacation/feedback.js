@@ -69,9 +69,9 @@ const Feedback = (props) => {
                     <div className="md-form mb-0">
                       <label for="form-contact-message">Your message</label>
                       <textarea id="form-contact-message" className="form-control md-textarea" rows="3"></textarea>
-                      <a className="btn-floating btn-lg blue">
+                      {/* <a className="btn-floating btn-lg blue">
                         <i className="far fa-paper-plane"></i>
-                      </a>
+                      </a> */}
                     </div>
                   </div>
 
