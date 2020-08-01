@@ -193,13 +193,30 @@ a {
     text-align: center
 }
 
-// .card {
-//     width: 500px;
-//     left: 100px;
-//     margin-top: 25%;
-//     margin-bottom: 25%;
-// }
+.card-signin {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    min-width: 0;
+    word-wrap: break-word;
+    background-color: #fff;
+    background-clip: border-box;
+    border: 1px solid rgba(0,0,0,.125);
+    border-radius: .25rem;
+    margin-top: 26%;
+    margin-bottom: 10%;
+
+}
 
 ::placeholder {
     color: #b3b3b3
+}
+.login-snip .tab {
+    font-size: 22px;
+    margin-right: 15px;
+    padding-bottom: 5px;
+    margin: 0 15px 10px 0;
+    color: #F7BE16;
+    display: inline-block;
+    border-bottom: 2px solid transparent;
 }
