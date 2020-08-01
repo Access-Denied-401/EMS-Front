@@ -1,37 +1,27 @@
 import React, {useState, useEffect} from 'react';
-import './profile.scss';
 import { Link } from 'react-router-dom';
-import cookie from 'react-cookies';
 import {connect} from 'react-redux';
+import useAjax from '../../hooks/ajaxHook';
 import {userSignIn} from '../../../store/actions';
+import './profile.scss';
 
 const Profile = (props) => {
   const [users, setUsers] = useState({});
+  const {userSignIn} = props;
+  const {getUserProfile} = useAjax();
  
-  const getUserProfile = async () => {
-    const token = cookie.load('auth');
-    const response = await fetch('https://ems-access-denied.herokuapp.com/getuserprofile', {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
-    return data;
-  };
 
   useEffect (() => {
+    console.log('userProfile');
+    userSignIn();
     getUserProfile().then(dbUsers => setUsers(dbUsers) );
-    props.userSignIn();
-  },[]);
+  },[userSignIn]);
   return (
     <>
       <div className="container d-flex justify-content-center">
         <div className="card-Profile p-3 py-4 text-center">
           <div className="F1">
-            <img src={users.image} className="text-center" width="100" className="rounded-circle" alt='' />
+            <img src={users.image} /**className="text-center" */ width="100" className="rounded-circle" alt='' />
             <div className="F2">
               <h3 className="mt-2 mb-0">{users.username} </h3> 
               {/* <div className="col mt-3 mb-3"> */}

@@ -1,6 +1,6 @@
 /* eslint-disable no-unused-vars */
 import React, {useState, useEffect} from 'react';
-import cookie from 'react-cookies';
+import useAjax from '../../hooks/ajaxHook';
 import {Link} from 'react-router-dom';
 import { makeStyles } from '@material-ui/core/styles';
 import Button from '@material-ui/core/Button';
@@ -40,34 +40,12 @@ const useStyles = makeStyles((theme) => ({
 function AdminEditUser (props) {
 
   const classes = useStyles();
+  const {/**editUser */ getUsers} = useAjax();
   const [open, setOpen] = useState(false);
   const [name, setName] = useState('');
   const [users, setUsers] = useState([]);
   const [selectedUser, setSelectedUser] = useState({});
 
-  let API = 'https://ems-access-denied.herokuapp.com';
-
-
-
-  function editUser (user) {
-    console.log(user);
-    const token = cookie.load('auth');
-    fetch( `${API}/adminedit/${user._id}`, {
-      method: 'patch',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-      body: JSON.stringify({ 
-        'email': `${user.email}`,
-        'position' : `${user.position}`,
-        'role': `${user.role}`,
-      }),
-    }); 
-  }
 
   const handleInputChange = (event) => {
     if(event.target.name) setSelectedUser({...selectedUser ,[event.target.name]:event.target.value});
@@ -95,22 +73,9 @@ function AdminEditUser (props) {
   };
 
   useEffect(()=>{
-    let API = 'https://ems-access-denied.herokuapp.com';
-    const getUsers = async () => {
-      const token = cookie.load('auth');
-      const response = await fetch(`${API}/adminpermanent`, {
-        method: 'GET',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-          'Authorization': `Bearer ${token}`,
-        },
-      });
-      const data = await response.json();
-      return data;
-    };
+    console.log('adminAddUser'); 
     getUsers().then(dbUsers => setUsers(dbUsers) );
-  },[]);
+  },[getUsers]);
 
   return(
     <>
