@@ -20,9 +20,9 @@ const About = (props) => {
                       <p>Software Developer</p>
                     </div>
                     <div className="social">
-                      <a href="#" className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
-                      <a href="#" className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
-                      <a href="#" className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
+                      <a href className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
+                      <a href className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
+                      <a href className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
                     </div>
                   </figcaption>
                 </figure>
@@ -38,9 +38,9 @@ const About = (props) => {
                       <p>Software Developer</p>
                     </div>
                     <div className="social">
-                      <a href="#" className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
-                      <a href="#" className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
-                      <a href="#" className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
+                      <a href className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
+                      <a href className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
+                      <a href className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
                     </div>
                   </figcaption>
                 </figure>
@@ -56,9 +56,9 @@ const About = (props) => {
                       <p>Software Developer</p>
                     </div>
                     <div className="social">
-                      <a href="#" className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
-                      <a href="#" className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
-                      <a href="#" className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
+                      <a href className="twitter" data-abc="true"><i className="fa fa-twitter"></i></a>
+                      <a href className="facebook" data-abc="true"><i className="fa fa-facebook"></i></a>
+                      <a href className="google-plus" data-abc="true"><i className="fa fa-linkedin"></i></a>
                     </div>
                   </figcaption>
                 </figure>
