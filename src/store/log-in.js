@@ -14,6 +14,9 @@ export default (state= initialState, action) => {
     // console.log('Im in the reducer at the moment ');
     return {...state, 'loggedIn':payload.loggedIn, 'token':payload.token, 'user':payload.user};
 
+  case 'LOGOUT_USER':
+    return {...state, 'loggedIn':false , 'toekn': null, 'user': {}};
+
   default:
     return state;
   }

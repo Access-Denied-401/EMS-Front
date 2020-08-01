@@ -1,7 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
+import {connect} from 'react-redux';
 import { Link, NavLink } from 'react-router-dom';
 import Auth from './../../store/auth';
+import {userSignOut} from './../../store/actions';
+import Show from '../show/show';
 import './header.scss';
 
 
@@ -34,12 +37,16 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">Profile</Link>
               </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/signin">Sign In</Link>
-              </li>
-              {/* <li className="nav-item">
-                <Link className="nav-link" to="/signup">Sign-up</Link>
-              </li> */}
+              <Show condition={!props.savedUser.loggedIn}>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/signin">Sign In</Link>
+                </li>
+              </Show>
+              <Show condition={props.savedUser.loggedIn}>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/" onClick={props.userSignOut}>Sign Out</Link>
+                </li>
+              </Show>
               <li className="nav-item">
                 <Link className="nav-link" to="/aboutus">About Us</Link>
               </li>
@@ -59,5 +66,10 @@ const Header = (props) => {
   );
 };
 
+const mapDispatchToProps= {userSignOut};
 
-export default Header;
+const mapStateToProps = (state) => ({
+  savedUser: state.loginReducer,
+});
+
+export default connect (mapStateToProps, mapDispatchToProps)(Header);
