@@ -17,7 +17,7 @@ import About from './components/About-Us/aboutus';
 const Routes = (props) => {
   return (
     <>
-      <Route path="/" component={Home} exact />
+      {/* <Route path="/" component={Home} exact />
 
       <Route path="/administration" component={Administration} exact />
      
@@ -37,7 +37,7 @@ const Routes = (props) => {
 
       <Route path="/signin" component={Signin} exact />
 
-      <Route path="/aboutus" component={About} exact />
+      <Route path="/aboutus" component={About} exact /> */}
     </>
   );
 };

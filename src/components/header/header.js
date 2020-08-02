@@ -8,7 +8,6 @@ import Show from '../show/show';
 import './header.scss';
 
 
-
 const Header = (props) => {
   return (
     <>
@@ -23,7 +22,7 @@ const Header = (props) => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link">Home </Link>
+                <Link to="/" className="nav-link">Home</Link>
               </li>
               <Auth capability='read'>
                 <li className="nav-item">

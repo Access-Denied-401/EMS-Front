@@ -1,16 +1,16 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
 import Header from './components/header/header';
-// import Footer from './components/footer/footer';
+import Footer from './components/footer/footer';
 // import Routes from './router';
-// import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/css/bootstrap.min.css';
 
 function App() {
   return (
     <>
       <Header />
       {/* <Routes /> */}
-      {/* <Footer />      */}
+      <Footer />     
     </>
   );
 }
