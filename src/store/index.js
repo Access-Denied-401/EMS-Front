@@ -6,8 +6,8 @@ import thunk from 'redux-thunk';
 // I will combine reducers here. 
 // index.js is the start file for store folder
 // I have one reducer but all apps will have more than one reducer to 'combine'
-import Admin from './administration';
-import Financial from './financial';
+// import Admin from './administration';
+// import Financial from './financial';
 import Profile from './profile';
 import Home from './home';
 import loginReducer from './log-in';
@@ -16,7 +16,7 @@ import loginReducer from './log-in';
 // reducer  ------> in on main reducer ----> dealing with the store 
 // reducer
 
-let reducers = combineReducers({ Admin,Financial,Profile,Home,loginReducer});
+let reducers = combineReducers({ Profile,Home,loginReducer});
 
 // create my store and pass this reducers variable
 

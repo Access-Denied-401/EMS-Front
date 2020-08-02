@@ -1,7 +1,6 @@
+/* eslint-disable no-unused-vars */
 import React from 'react';
 import './aboutus.scss';
-// import { Link } from 'react-router-dom';
-
 
 const About = (props) => {
   return (
