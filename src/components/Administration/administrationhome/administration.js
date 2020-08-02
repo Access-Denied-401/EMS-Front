@@ -52,7 +52,7 @@ const AdministrationHome = (props) => {
     } catch (error) {
       console.log(error);
     }
-  },[userSignIn]);
+  },[userSignIn, getUsers]);
 
   return (
     <>
