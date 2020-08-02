@@ -1,25 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
-// div#root {
-//     width: 100%;
-//     margin-top: -7%;
-//     background-color: white;
-// }
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: 'Noto Sans', sans-serif
-}
-
-html,
-body {
-    height: 100%
-}
-
-body {
-    display: grid;
-    place-items: center;
-    background: #dba82a
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .neo-button {
