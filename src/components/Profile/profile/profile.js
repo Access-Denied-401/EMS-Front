@@ -16,7 +16,7 @@ const Profile = (props) => {
     console.log('userProfile');
     userSignIn();
     getUserProfile().then(dbUsers => setUsers(dbUsers) );
-  },[userSignIn]);
+  },[userSignIn, getUserProfile]);
   return (
     <>
       <div className="container d-flex justify-content-center">

@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
-
 @media (max-width: 767px) {
     body {
         background: #f8f9fa;
@@ -22,35 +21,25 @@
     button.navbar-toggler {
         margin-right: -81%;
     }
-
   }
-
 @media (min-width: 768px) {
-
   h1 {
     font-size: 2.5rem;
     color: #746c69;
     font-family: 'Fira Sans', sans-serif;
-
 }
-
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.5);
     font-family: 'Fira Sans', sans-serif;
-    
 }
 .nav-link:hover {
     font-size: 18.5px;
     transition-duration: 1.5s;
-    
 }
-
 .navbar-light .navbar-brand {
     color: rgba(0,0,0,.9);
     font-family: 'Fira Sans', sans-serif;
-    
 }
-
 .tabBlock
 {
     background-color:#57574f;
@@ -60,9 +49,7 @@
     width:100%;
     overflow:hidden;
     display:block;
-    
 }
-
 #logo {
     width: 38px;
     margin-left: -5%;
@@ -74,7 +61,6 @@
 a.navbar-brand {
     margin-left: -1%;
 }
-
 .navbar-expand-lg .navbar-collapse {
     display: flex!important;
     flex-basis: auto;

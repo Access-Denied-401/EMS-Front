@@ -1,22 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Cairo&display=swap');
-body {
-    width: 100%;
-}
-// .row {
-//     margin-top: 5%;
-//     margin-left: 2%;
-//     margin-right: 2%;
-//     margin-bottom: 5%;
-// }
 
-.page {
-    margin-top: 0%
-}
-
-.sign {
-    border-radius: 25px;
-    width: 25%;
-    margin: auto
+.row-add {
+    display: flex;
+    flex-wrap: wrap;
+    width: 75%;
+    margin: 10% auto 5% auto ;
+    
 }
 
 form {
@@ -29,8 +18,7 @@ form {
     padding: 2%;
     margin: auto;
     color: #000000;
-    font-family: 'Cairo', sans-serif;
-
+    font-family: 'Fira Sans', sans-serif;
 }
 
 .xyz {
@@ -70,7 +58,7 @@ form {
 h2.account-text {
     color: #fff !important;
     font-weight: 200;
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
 
 }
 
@@ -95,25 +83,29 @@ h2.account-text {
 p.h4.mb-4.text-left {
   font-weight: bolder;
 }
-.btn {
+.btn-add {
     width: 38%;
     margin-top: 2%;
-    font-family: 'Cairo', sans-serif;
+    font-family: 'Fira Sans', sans-serif;
     background-color: #F7BE16;
     border-color: #F7BE16;
 
 }
 
-button.btn.btn-info.btn-block {
+button.btn-add.btn-info.btn-block {
     color: #fff;
     background-color: #F7BE16;
     border-color: #F7BE16;
-
 }
 input.form-control.mb-4 {
     border-radius: 25px;
 }
-button.btn.btn-info.btn-block {
+button.btn-add.btn-info.btn-block {
     border-radius: 25px;
-    width: 40%;
+    width: 54%;
+    margin-left: 12%;
+}
+
+.we:hover{
+    text-decoration: none;
 }
