@@ -2,7 +2,7 @@
 import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home/home';
-import Administration from './components/Administration/administrationhome/administration';
+// import Administration from './components/Administration/administrationhome/administration';
 // import AdminAddUser from './components/Administration/admin-add-user/admin-add-user';
 // import AdminEditUser from './components/Administration/admin-edit-user/admin-edit-user';
 // import AdminAcceptUser from './components/Administration/admin-accept-user/admin-accept-user';
@@ -11,7 +11,7 @@ import Administration from './components/Administration/administrationhome/admin
 // import EditProfile from './components/Profile/edit-profile/editProfile';
 // import Feedback from './components/Profile/vacation/feedback';
 // import Signin from './components/Sign-in/signin';
-import About from './components/About-Us/aboutus';
+// import About from './components/About-Us/aboutus';
 
 
 const Routes = (props) => {
@@ -19,7 +19,7 @@ const Routes = (props) => {
     <>
       <Route path="/" component={Home} exact />
 
-      <Route path="/administration" component={Administration} exact />
+      {/* <Route path="/administration" component={Administration} exact /> */}
      
       {/* <Route path='/administration/adduser' component= {AdminAddUser} exact /> */}
 
@@ -37,7 +37,7 @@ const Routes = (props) => {
 
       {/* <Route path="/signin" component={Signin} exact /> */}
 
-      <Route path="/about-us" component={About} exact />
+      {/* <Route path="/about-us" component={About} exact /> */}
     </>
   );
 };
