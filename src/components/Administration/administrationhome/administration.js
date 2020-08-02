@@ -90,7 +90,7 @@ const AdministrationHome = (props) => {
             </tr>
           </thead>
           <tbody>
-            {handleSearch(users, searchName).map (value =><tr className="border-bottom"> 
+            {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
                 <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold" value={value}>
                   {value.username} 
