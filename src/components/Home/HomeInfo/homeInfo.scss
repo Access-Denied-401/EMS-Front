@@ -17,16 +17,14 @@
         margin-left: 4%;
 
     }
+    .row.justify-content-center {
+        background-color: #f8f9fa;
+    }
+ 
 
 }
 
 @media (min-width: 768px) {
-
-body {
-    background: #ffffff;
-    font-family: 'Fira Sans', sans-serif;
-
-}
 .main-div {
     height: 615px;
     width: 75%;
@@ -85,4 +83,5 @@ p.left-p:hover {
   
     border-radius: 5px;
   }
+
 }

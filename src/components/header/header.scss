@@ -1,7 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 
 @media (max-width: 767px) {
-    
+    body {
+        background: #f8f9fa;
+        width: 100%;
+        padding-right: 0; 
+        padding-left: 0;
+    }
     #logo {
         width: 31px;
         margin-left: -72%;
@@ -21,10 +26,7 @@
   }
 
 @media (min-width: 768px) {
-body {
-    background: #f8f9fa;
-    width: 100%;
-}
+
   h1 {
     font-size: 2.5rem;
     color: #746c69;
@@ -76,7 +78,7 @@ a.navbar-brand {
 .navbar-expand-lg .navbar-collapse {
     display: flex!important;
     flex-basis: auto;
-    padding: 2%;
+    // padding: 2%;
 }
 li.nav-item {
     font-size: 15px;
