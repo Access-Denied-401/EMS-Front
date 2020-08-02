@@ -1,13 +1,24 @@
+@media (max-width: 767px) {
+
+.space {
+    margin-top: 1.5%;
+}
+.mid {
+    text-align: center;
+}
+}
+
+@media (min-width: 768px) {
+
 head,
 body {
     background-color: lightcyan;
     font-family: 'Fira Sans', sans-serif;
+    width: 100%;
 
 }
 
-.card-posts {
-    cursor: pointer
-}
+
 .card-posts {
     position: relative;
     display: flex;
@@ -67,4 +78,8 @@ button:focus {
     flex-wrap: wrap;
     margin-right: -15px;
     margin-left: 255px;
+}
+.space {
+    margin-top: 1.5%;
+}
 }
