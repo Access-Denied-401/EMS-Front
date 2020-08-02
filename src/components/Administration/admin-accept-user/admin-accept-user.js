@@ -1,6 +1,9 @@
 /* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import {Link} from 'react-router-dom';
 import {connect} from 'react-redux';
+import { Button } from 'react-bootstrap';
+
 import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
 import './admin-accept-user.scss';
@@ -76,6 +79,9 @@ function AdminAcceptUser (props) {
             </tbody> 
           </div>
         </table>
+        <Link className="we-accept" to='/administration'>
+          <Button className=" we-accept-btn">Back</Button>
+        </Link>
       </div>
     </>
   );

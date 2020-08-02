@@ -31,7 +31,7 @@ const Header = (props) => {
               </Auth>
               
               <li className="nav-item">
-                <Link className="nav-link" to="/financials">Financial Management</Link>
+                <Link className="nav-link" to="/financialmanagement">Financial Management</Link>
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to="/profile">Profile</Link>
@@ -47,7 +47,7 @@ const Header = (props) => {
                 </li>
               </Show>
               <li className="nav-item">
-                <Link className="nav-link" to="/aboutus">About Us</Link>
+                <Link className="nav-link" to="/about-us">About Us</Link>
               </li>
             </ul>
           </div>
