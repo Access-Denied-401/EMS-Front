@@ -4,7 +4,6 @@ import {connect} from 'react-redux';
 import { userSignIn} from '../../store/actions';
 import useAjax from '../hooks/ajaxHook';
 import './signin.scss';
-import 'bootstrap/dist/css/bootstrap.min.css';
 
 
 

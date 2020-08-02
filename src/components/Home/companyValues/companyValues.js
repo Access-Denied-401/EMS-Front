@@ -13,7 +13,7 @@ const CompanyValues = (props) => {
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="1000">
-              <div className="card-header bg-white mt-4 border-0">
+              <div className="card-header white mt-4 border-0">
                 <div className="media ">
                   <img className="align-self-center rounded-circle outside img-fluid" src="https://icons-for-free.com/iconfiles/png/512/finance+market+market+vision+vision+icon-1320167739794647785.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
@@ -28,7 +28,7 @@ const CompanyValues = (props) => {
                   </div>
                 </div>
               </div>
-              <div className=" py-0 my-0 bg-white border-0">
+              <div className=" py-0 my-0 white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
                     <img className="img-fluid-logo resp" src="../../../assest/ems.png" width="60" height="60" alt='' /></div>
@@ -42,7 +42,7 @@ const CompanyValues = (props) => {
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="1000">
-              <div className="card-header bg-white mt-4 border-0">
+              <div className="card-header white mt-4 border-0">
                 <div className="media ">
                   <img className="align-self-center rounded-circle outside img-fluid" src="https://toppng.com/uploads/preview/mission-and-vision-icon-vision-and-mission-icon-11553526851cxivzxompa.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
@@ -57,7 +57,7 @@ const CompanyValues = (props) => {
                   </div>
                 </div>
               </div>
-              <div className=" bg-white border-0">
+              <div className=" white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
                     <img className="img-fluid-logo resp" src="../../../assest/ems.png" width="60" height="60" alt='' /> </div>
@@ -71,7 +71,7 @@ const CompanyValues = (props) => {
               data-aos-offset="200"
               data-aos-delay="50"
               data-aos-duration="1000">
-              <div className="card-header bg-white mt-4 border-0">
+              <div className="card-header white mt-4 border-0">
                 <div className="media ">
                   <img className="align-self-center rounded-circle outside img-fluid" src="https://pp.netclipart.com/pp/s/136-1365618_goal-clipart-personal-goal-transparent-goals-png.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
@@ -86,7 +86,7 @@ const CompanyValues = (props) => {
                   </div>
                 </div>
               </div>
-              <div className=" bg-white border-0">
+              <div className=" white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
                     <img className="img-fluid-logo resp" src="../../../assest/ems.png" width="60" height="60" alt='' /> </div>
