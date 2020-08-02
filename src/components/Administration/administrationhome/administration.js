@@ -2,7 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
-import Button from '@material-ui/core/Button';
+import Button from 'react-bootstrap/Button';
+import Table from 'react-bootstrap/Table';
 
 import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
@@ -51,28 +52,45 @@ const AdministrationHome = (props) => {
     } catch (error) {
       console.log(error);
     }
-  },[userSignIn]);
+  },[userSignIn, getUsers]);
 
   return (
     <>
-      <br></br>  <br></br>  <br></br>   <br></br>   <br></br> <br></br>  <br></br>  <br></br>  <br></br> <br></br>
       <h1 className='administrationHome'>Administration</h1>
-      <div>
-        <input placeholder='Search Bar' onChange= {handleChange} />
+      <div className="admin-home-search-div">
+        <input className="admin-home-search" placeholder='Search Bar' onChange= {handleChange} />
       </div>
+      <Link to='/administration/edituser'>
+        <Button className="admin-home" variant="warning">
+          Edit User Profile
+        </Button>
+      </Link>
+     
+      <Link to='/administration/adduser'>
+        <Button className="admin-home" variant="warning">
+         Add New User
+        </Button>
+      </Link>
+
+      <Link to='/administration/acceptuser'>
+        <Button className="admin-home" variant="warning">
+          Accept Users
+        </Button>
+      </Link>
 
       <div className="container mt-5">
-        <table className="table table-borderless table-responsive card-1-admin p-4">
+        <Table responsive >
           <thead>
             <tr className="border-bottom">
               <th> <span className="ml-2">User Name</span> </th>
               <th> <span className="ml-2"></span> E-mail </th>
               <th> <span className="ml-2"></span> Position </th>
-              <th> <span className="ml-4">Role</span> </th>
+              <th> <span className="ml-2">Role</span> </th>
+              <th> <span className="ml-2">Action</span> </th>
             </tr>
           </thead>
           <tbody>
-            {handleSearch(users, searchName).map (value =><tr className="border-bottom"> 
+            {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
                 <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold" value={value}>
                   {value.username} 
@@ -91,37 +109,16 @@ const AdministrationHome = (props) => {
               </td>
               <td>
                 <Link to='/administration/edituser'>
-                  <Button variant="contained">
+                  <Button variant="warning">
           Edit User Profile
                   </Button>
                 </Link>
               </td>
             </tr>, 
             )}
-            
           </tbody>
-        </table>
+        </Table>
       </div>
-
-      <Link to='/administration/edituser'>
-        <Button variant="contained">
-          Edit User Profile
-        </Button>
-      </Link>
-     
-      <Link to='/administration/adduser'>
-        <Button variant="contained">
-         Add New User
-        </Button>
-      </Link>
-
-     
-
-      <Link to='/administration/acceptuser'>
-        <Button variant="contained">
-          Accept Users
-        </Button>
-      </Link>
     </>
   );
 };

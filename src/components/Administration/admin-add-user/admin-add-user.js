@@ -2,6 +2,8 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
+import { Button } from 'react-bootstrap';
+
 import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
 import './admin-add-user.scss';
@@ -28,7 +30,7 @@ function AdminAddUser(props) {
 
   return (
     <>
-      <div className="row">
+      <div className="row-add box">
         <div className="col-sm-4 text-center abc">
           <form onSubmit={handleSubmit}>
             <p className="h4 mb-4 text-left">User's Informations</p>
@@ -46,12 +48,12 @@ function AdminAddUser(props) {
             <input name='role' onChange={handleInputChage} type="text" id="defaultLoginFormRole" className="form-control mb-4" placeholder="Enter Role" />
             <div className="d-flex justify-content-left">
             </div>
-            <button className="btn btn-info btn-block " type="submit">ADD NEW USER</button>
+            <Button className="btn-add btn-info btn-block " type="submit">ADD NEW USER</Button>
+            <Link className="we" to='/administration'>
+              <Button className="btn-add btn-info btn-block">Back</Button>
+            </Link>
           </form>
 
-          <Link to='/administration'>
-            <button className="btn btn-info btn-block " type="submit">Back</button>
-          </Link>
           
         </div>
         

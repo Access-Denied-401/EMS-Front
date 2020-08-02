@@ -3,7 +3,7 @@ import cookie from 'react-cookies';
 let API = 'https://ems-access-denied.herokuapp.com';
 
 
-const useAjax = cb => {
+const useAjax = () => {
   const token = cookie.load('auth');
 
   const getUsers = async () => {
