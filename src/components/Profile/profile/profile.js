@@ -5,6 +5,16 @@ import cookie from 'react-cookies';
 import {connect} from 'react-redux';
 import {userSignIn} from '../../../store/actions';
 
+let hourSalary = {
+  admin:    22,
+  marketing: 12,
+  accountant: 16,
+  salesperson :  15,
+  hr:8,
+  developer:19,
+  qa:15,
+};
+
 const Profile = (props) => {
   const [users, setUsers] = useState({});
  
@@ -53,7 +63,7 @@ const Profile = (props) => {
           </div>
           <hr className="line" /> 
           <div className="row-md-4">
-            <h5>Net Salary</h5><small>{(users.workHours*12).toFixed(2)}JD</small>
+            <h5>Net Salary</h5><small>{(users.workHours*(hourSalary[users.position])).toFixed(2)} JD</small>
           </div>
           <hr className="line" /> 
           <div className="row-md-4">
