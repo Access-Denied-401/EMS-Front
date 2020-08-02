@@ -9,36 +9,40 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Signin(props) {
 
-  let [userSignUp, setUserSignup] = useState({});
-  let[userSignIn, setUserSignIn] = useState({});
+  const {userSignIn, userSignUp} = props;
+  let [newUserSignUp, setUserSignup] = useState({});
+  let[newUserSignIn, setUserSignIn] = useState({});
   
   const _changeSignUpInput = (event) => {
-    setUserSignup({...userSignUp, [event.target.name]: event.target.value});
+    setUserSignup({...newUserSignUp, [event.target.name]: event.target.value});
   };
 
   const _changeSignInInput = (event) => {
-    setUserSignIn({...userSignIn, [event.target.name]: event.target.value});
+    setUserSignIn({...newUserSignIn, [event.target.name]: event.target.value});
   };
 
   const _handleSignup = (event) => {
     if(event) event.preventDefault();
     event.target.reset();
-    props.userSignUp(userSignUp);
+    userSignUp(newUserSignUp);
   };
 
   const _handleSignin = (event) => {
     if(event) event.preventDefault();
     event.target.reset();
-    props.userSignIn(userSignIn);
+    userSignIn(newUserSignIn);
   };
+
   useEffect (() => {
-    props.userSignIn();
-  },[]);
+    console.log('signIn');
+    userSignIn();
+  },[userSignIn]);
+
   return (
     <>
       <div className="row">
         <div className="col-md-6 mx-auto p-0">
-          <div className="card">
+          <div className="card-signin">
             
             <div className="login-box">
               <div className="login-snip"> <input id="tab-1" type="radio" name="tab" className="sign-in"/><label htmlFor="tab-1" className="tab">Login</label> <input id="tab-2" type="radio" name="tab" className="sign-up"/><label htmlFor="tab-2" className="tab">Sign Up</label>

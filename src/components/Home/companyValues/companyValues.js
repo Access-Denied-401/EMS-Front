@@ -31,7 +31,7 @@ const CompanyValues = (props) => {
               <div className=" py-0 my-0 bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo " src="" width="60" height="60" alt='' /></div>
+                    <img className="img-fluid-logo " src="../../../assest/ems.png" width="60" height="60" alt='' /></div>
                 </div>
               </div>
             </div>
@@ -46,7 +46,7 @@ const CompanyValues = (props) => {
                 <div className="media ">
                   <img className="align-self-center rounded-circle outside img-fluid" src="https://toppng.com/uploads/preview/mission-and-vision-icon-vision-and-mission-icon-11553526851cxivzxompa.png" width="70" height="70" alt='' />
                   <div className="media-body my-auto margin-left">
-                    <p className="font-weight-bold mb-0 ">MISION</p><small className="text-muted font-italic ">Employee Management System</small>
+                    <p className="font-weight-bold mb-0 ">MISSION</p><small className="text-muted font-italic ">Employee Management System</small>
                   </div>
                 </div>
               </div>
@@ -60,7 +60,7 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="" width="60" height="60" alt='' /> </div>
+                    <img className="img-fluid-logo" src="../../../assest/ems.png" width="60" height="60" alt='' /> </div>
                 </div>
               </div>
             </div>
@@ -89,7 +89,7 @@ const CompanyValues = (props) => {
               <div className=" bg-white border-0">
                 <div className="row justify-content-center">
                   <div className="col-auto">
-                    <img className="img-fluid-logo" src="" width="60" height="60" alt='' /> </div>
+                    <img className="img-fluid-logo" src="../../../assest/ems.png" width="60" height="60" alt='' /> </div>
                 </div>
               </div>
             </div>

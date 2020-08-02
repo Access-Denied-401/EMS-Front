@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 body {
-    background: #ffffff;
+    background: #f8f9fa;
 }
   h1 {
     font-size: 2.5rem;
@@ -15,7 +15,7 @@ body {
     
 }
 .nav-link:hover {
-    font-size: large;
+    font-size: 18.5px;
     transition-duration: 1.5s;
     
 }
@@ -39,8 +39,31 @@ body {
 }
 
 #logo {
-    width: 25px;
-    margin-left: -6%;
-    
+    width: 38px;
+    margin-left: -5%;
+}
+.navbar-expand-lg .navbar-nav {
+    flex-direction: row;
+    margin-left: 43%;
+}
+a.navbar-brand {
+    margin-left: -1%;
+}
 
+.navbar-expand-lg .navbar-collapse {
+    display: flex!important;
+    flex-basis: auto;
+    padding: 2%;
+}
+li.nav-item {
+    font-size: 15px;
+    font-weight: bolder
+}
+.navbar-light .navbar-brand {
+    color: rgba(0,0,0,.9);
+    font-size: 25px;
+}
+.navbar-expand-lg .navbar-nav .nav-link {
+    padding-right: .5rem;
+    padding-left: 1.5rem;
 }

@@ -25,7 +25,7 @@ const Routes = (props) => {
 
       <Route path='/administration/edituser' component= {AdminEditUser} exact />
 
-      <Route path='/administration/acceptuser' component= {AdminAcceptUser} exact />
+      <Route path='/administration/acceptuser' component= {AdminAcceptUser}  exact />
 
       <Route path="/financials" component={FinancialManagement} exact />
 
