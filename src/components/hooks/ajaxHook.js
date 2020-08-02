@@ -20,20 +20,25 @@ const useAjax = cb => {
   };
 
   const getTempUsers = async () => {
-    const response = await fetch(`${API}/admincheckuser`, {
-      method: 'GET',
-      headers: {
-        'Content-Type': 'application/json',
-        Accept: 'application/json',
-        'Authorization': `Bearer ${token}`,
-      },
-    });
-    const data = await response.json();
-    return data;
+    try {
+      const response = await fetch(`${API}/admincheckuser`, {
+        method: 'GET',
+        headers: {
+          'Content-Type': 'application/json',
+          Accept: 'application/json',
+          'Authorization': `Bearer ${token}`,
+        },
+      });
+      const data = await response.json();
+      return data;
+    } catch (error) {
+      console.log(error);
+    }
+   
   };
 
 
-  function acceptUser (user) {
+  const acceptUser = async (user) =>{
     let myUser = { 
       '_id':`${user._id}`,
       'username': `${user.username}`,
@@ -55,8 +60,9 @@ const useAjax = cb => {
       body: JSON.stringify(myUser),
     }); 
 
-  }
-  function rejectUser (user) {
+  };
+
+  const rejectUser = async (user) => {
     fetch( `${API}/reject/${user._id}`, {
       method: 'delete',
       mode: 'cors',
@@ -67,9 +73,9 @@ const useAjax = cb => {
         'Authorization': `Bearer ${token}`,
       },
     }); 
-  }
+  };
 
-  function addUser (user) {
+  const addUser = async (user) => {
     fetch( `${API}/adduser`, {
       method: 'post',
       mode: 'cors',
@@ -88,9 +94,9 @@ const useAjax = cb => {
         'role': `${user.role}`,
       }),
     }); 
-  }
+  };
 
-  function editUser (user) {
+  const editUser = async (user) => {
     fetch( `${API}/adminedit/${user._id}`, {
       method: 'patch',
       mode: 'cors',
@@ -106,7 +112,7 @@ const useAjax = cb => {
         'role': `${user.role}`,
       }),
     }); 
-  }
+  };
 
   const getUserProfile = async () => {
     const response = await fetch(`${API}/getuserprofile`, {
@@ -121,7 +127,27 @@ const useAjax = cb => {
     return data;
   };
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile};
+  const userSignUp = async (user) => {
+    try {
+      await fetch( `${API}/signup`, {
+        method: 'post',
+        mode: 'cors',
+        cache: 'no-cache',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify({ 
+          'username': `${user.username}`,
+          'email': `${user.email}`,
+          'password': `${user.password}`,
+          'image': `${user.image}`,
+          'role': 'user',
+        }),
+      });    
+    } catch (error) {
+      console.log(error);
+    }
+  };
+
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp};
 };
 
 export default useAjax;

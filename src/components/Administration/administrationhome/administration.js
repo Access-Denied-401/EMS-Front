@@ -2,74 +2,46 @@
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import { Link } from 'react-router-dom';
+import Button from '@material-ui/core/Button';
 
 import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
-
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import Dialog from '@material-ui/core/Dialog';
-import DialogActions from '@material-ui/core/DialogActions';
-import DialogContent from '@material-ui/core/DialogContent';
-import DialogTitle from '@material-ui/core/DialogTitle';
-import InputLabel from '@material-ui/core/InputLabel';
-import Input from '@material-ui/core/Input';
-import MenuItem from '@material-ui/core/MenuItem';
-import FormControl from '@material-ui/core/FormControl';
-import Select from '@material-ui/core/Select';
-import Card from '@material-ui/core/Card';
-import CardActionArea from '@material-ui/core/CardActionArea';
-import Typography from '@material-ui/core/Typography';
-import Avatar from '@material-ui/core/Avatar';
-import TextField from '@material-ui/core/TextField';
+import useSearch from '../../hooks/searchHook';
+import './administration.scss';
 
 
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 200,
-  },	
-  root: {
-    maxWidth: 245,
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    flexDirection:'column',
-  },
-}));
+
 
 
 const AdministrationHome = (props) => {
-  const classes = useStyles();
 
   const {userSignIn} = props;
   const {getUsers} = useAjax();
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
+  const {handleSearch} = useSearch();
   const [users, setUsers] = useState([]);
-  const [selecteduser, setSelecteduser] = useState({});
- 
- 
+  const [searchName, setName] = useState('');
 
-  const fillForm = (event) => {
-    setSelecteduser(event.target.value);
-  };
-  
-  const handleChange = (event) => {
+  const handleChange = event => {
     setName(String(event.target.value) || '');
+    console.log(searchName);
   };
+
+  // const [open, setOpen] = useState(false);
+  // const [selecteduser, setSelecteduser] = useState({});
+
+  // const fillForm = (event) => {
+  //   setSelecteduser(event.target.value);
+  // };
+  // const handleClickOpen = () => {
+  //   setOpen(true);
+  // };
   
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
+  // const handleClose = () => {
+  //   setOpen(false);
+  // };
   
-  const handleClose = () => {
-    setOpen(false);
-  };
+  
+  
 
   useEffect(()=>{
     try {
@@ -83,98 +55,67 @@ const AdministrationHome = (props) => {
 
   return (
     <>
-      <br></br>            <br></br>            <br></br>            <br></br>
+      <br></br>  <br></br>  <br></br>   <br></br>   <br></br> <br></br>  <br></br>  <br></br>  <br></br> <br></br>
       <h1 className='administrationHome'>Administration</h1>
       <div>
-        <Button onClick={handleClickOpen}>Select Empolyee</Button>
-        <Dialog disableBackdropClick disableEscapeKeyDown open={open} onClose={handleClose}>
-          <DialogTitle>Fill the form</DialogTitle>
-          <DialogContent>
-            <form  className={classes.container}>
-              <FormControl className={classes.formControl}>
-                <InputLabel id="demo-dialog-select-label">Empolyee Name</InputLabel>
-                <Select
-                  labelId="demo-dialog-select-label"
-                  id="demo-dialog-select"
-                  value={name}
-                  // onChange={handleChange}
-                  onChange={fillForm}
-                  input={<Input />}
-                >
-                  <MenuItem value="">
-                    <em>None</em>
-                  </MenuItem>
-                  {users.map(value => <MenuItem key={value._id} value={value}>{value.username}</MenuItem>)}                 
-                </Select>
-              </FormControl>
-            </form>
-          </DialogContent>
-          <DialogActions>
-            <Button onClick={handleClose} color="primary">
-            Cancel
-            </Button>
-            <Button onClick={handleClose} color="primary">
-            Ok
-            </Button>
-          </DialogActions>
-        </Dialog>
+        <input placeholder='Search Bar' onChange= {handleChange} />
       </div>
 
-      <div className = 'card'>
-        <Card className={classes.root}>
-          <CardActionArea>
-            <br></br>
-            <Avatar alt="Remy Sharp" src="/static/images/avatar/1.jpg" className={classes.large} />
-            <br></br>
-            <Typography gutterBottom variant="h5" component="h2">
-              Empolyee Name: {selecteduser.username}
-            </Typography>
-            <TextField
-              id="standard-read-only-input"
-              // label="E-mail"
-              value={selecteduser.email}
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              // label="Position"
-              value={selecteduser.position}
-              InputProps={{
-                readOnly: false,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              // label="Role"
-              value={selecteduser.role}
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-            <TextField
-              id="standard-read-only-input"
-              label="Gender"
-              value={selecteduser.gender}
-              InputProps={{
-                readOnly: true,
-              }}
-            />
-          </CardActionArea>
-        </Card>
+      <div className="container mt-5">
+        <table className="table table-borderless table-responsive card-1-admin p-4">
+          <thead>
+            <tr className="border-bottom">
+              <th> <span className="ml-2">User Name</span> </th>
+              <th> <span className="ml-2"></span> E-mail </th>
+              <th> <span className="ml-2"></span> Position </th>
+              <th> <span className="ml-4">Role</span> </th>
+            </tr>
+          </thead>
+          <tbody>
+            {handleSearch(users, searchName).map (value =><tr className="border-bottom"> 
+              <td>
+                <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold" value={value}>
+                  {value.username} 
+                </li></span></div> </div>
+              </td>
+              <td>
+                <div className="p-2 d-flex-admin flex-row align-items-center mb-2"> 
+                  <div className="p-2"> <span className="font-weight-bold">{value.email}</span> </div>
+                </div>
+              </td>
+              <td>
+                <div className="p-2"> <span className="font-weight-bold">{value.position}</span> </div>
+              </td>
+              <td>
+                <div className="p-2 d-flex-admin flex-column"> <span>{value.role}</span>  </div>
+              </td>
+              <td>
+                <Link to='/administration/edituser'>
+                  <Button variant="contained">
+          Edit User Profile
+                  </Button>
+                </Link>
+              </td>
+            </tr>, 
+            )}
+            
+          </tbody>
+        </table>
       </div>
-      <Link to='/administration/adduser'>
-        <Button variant="contained">
-         Add New User
-        </Button>
-      </Link>
 
       <Link to='/administration/edituser'>
         <Button variant="contained">
           Edit User Profile
         </Button>
       </Link>
+     
+      <Link to='/administration/adduser'>
+        <Button variant="contained">
+         Add New User
+        </Button>
+      </Link>
+
+     
 
       <Link to='/administration/acceptuser'>
         <Button variant="contained">
