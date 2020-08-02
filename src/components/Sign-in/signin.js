@@ -1,7 +1,8 @@
 /* eslint-disable no-unused-vars */
 import React, {useState,useEffect} from 'react';
 import {connect} from 'react-redux';
-import {userSignUp, userSignIn} from '../../store/actions';
+import { userSignIn} from '../../store/actions';
+import useAjax from '../hooks/ajaxHook';
 import './signin.scss';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
@@ -9,7 +10,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 function Signin(props) {
 
-  const {userSignIn, userSignUp} = props;
+  const {userSignIn} = props;
+  const {userSignUp} = useAjax();
   let [newUserSignUp, setUserSignup] = useState({});
   let[newUserSignIn, setUserSignIn] = useState({});
   
@@ -81,7 +83,7 @@ function Signin(props) {
   );
 }
 
-const mapDispatchToProps = {userSignUp, userSignIn};
+const mapDispatchToProps = {userSignIn};
 
 const mapStateToProps = (state) => ({
   logInReducer: state.logInReducer,

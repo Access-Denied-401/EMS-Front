@@ -1,20 +1,24 @@
+/* eslint-disable no-unused-vars */
 import React, { useEffect, useState } from 'react';
+import {connect} from 'react-redux';
+import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
 
 
 function AdminAcceptUser (props) {
   let [users, setUsers] = useState([]);
   const {getTempUsers, acceptUser, rejectUser} = useAjax();
-
+  
 
   useEffect(()=> {
     try {
       console.log('adminAcceptUser');
+      props.userSignIn();
       getTempUsers().then(tempUsers => setUsers(tempUsers) );
     } catch (error) {
       console.error(error);
     }
-  },[getTempUsers]);
+  },[props]);
 
   return(
     <>
@@ -66,6 +70,7 @@ function AdminAcceptUser (props) {
   );
 }
 
+const mapDisPatchToprops = {userSignIn};
 
 
-export default AdminAcceptUser;
+export default connect(null, mapDisPatchToprops) (AdminAcceptUser);

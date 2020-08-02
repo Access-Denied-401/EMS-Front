@@ -3,29 +3,28 @@ import {useEffect} from 'react';
 import cookie from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
-let signUpUrl = 'https://lab-38.herokuapp.com';
 let API = 'https://ems-access-denied.herokuapp.com';
 
 // SignUp Action
-export const userSignUp = user => async dispatch => {
-  try {
-    await fetch( `${API}/signup`, {
-      method: 'post',
-      mode: 'cors',
-      cache: 'no-cache',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ 
-        'username': `${user.username}`,
-        'email': `${user.email}`,
-        'password': `${user.password}`,
-        'image': `${user.image}`,
-        'role': 'user',
-      }),
-    });    
-  } catch (error) {
-    console.log(error);
-  }
-};
+// export const userSignUp = user => async () => {
+//   try {
+//     await fetch( `${API}/signup`, {
+//       method: 'post',
+//       mode: 'cors',
+//       cache: 'no-cache',
+//       headers: { 'Content-Type': 'application/json' },
+//       body: JSON.stringify({ 
+//         'username': `${user.username}`,
+//         'email': `${user.email}`,
+//         'password': `${user.password}`,
+//         'image': `${user.image}`,
+//         'role': 'user',
+//       }),
+//     });    
+//   } catch (error) {
+//     console.log(error);
+//   }
+// };
 
 export const userSignIn = user => async dispatch => {
   if(user){
@@ -65,7 +64,7 @@ export const userSignIn = user => async dispatch => {
   }
 
   const cookieToken = cookie.load('auth');
-  const token = cookieToken || null; 
+  const token = cookieToken; 
   validateToken(token);
 };
 
