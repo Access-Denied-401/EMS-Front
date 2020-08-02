@@ -18,7 +18,7 @@ const Home = (props) => {
   });
   return (
     <>
-      {/* <Slider /> */}
+      <Slider />
       <CompanyValues />
       <HomeInfo />
       <HomePosts />
