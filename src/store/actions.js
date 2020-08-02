@@ -1,5 +1,4 @@
 /* eslint-disable no-unused-vars */
-import {useEffect} from 'react';
 import cookie from 'react-cookies';
 import jwt from 'jsonwebtoken';
 
