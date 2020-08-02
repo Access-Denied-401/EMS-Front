@@ -1,6 +1,36 @@
+@media (max-width: 767px) {
+
+    body {
+        margin: 0;
+        color: #6a6f8c;
+        background: #ffffff;
+        font-family: 'Fira Sans', sans-serif;
+        width: 100%;
+    }
+    // div#root {
+    //     width: 100%;
+    //     margin-top: 13%;
+    //     background-color: white;
+    // }
+    .w-90-res {
+        margin-top: 19%;
+        height: 45vh;
+        width: 90%;
+    }
+    .carousel {
+        margin-bottom: 8%;
+        margin-top: 15%;
+        margin-left: 9%;
+        width: 90%;
+
+    }
+}
+@media (min-width: 768px) {
+
 body {
     background-color: white;
     font-family: 'Fira Sans', sans-serif;
+    width: 100%;
 
 }
 .carousel {
@@ -45,4 +75,5 @@ body {
 .carousel-control-next-icon,
 .carousel-control-prev-icon {
   filter: invert(1);
+}
 }
