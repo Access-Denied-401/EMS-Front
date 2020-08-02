@@ -1,3 +1,27 @@
+@media (max-width: 767px) {
+    .main-div {
+        width: 90%;
+        margin: 0 auto;
+        margin-bottom: 7%;
+    }
+    .width-res {
+        width: 90%;
+        color: #2d6064;
+        margin-left: 4%;
+
+
+    }
+    .res-width {
+        width: 90%;
+        margin-bottom: 7%;
+        margin-left: 4%;
+
+    }
+
+}
+
+@media (min-width: 768px) {
+
 body {
     background: #ffffff;
     font-family: 'Fira Sans', sans-serif;
@@ -5,41 +29,46 @@ body {
 }
 .main-div {
     height: 615px;
-    width: 83.5%;
+    width: 75%;
     margin: 0 auto;
     font-family: 'Fira Sans', sans-serif;
-
 }
-p.w-50.float-left {
+.width-res {
+    width: 50%;
+}
+.res-width {
+    width: 25%;
+}
+p.left-p {
     margin-left: 6%;
     margin-top: 2%;
     background-color: white;
     padding: 2%;
+    float: left;
+
 }
-img.w-25.right-img {
+img.right-i {
     margin-left: 12%;
+    float: right;
 }
-.right-img:hover {
-    opacity: .5;
-}
-img.w-25.left-img {
+img.left-i {
     margin-left: 6%;
     margin-top: 3%;
+    float:left;
 }
-.left-img:hover {
-    opacity: .5;
-}
-p.w-50.float-right {
+
+p.right-p {
     margin-right: 6%;
     margin-top: 4%;
     background-color: white;
     padding: 2%;
+
 }
-p.w-50.float-right:hover {
+p.right-p:hover {
     background-color: #7a9d96b5;
     color: white;
 }
-p.w-50.float-left:hover {
+p.left-p:hover {
     background-color: #7a9d96b5;
     color: white;
 }
@@ -56,4 +85,4 @@ p.w-50.float-left:hover {
   
     border-radius: 5px;
   }
-  
+}
