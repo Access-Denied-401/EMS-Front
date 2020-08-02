@@ -3,9 +3,9 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import Home from './components/Home/home';
 import Administration from './components/Administration/administrationhome/administration';
-import AdminAddUser from './components/Administration/admin-add-user/admin-add-user';
+// import AdminAddUser from './components/Administration/admin-add-user/admin-add-user';
 // import AdminEditUser from './components/Administration/admin-edit-user/admin-edit-user';
-import AdminAcceptUser from './components/Administration/admin-accept-user/admin-accept-user';
+// import AdminAcceptUser from './components/Administration/admin-accept-user/admin-accept-user';
 // import FinancialManagement from './components/Financial-Management/financial';
 // import Profile from './components/Profile/profile/profile';
 // import EditProfile from './components/Profile/edit-profile/editProfile';
@@ -21,11 +21,11 @@ const Routes = (props) => {
 
       <Route path="/administration" component={Administration} exact />
      
-      <Route path='/administration/adduser' component= {AdminAddUser} exact />
+      {/* <Route path='/administration/adduser' component= {AdminAddUser} exact /> */}
 
       {/* <Route path='/administration/edituser' component= {AdminEditUser} exact /> */}
 
-      <Route path='/administration/acceptuser' component= {AdminAcceptUser}  exact />
+      {/* <Route path='/administration/acceptuser' component= {AdminAcceptUser}  exact /> */}
 
       {/* <Route path="/financialmanagement" component={FinancialManagement} exact /> */}
 
