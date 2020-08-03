@@ -77,3 +77,32 @@ button .neo-button {
     margin-top: 12%;
     margin-bottom: 5%;
 }
+
+img {
+    width: 6.5rem;
+}
+
+.rounded-circle {
+    border-radius: -1%!important;
+}
+
+
+@media (min-width: 768px){
+
+.col-md-4 {
+    flex: 0 0 30.333333%;
+    max-width: 29.333333%;
+}
+.col-md-8 {
+    flex: 0 0 66.666667%;
+    max-width: 45.666667%;
+}
+}
+
+.edit-image{
+width:6.5rem;
+}
+
+.edit-sec{
+    
+}
