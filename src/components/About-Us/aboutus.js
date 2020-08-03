@@ -5,6 +5,65 @@ import './aboutus.scss';
 const About = (props) => {
   return (
     <>
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
+            <div class="card" >
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+            </div>
+            <div class="arrow-down"></div>
+            <div class="row d-flex justify-content-center">
+              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UT41K4Y1X-a36a1e48bdef-512"/> </div>
+              <p class="profile-name">Raghad Al-Quran</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
+            <div class="card">
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+            </div>
+            <div class="arrow-down"></div>
+            <div class="row d-flex justify-content-center">
+              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UT2ND0MV1-0e252aa28dee-512"/> </div>
+              <p class="profile-name">Abdallah Obaid</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
+            <div class="card">
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+            </div>
+            <div class="arrow-down"></div>
+            <div class="row d-flex justify-content-center">
+              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UTGDK1NLE-19fdf2afc718-512"/> </div>
+              <p class="profile-name">Amer Majdi</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="container-fluid">
+        <div class="row justify-content-center">
+          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
+            <div class="card">
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+            </div>
+            <div class="arrow-down"></div>
+            <div class="row d-flex justify-content-center">
+              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UTE74KE5B-a7172b3e3315-512"/> </div>
+              <p class="profile-name">Ahlam Alefishat</p>
+            </div>
+          </div>
+        </div>
+      </div>
       <section className="team section">
         <div className="container-about">
           <h1 className="section-title">Our Team Section</h1>
