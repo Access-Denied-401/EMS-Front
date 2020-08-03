@@ -1,5 +1,4 @@
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
 import './editProfile.scss';
 import cookie from 'react-cookies';
 import {connect} from 'react-redux';
@@ -39,7 +38,7 @@ const EditProfile = (props) => {
           storage.ref(`images`).child(image.name).getDownloadURL().then(imageUrl=>{
             console.log(imageUrl);
             console.log(users,'selectedUservselectedUser');
-            setUsers({...users ,['image']:imageUrl});
+            setUsers({...users ,'image':imageUrl});
             console.log(users,'selectedUservselectedUser');
           });
         });
@@ -73,7 +72,7 @@ const EditProfile = (props) => {
   const handleInputChange = (event) => {
     if(event.target.name) setUsers({...users ,[event.target.name]:event.target.value});
     else  setUsers(event.target.value);
-    console.log(users);
+    console.log(users,'usersusersusersusers');
   }; 
 
   const handleSubmit = (event) => {
@@ -87,153 +86,151 @@ const EditProfile = (props) => {
   useEffect (() => {
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers); 
-      console.log(users,'selectedUservselectedUser');
     });
 
-    props.userSignIn();
   },[]);
   return (
     <>
-      <div class="container containerdiv">
-        <div class="row flex-lg-nowrap">
-          <div class="col-12 col-lg-auto mb-3 F1Div">
-            <div class="card p-3">
-              <div class="e-navlist e-navlist--active-bg">
-                <ul class="nav">
-                  <li class="nav-item"><a class="nav-link px-2 active" href="./"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Profile</span></a></li>
-                  <li class="nav-item"><a class="nav-link px-2" href="/profile/Feedback"><i class="fa fa-fw fa-th mr-1"></i><span>Feedback</span></a></li>
-                  <li class="nav-item"><a class="nav-link px-2" href="/profile/EditProfile"><i class="fa fa-fw fa-cog mr-1"></i><span>Edit profile</span></a></li>
+      <div className="container containerdiv">
+        <div className="row flex-lg-nowrap">
+          <div className="col-12 col-lg-auto mb-3 F1Div">
+            <div className="card p-3">
+              <div className="e-navlist e-navlist--active-bg">
+                <ul className="nav">
+                  <li className="nav-item"><a className="nav-link px-2 active" href="./"><i className="fa fa-fw fa-bar-chart mr-1"></i><span>Profile</span></a></li>
+                  <li className="nav-item"><a className="nav-link px-2" href="/profile/Feedback"><i className="fa fa-fw fa-th mr-1"></i><span>Feedback</span></a></li>
+                  <li className="nav-item"><a className="nav-link px-2" href="/profile/EditProfile"><i className="fa fa-fw fa-cog mr-1"></i><span>Edit profile</span></a></li>
                 </ul>
               </div>
             </div>
           </div>
 
-          <div class="col">
-            <div class="row">
-              <div class="col mb-3">
-                <div class="card">
-                  <div class="card-body">
-                    <div class="e-profile">
-                      <div class="row">
-                        <div class="col-12 col-sm-auto mb-3">
-                          <div class="mx-auto F2Div" >
-                            <div class="d-flex justify-content-center align-items-center rounded F3Div" >
-                              <img class="imgProfile" src={users.image} width="180" alt='' />
+          <div className="col">
+            <div className="row">
+              <div className="col mb-3">
+                <div className="card">
+                  <div className="card-body">
+                    <div className="e-profile">
+                      <div className="row">
+                        <div className="col-12 col-sm-auto mb-3">
+                          <div className="mx-auto F2Div" >
+                            <div className="d-flex justify-content-center align-items-center rounded F3Div" >
+                              <img className="imgProfile" src={users.image} width="180" alt='' />
                             </div>
                           </div>
                         </div>
-                        <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
-                          <div class="text-center text-sm-left mb-2 mb-sm-0">
-                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap" >{users.username}</h4>
-                            <p class="mb-0">@{users.username}</p>
-                            <div class="text-muted"><small>Last seen 2 hours ago</small></div>
-                            <div class="mt-2">
-                              <button class="btn btn-primary" type="button">
-                                <input type="file"  onChange = {handleImageChange}/>
-                                <i class="fa fa-fw fa-camera"></i>
+                        <div className="col d-flex flex-column flex-sm-row justify-content-between mb-3">
+                          <div className="text-center text-sm-left mb-2 mb-sm-0">
+                            <h4 className="pt-sm-2 pb-1 mb-0 text-nowrap" >{users.username}</h4>
+                            <p className="mb-0">@{users.username}</p>
+                            <div className="text-muted"><small>Last seen 2 hours ago</small></div>
+                            <div className="mt-2">
+                              <button className="btn btn-primary" type="button">
+                                <input type="file"  onChange = {handleImageChange} />
+                                <i className="fa fa-fw fa-camera"></i>
                                 <span>Change Photo</span>
                               </button>
                             </div>
                           </div>
-                          <div class="text-center text-sm-right">
-                            <span class="badge badge-secondary">{users.role}</span>
-                            <div class="text-muted"><small>{users.signUpDate}</small></div>
+                          <div className="text-center text-sm-right">
+                            <span className="badge badge-secondary">{users.role}</span>
+                            <div className="text-muted"><small>{users.signUpDate}</small></div>
                           </div>
                         </div>
                       </div>
-                      <ul class="nav nav-tabs">
-                        <li class="nav-item"><a href="" class="active nav-link">Settings</a></li>
+                      <ul className="nav nav-tabs">
+                        <li className="nav-item"><a href="/profile/EditProfile" className="active nav-link">Settings</a></li>
                       </ul>
-                      <div class="tab-content pt-3">
-                        <div class="tab-pane active">
-                          <form class="form1" novalidate="">
-                            <div class="row">
-                              <div class="col">
-                                <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
+                      <div className="tab-content pt-3">
+                        <div className="tab-pane active">
+                          <form className="form1" noValidate="">
+                            <div className="row">
+                              <div className="col">
+                                <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
                                       <label>Full Name</label>
-                                      <input class="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your name' defaultValue={users.username}/>
+                                      <input className="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your name' defaultValue={users.username}/>
                                     </div>
                                   </div>
-                                  <div class="col">
-                                    <div class="form-group">
+                                  <div className="col">
+                                    <div className="form-group">
                                       <label>Mobile</label>
-                                      <input class="form-control" type="text" name='mobile' onChange={handleInputChange} placeholder='Enter your mobile' defaultValue={users.mobile}/>
+                                      <input className="form-control" type="text" name='mobile' onChange={handleInputChange} placeholder='Enter your mobile' defaultValue={users.mobile}/>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
+                                <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
                                       <label>Email</label>
-                                      <input class="form-control" type="text" name='email' onChange={handleInputChange} placeholder="Email" defaultValue={users.email}/>
+                                      <input className="form-control" type="text" name='email' onChange={handleInputChange} placeholder="Email" defaultValue={users.email} />
                                     </div>
                                   </div>
                                 </div>
-                                <div class="row">
-                                  <div class="col mb-3">
-                                    <div class="form-group">
+                                <div className="row">
+                                  <div className="col mb-3">
+                                    <div className="form-group">
                                       <label>About</label>
-                                      <textarea class="form-control" rows="5" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
+                                      <textarea className="form-control" rows="5" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
                                     </div>
                                   </div>
                                 </div>
                               </div>
                             </div>
-                            <div class="row">
-                              <div class="col-12 col-sm-6 mb-3">
-                                <div class="mb-2"><b>Change Password</b></div>
-                                {/* <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
+                            <div className="row">
+                              <div className="col-12 col-sm-6 mb-3">
+                                <div className="mb-2"><b>Change Password</b></div>
+                                {/* <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
                                       <label>Current Password</label>
-                                      <input class="form-control" type="password" placeholder="••••••"/>
+                                      <input className="form-control" type="password" placeholder="••••••"/>
                                     </div>
                                   </div>
                                 </div> */}
-                                <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
+                                <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
                                       <label>New Password</label>
-                                      <input class="form-control" type="password" placeholder="••••••" name="password" onChange={handleInputChange} defaultValue={123}/>
+                                      <input className="form-control" type="password" placeholder="••••••" name="password" onChange={handleInputChange} defaultValue={123}/>
                                     </div>
                                   </div>
                                 </div>
-                                {/* <div class="row">
-                                  <div class="col">
-                                    <div class="form-group">
-                                      <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
-                                      <input class="form-control" type="password" placeholder="••••••"/></div>
+                                {/* <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
+                                      <label>Confirm <span className="d-none d-xl-inline">Password</span></label>
+                                      <input className="form-control" type="password" placeholder="••••••"/></div>
                                   </div>
                                 </div> */}
                               </div>
-                              {/* <div class="col-12 col-sm-5 offset-sm-1 mb-3">
-                                <div class="mb-2"><b>Keeping in Touch</b></div>
-                                <div class="row">
-                                  <div class="col">
+                              {/* <div className="col-12 col-sm-5 offset-sm-1 mb-3">
+                                <div className="mb-2"><b>Keeping in Touch</b></div>
+                                <div className="row">
+                                  <div className="col">
                                     <label>Email Notifications</label>
-                                    <div class="custom-controls-stacked px-2">
-                                      <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="notifications-blog" checked=""/>
-                                        <label class="custom-control-label" for="notifications-blog">Blog posts</label>
+                                    <div className="custom-controls-stacked px-2">
+                                      <div className="custom-control custom-checkbox">
+                                        <input type="checkbox" className="custom-control-input" id="notifications-blog" checked=""/>
+                                        <label className="custom-control-label" for="notifications-blog">Blog posts</label>
                                       </div>
-                                      <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="notifications-news" checked=""/>
-                                        <label class="custom-control-label" for="notifications-news">Newsletter</label>
+                                      <div className="custom-control custom-checkbox">
+                                        <input type="checkbox" className="custom-control-input" id="notifications-news" checked=""/>
+                                        <label className="custom-control-label" for="notifications-news">Newsletter</label>
                                       </div>
-                                      <div class="custom-control custom-checkbox">
-                                        <input type="checkbox" class="custom-control-input" id="notifications-offers" checked=""/>
-                                        <label class="custom-control-label" for="notifications-offers">Personal Offers</label>
+                                      <div className="custom-control custom-checkbox">
+                                        <input type="checkbox" className="custom-control-input" id="notifications-offers" checked=""/>
+                                        <label className="custom-control-label" for="notifications-offers">Personal Offers</label>
                                       </div>
                                     </div>
                                   </div>
                                 </div>
                               </div> */}
                             </div>
-                            <div class="row">
-                              <div class="col d-flex justify-content-end">
-                                <button class="btn btn-primary" type="submit" onClick={handleSubmit}>Save Changes</button>
+                            <div className="row">
+                              <div className="col d-flex justify-content-end">
+                                <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Save Changes</button>
                               </div>
                             </div>
                           </form>
