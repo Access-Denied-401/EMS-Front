@@ -4,11 +4,13 @@ import './editProfile.scss';
 import cookie from 'react-cookies';
 import {connect} from 'react-redux';
 import {userSignIn} from '../../../store/actions';
+import {storage} from '../../../firebase';
 
 let API = 'https://ems-access-denied.herokuapp.com';
 const EditProfile = (props) => {
   const [users, setUsers] = useState({});
-  const [selectedUser, setSelectedUser] = useState({});
+  // const [image, setImage] = useState({});
+  // const [selectedUser, setSelectedUser] = useState({});
 
   const getUserProfile = async () => {
     const token = cookie.load('auth');
@@ -24,11 +26,32 @@ const EditProfile = (props) => {
     return data;
   };
 
-  function editUser (user) {
-    console.log(user,'useruseruseruseruser');
+  const handleImageChange = (event) => {
+    if(event.target.files[0]){
+      let image = event.target.files[0];
+      console.log(image);
+      const uploadTask =  storage.ref(`images/${image.name}`).put(image);
+      uploadTask.on(`state_changed`,
+        (snapshot)=>{
+        // const progress = Math.round((snapshot.bytesTransferred / snapshot.totalBytes)*100);
+        } , (error)=>{
+        } , ()=>{
+          storage.ref(`images`).child(image.name).getDownloadURL().then(imageUrl=>{
+            console.log(imageUrl);
+            console.log(users,'selectedUservselectedUser');
+            setUsers({...users ,['image']:imageUrl});
+            console.log(users,'selectedUservselectedUser');
+          });
+        });
+    }
+  };
+
+
+  function editUser (usersF) {
+    console.log(usersF,'useruseruseruseruser');
     const token = cookie.load('auth');
     fetch( `${API}/usereditprofile`, {
-      method: 'patch',
+      method: 'PATCH',
       mode: 'cors',
       cache: 'no-cache',
       headers: {
@@ -38,83 +61,48 @@ const EditProfile = (props) => {
       },
       body: JSON.stringify({ 
         '_id':`${users._id}`,
-        'username':`${user.username}`,
-        'password':`${user.password}`,
-        'email': `${user.email}`,
-        'image': `${user.image}`,
-        'gender': `${user.gender}`,
-        'birthday': `${user.birthday}`,        
+        'username':`${usersF.username}`,
+        'password':`${usersF.password}`,
+        'email': `${usersF.email}`,
+        'image': `${usersF.image}`,
+        'gender': `${usersF.gender}`,
+        'birthday': `${usersF.birthday}`,        
       }),
     }); 
   }
   const handleInputChange = (event) => {
-    if(event.target.name) setSelectedUser({...selectedUser ,[event.target.name]:event.target.value});
-    else  setSelectedUser(event.target.value);
-    console.log(selectedUser);
+    if(event.target.name) setUsers({...users ,[event.target.name]:event.target.value});
+    else  setUsers(event.target.value);
+    console.log(users);
   }; 
 
   const handleSubmit = (event) => {
     if(event) event.preventDefault();
-    event.target.reset();
-    console.log(selectedUser);
-    console.log(selectedUser,'event.target.value');
-
-    editUser(event.target.value);
+    // event.target.reset();
+    console.log(users);
+    console.log(users,'event.target.value');
+    // console.log(event.target.value,'event.target.value.target.value');
+    editUser(users);
   };
   useEffect (() => {
-    getUserProfile().then(dbUsers => setUsers(dbUsers) );
+    getUserProfile().then(dbUsers =>{ 
+      setUsers(dbUsers); 
+      console.log(users,'selectedUservselectedUser');
+    });
+
     props.userSignIn();
   },[]);
   return (
     <>
-<<<<<<< HEAD
-      {/* <div class="container rounded bg-white mt-5">
-        <div class="row-edit">
-          <div class="col-md-4 border-right">
-            <div class="d-flex flex-column align-items-center text-center p-3 py-5"><img class="rounded-circle mt-5" src={users.image} width="90" alt='' /><span class="font-weight-bold">John Doe</span><span class="text-black-50">{users.email}</span><span>Jordan</span></div>
-          </div>
-          <form onSubmit={handleSubmit}>
-            <div class="col-md-8" >
-              <div class="p-3 py-5">
-                <div class="d-flex justify-content-between align-items-center mb-3">
-                  <div class="d-flex flex-row align-items-center back"><i class="fa fa-long-arrow-left mr-1 mb-1"></i>
-                    <Link to="/profile">
-                      <h6>Back to profile</h6>
-                    </Link>
-                  </div>
-                  <h6 class="text-right">Edit Profile</h6>
-                </div>
-                <div class="row-edit mt-2">
-                  <div class="col-md-6"><input type="text" class="form-control" name='Username' onChange={handleInputChange} placeholder={users.username} defaultValue={users.username}/></div>
-                  <div class="col-md-6"><input type="text" class="form-control" name='Password' onChange={handleInputChange} placeholder="Password" value={users.password}/></div>
-                </div>
-                <div class="row-edit mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" name='Email' onChange={handleInputChange} placeholder="Email" value={users.email}/></div>
-                  <div class="col-md-6"><input type="text" class="form-control" name='Phone number' onChange={handleInputChange} placeholder="Phone number" value="+19685969668"/></div>
-                </div>
-                <div class="row-edit mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" name='Gender' onChange={handleInputChange} placeholder="Gender" value={users.gender}/></div>
-                  <div class="col-md-6"><input type="text" class="form-control" name='Birthday' onChange={handleInputChange} placeholder="Birthday" value={users.birthday}/></div>
-                </div>
-                <div class="row-edit mt-3">
-                  <div class="col-md-6"><input type="text" class="form-control" name='Bank Name'  placeholder="Bank Name" value="Bank of America"/></div>
-                  <div class="col-md-6"><input type="text" class="form-control" name='Account Number'  placeholder="Account Number" value="043958409584095"/></div>
-                </div>
-                <div class="mt-5 text-right"><button class="btn btn-primary profile-button" type='submit'>Save Profile</button></div>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div> */}
-      <div class="container">
+      <div class="container containerdiv">
         <div class="row flex-lg-nowrap">
           <div class="col-12 col-lg-auto mb-3 F1Div">
             <div class="card p-3">
               <div class="e-navlist e-navlist--active-bg">
                 <ul class="nav">
-                  <li class="nav-item"><a class="nav-link px-2 active" href="./overview.html"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Overview</span></a></li>
-                  <li class="nav-item"><a class="nav-link px-2" href="./users.html"><i class="fa fa-fw fa-th mr-1"></i><span>CRUD</span></a></li>
-                  <li class="nav-item"><a class="nav-link px-2" href="./settings.html"><i class="fa fa-fw fa-cog mr-1"></i><span>Settings</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2 active" href="./"><i class="fa fa-fw fa-bar-chart mr-1"></i><span>Profile</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2" href="/profile/Feedback"><i class="fa fa-fw fa-th mr-1"></i><span>Feedback</span></a></li>
+                  <li class="nav-item"><a class="nav-link px-2" href="/profile/EditProfile"><i class="fa fa-fw fa-cog mr-1"></i><span>Edit profile</span></a></li>
                 </ul>
               </div>
             </div>
@@ -130,25 +118,26 @@ const EditProfile = (props) => {
                         <div class="col-12 col-sm-auto mb-3">
                           <div class="mx-auto F2Div" >
                             <div class="d-flex justify-content-center align-items-center rounded F3Div" >
-                              <span class="Span1">140x140</span>
+                              <img class="imgProfile" src={users.image} width="180" alt='' />
                             </div>
                           </div>
                         </div>
                         <div class="col d-flex flex-column flex-sm-row justify-content-between mb-3">
                           <div class="text-center text-sm-left mb-2 mb-sm-0">
-                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap">John Smith</h4>
-                            <p class="mb-0">@johnny.s</p>
+                            <h4 class="pt-sm-2 pb-1 mb-0 text-nowrap" >{users.username}</h4>
+                            <p class="mb-0">@{users.username}</p>
                             <div class="text-muted"><small>Last seen 2 hours ago</small></div>
                             <div class="mt-2">
                               <button class="btn btn-primary" type="button">
+                                <input type="file"  onChange = {handleImageChange}/>
                                 <i class="fa fa-fw fa-camera"></i>
                                 <span>Change Photo</span>
                               </button>
                             </div>
                           </div>
                           <div class="text-center text-sm-right">
-                            <span class="badge badge-secondary">administrator</span>
-                            <div class="text-muted"><small>Joined 09 Dec 2017</small></div>
+                            <span class="badge badge-secondary">{users.role}</span>
+                            <div class="text-muted"><small>{users.signUpDate}</small></div>
                           </div>
                         </div>
                       </div>
@@ -157,20 +146,20 @@ const EditProfile = (props) => {
                       </ul>
                       <div class="tab-content pt-3">
                         <div class="tab-pane active">
-                          <form class="form" novalidate="">
+                          <form class="form1" novalidate="">
                             <div class="row">
                               <div class="col">
                                 <div class="row">
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Full Name</label>
-                                      <input class="form-control" type="text" name="name" placeholder="John Smith" value="John Smith"/>
+                                      <input class="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your name' defaultValue={users.username}/>
                                     </div>
                                   </div>
                                   <div class="col">
                                     <div class="form-group">
-                                      <label>Username</label>
-                                      <input class="form-control" type="text" name="username" placeholder="johnny.s" value="johnny.s"/>
+                                      <label>Mobile</label>
+                                      <input class="form-control" type="text" name='mobile' onChange={handleInputChange} placeholder='Enter your mobile' defaultValue={users.mobile}/>
                                     </div>
                                   </div>
                                 </div>
@@ -178,7 +167,7 @@ const EditProfile = (props) => {
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Email</label>
-                                      <input class="form-control" type="text" placeholder="user@example.com"/>
+                                      <input class="form-control" type="text" name='email' onChange={handleInputChange} placeholder="Email" defaultValue={users.email}/>
                                     </div>
                                   </div>
                                 </div>
@@ -186,7 +175,7 @@ const EditProfile = (props) => {
                                   <div class="col mb-3">
                                     <div class="form-group">
                                       <label>About</label>
-                                      <textarea class="form-control" rows="5" placeholder="My Bio"></textarea>
+                                      <textarea class="form-control" rows="5" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
                                     </div>
                                   </div>
                                 </div>
@@ -195,31 +184,31 @@ const EditProfile = (props) => {
                             <div class="row">
                               <div class="col-12 col-sm-6 mb-3">
                                 <div class="mb-2"><b>Change Password</b></div>
-                                <div class="row">
+                                {/* <div class="row">
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Current Password</label>
                                       <input class="form-control" type="password" placeholder="••••••"/>
                                     </div>
                                   </div>
-                                </div>
+                                </div> */}
                                 <div class="row">
                                   <div class="col">
                                     <div class="form-group">
                                       <label>New Password</label>
-                                      <input class="form-control" type="password" placeholder="••••••"/>
+                                      <input class="form-control" type="password" placeholder="••••••" name="password" onChange={handleInputChange} defaultValue={123}/>
                                     </div>
                                   </div>
                                 </div>
-                                <div class="row">
+                                {/* <div class="row">
                                   <div class="col">
                                     <div class="form-group">
                                       <label>Confirm <span class="d-none d-xl-inline">Password</span></label>
                                       <input class="form-control" type="password" placeholder="••••••"/></div>
                                   </div>
-                                </div>
+                                </div> */}
                               </div>
-                              <div class="col-12 col-sm-5 offset-sm-1 mb-3">
+                              {/* <div class="col-12 col-sm-5 offset-sm-1 mb-3">
                                 <div class="mb-2"><b>Keeping in Touch</b></div>
                                 <div class="row">
                                   <div class="col">
@@ -240,11 +229,11 @@ const EditProfile = (props) => {
                                     </div>
                                   </div>
                                 </div>
-                              </div>
+                              </div> */}
                             </div>
                             <div class="row">
                               <div class="col d-flex justify-content-end">
-                                <button class="btn btn-primary" type="submit">Save Changes</button>
+                                <button class="btn btn-primary" type="submit" onClick={handleSubmit}>Save Changes</button>
                               </div>
                             </div>
                           </form>
@@ -254,40 +243,6 @@ const EditProfile = (props) => {
                   </div>
                 </div>
               </div>
-=======
-      <div className="container rounded bg-white mt-5">
-        <div className="row-edit">
-          <div className="col-md-4 border-right">
-            <div className="d-flex flex-column align-items-center text-center p-3 py-5"><img className="rounded-circle mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="90" alt='' /><span className="font-weight-bold">John Doe</span><span className="text-black-50">john_doe12@bbb.com</span><span>United States</span></div>
-          </div>
-          <div className="col-md-8">
-            <div className="p-3 py-5">
-              <div className="d-flex justify-content-between align-items-center mb-3">
-                <div className="d-flex flex-row align-items-center back"><i className="fa fa-long-arrow-left mr-1 mb-1"></i>
-                  <Link to="/profile">
-                    <h6>Back to profile</h6>
-                  </Link>
-                </div>
-                <h6 className="text-right">Edit Profile</h6>
-              </div>
-              <div className="row-edit mt-2">
-                <div className="col-md-6"><input type="text" className="form-control" placeholder="first name" value="John"/></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="Doe" placeholder="Doe"/></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><input type="text" className="form-control" placeholder="Email" value="john_doe12@bbb.com"/></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="+19685969668" placeholder="Phone number"/></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><input type="text" className="form-control" placeholder="address" value="D-113, right avenue block, CA,USA"/></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="USA" placeholder="Country"/></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><input type="text" className="form-control" placeholder="Bank Name" value="Bank of America"/></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="043958409584095" placeholder="Account Number"/></div>
-              </div>
-              <div className="mt-5 text-right"><button className="btn btn-primary profile-button" type="button">Save Profile</button></div>
->>>>>>> a061d77cad21bb55508ef3de147beb6b880c8349
             </div>
           </div>
         </div>

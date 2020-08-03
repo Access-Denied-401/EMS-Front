@@ -2,34 +2,11 @@
 import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
-<<<<<<< HEAD
-import { makeStyles } from '@material-ui/core/styles';
-import Button from '@material-ui/core/Button';
-import './admin-edit-user.scss';
-const useStyles = makeStyles((theme) => ({
-  container: {
-    display: 'flex',
-    flexWrap: 'wrap',
-  },
-  formControl: {
-    margin: theme.spacing(1),
-    minWidth: 200,
-  },	
-  root: {
-    maxWidth: 345,
-    display:'flex',
-    justifyContent:'center',
-    alignItems:'center',
-    flexDirection:'column',
-  },
-}));
-=======
 
 import useAjax from '../../hooks/ajaxHook';
 import './admin-edit-user.scss';
 
 
->>>>>>> a061d77cad21bb55508ef3de147beb6b880c8349
 
 function AdminEditUser (props) {
 
@@ -116,16 +93,8 @@ function AdminEditUser (props) {
           </div>
         </div>
       </div>
-<<<<<<< HEAD
-      <Link to='/administration'>
-        <Button variant="contained">
-          Back
-        </Button>
-      </Link> 
-=======
 
       
->>>>>>> a061d77cad21bb55508ef3de147beb6b880c8349
     </>
   );
 
