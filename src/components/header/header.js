@@ -11,7 +11,6 @@ import './header.scss';
 const Header = (props) => {
   return (
     <>
-
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
           <img id="logo" src="../../../assest/ems.png" alt="logo" />
@@ -24,18 +23,23 @@ const Header = (props) => {
               <li className="nav-item">
                 <Link to="/" className="nav-link">Home</Link>
               </li>
-              <Auth capability='read'>
+              <Auth capability='manage'>
                 <li className="nav-item">
                   <Link className="nav-link" to="/Administration">Administration</Link>
                 </li>
               </Auth>
-              
-              <li className="nav-item">
-                <Link className="nav-link" to="/financialmanagement">Financial Management</Link>
-              </li>
-              <li className="nav-item">
-                <Link className="nav-link" to="/profile">Profile</Link>
-              </li>
+              <Auth capability='account'>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/financialmanagement">Financial Management</Link>
+                </li>
+              </Auth>
+
+              <Auth capability='read'>
+                <li className="nav-item">
+                  <Link className="nav-link" to="/profile">Profile</Link>
+                </li>
+              </Auth>
+
               <Show condition={!props.savedUser.loggedIn}>
                 <li className="nav-item">
                   <Link className="nav-link" to="/signin">Sign In</Link>
