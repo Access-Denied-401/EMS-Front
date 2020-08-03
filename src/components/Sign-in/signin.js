@@ -1,13 +1,48 @@
 /* eslint-disable no-unused-vars */
 import React, {useState,useEffect} from 'react';
 import {connect} from 'react-redux';
+import cookie from 'react-cookies';
+
+import {Link, useHistory} from 'react-router-dom';
+import Swal from 'sweetalert2';
+
+
+
 import { userSignIn} from '../../store/actions';
 import useAjax from '../hooks/ajaxHook';
 import './signin.scss';
 
-
-
 function Signin(props) {
+  const history = useHistory();
+
+  function alertSign() {
+    const cookieToken = cookie.load('auth');
+    if(cookieToken !== 'null'){
+      Swal.fire({
+        icon:'success',
+        title: 'We got your request',
+        text: 'Successfully Signed',
+      }).then(function() {
+        history.push('/');
+      });
+    } else {
+      Swal.fire({
+        icon:'error',
+        title: 'We got your request',
+        text: 'Wrong username or password',
+      });
+    }
+  }
+
+  function alertSignUp() {
+    Swal.fire({
+      icon:'success',
+      title: 'We got your request',
+      text: 'Successfully Signed',
+    }).then(function() {
+      history.push('/');
+    });
+  }
 
   const {userSignIn} = props;
   const {userSignUp} = useAjax();
@@ -23,15 +58,27 @@ function Signin(props) {
   };
 
   const _handleSignup = (event) => {
-    if(event) event.preventDefault();
-    event.target.reset();
-    userSignUp(newUserSignUp);
+    try {
+      if(event) event.preventDefault();
+      event.target.reset();
+      userSignUp(newUserSignUp).then(res =>{
+        alertSignUp();
+      });      
+    } catch (error) {
+      alert(error.message);
+    }
   };
 
   const _handleSignin = (event) => {
-    if(event) event.preventDefault();
-    event.target.reset();
-    userSignIn(newUserSignIn);
+    try {
+      if(event) event.preventDefault();
+      event.target.reset();
+      userSignIn(newUserSignIn).then(res =>{
+        alertSign();
+      });      
+    } catch (error) {
+      alert(error.message);
+    }    
   };
 
   useEffect (() => {
@@ -71,7 +118,6 @@ function Signin(props) {
                       <div className="hr"></div>
                     </div>
                   </form>
-
                 </div>
               </div>
             </div>
@@ -85,7 +131,7 @@ function Signin(props) {
 const mapDispatchToProps = {userSignIn};
 
 const mapStateToProps = (state) => ({
-  logInReducer: state.logInReducer,
+  savedUser: state.loginReducer,
 });
 
 export default connect(mapStateToProps, mapDispatchToProps)(Signin);
