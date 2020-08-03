@@ -1,0 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Fira Sans', sans-serif;
+}
+
+.neo-button {
+    width: 40px;
+    height: 40px;
+    outline: 0 !important;
+    cursor: pointer;
+    color: #fff;
+    font-size: 15px;
+    border: none;
+    margin-right: 10px;
+    border-radius: 50%;
+    background: #dba82a;
+    // box-shadow: inset 20px 20px 60px #913ca0, inset -20px -20px 60px #c552d8
+}
+
+.num {
+    color: #eee !important
+}
+
+.line {
+    color: #fff
+}
+
+.neo-button:active {
+    border-radius: 50%;
+    background: #dba82a;
+    // box-shadow: 28px 28px 57px #933da2, -28px -28px 57px #c351d6
+}
+
+.fa-facebook {
+    color: #3b5998
+}
+
+
+.fa-linkedin {
+    color: #0077b5
+}
+
+.fa-google {
+    color: #dc4e41
+}
+
+.fa-youtube {
+    color: #cd201f
+}
+
+.fa-twitter {
+    color: #55acee
+}
+
+.profile_button {
+    color: #fff;
+    padding: 10px;
+    border: none;
+    outline: 0 !important;
+    border-radius: 50px;
+    background: #dba82a;
+    margin: 4%;
+
+}
+.container.d-flex.justify-content-center {
+    margin-top: 13%;
+    margin-bottom: 8%;
+}
+.card-Profile {
+    color: #fff;
+    width: 590px;
+    border-radius: 10px;
+    background: linear-gradient(145deg, #13303fb5, #13303fc7);
+    box-shadow: 20px 20px 60px #13303f73, -20px -20px 60px #13303f94;
+    border: none;
+}
+.F1{
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between;
+}
+.F2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+}
