@@ -67,10 +67,10 @@ function AdminEditUser (props) {
               </div>
               <br></br>
               <div className="row-edit mt-2">
-                <div className="col-md-6"><label>User Name</label></div>
+                <div className="col-md-6"><label>Full Name</label></div>
                 
                 <div className="col-md-6"> 
-                  <input type="text" className="form-control" placeholder="first name"
+                  <input type="text" className="form-control" placeholder=""
                     value=""></input></div>
               </div>
               <div className="row-edit mt-3">

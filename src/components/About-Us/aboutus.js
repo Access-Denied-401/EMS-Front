@@ -9,7 +9,7 @@ const About = (props) => {
         <div className="container-about">
           <h1 className="section-title">Our Team Section</h1>
           <div className="title-div"><h3>Introducing our superstar developer team!</h3>
-            <h4></h4>Our team draws on broad industry experience and networks to create the most powerful outcomes for our clients.</div>
+            <h4>Our team draws on broad industry experience and networks to create the most powerful outcomes for our clients.</h4></div>
           {/* <img className="img-logo" src="../../../assest/ems.png" alt="logo" /> */}
           <div className="row">
             <div className="col-md-4 col-sm-6 col-xs-12">
