@@ -77,7 +77,7 @@ const useAjax = () => {
 
   const addUser = async (user) => {
     fetch( `${API}/adduser`, {
-      method: 'post',
+      method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
       headers: {
@@ -96,9 +96,32 @@ const useAjax = () => {
     }); 
   };
 
-  const editUser = async (user) => {
-    fetch( `${API}/adminedit/${user._id}`, {
-      method: 'patch',
+  const userEditHisProfile = (users) => {
+    fetch( `${API}/usereditprofile`, {
+      method: 'PATCH',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ 
+        '_id':`${users._id}`,
+        'username':`${users.username}`,
+        'password':`${users.password}`,
+        'email': `${users.email}`,
+        'image': `${users.image}`,
+        'gender': `${users.gender}`,
+        'birthday': `${users.birthday}`,        
+        'bio': `${users.bio}`,
+      }),
+    }); 
+  };
+
+  const editUser = async (user, userId) => {
+    fetch( `${API}/adminedit/${userId}`, {
+      method: 'PATCH',
       mode: 'cors',
       cache: 'no-cache',
       headers: {
@@ -147,7 +170,7 @@ const useAjax = () => {
     }
   };
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp};
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile};
 };
 
 export default useAjax;
