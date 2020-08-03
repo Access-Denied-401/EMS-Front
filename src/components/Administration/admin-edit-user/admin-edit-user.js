@@ -97,11 +97,8 @@ function AdminEditUser (props) {
           </div>
         </div>
       </div>
-    
-      
     </>
   );
-
 }
 
 export default AdminEditUser;
