@@ -1,7 +1,9 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { Button } from 'react-bootstrap';
 import {Link} from 'react-router-dom';
+import Swal from 'sweetalert2';
 
 import useAjax from '../../hooks/ajaxHook';
 import './admin-edit-user.scss';
@@ -10,16 +12,14 @@ import './admin-edit-user.scss';
 
 function AdminEditUser (props) {
 
-  const {/**editUser */ getUsers} = useAjax();
-  const [open, setOpen] = useState(false);
-  const [name, setName] = useState('');
-  const [users, setUsers] = useState([]);
+  const userInfo = props.location.state.user;
+  const {editUser} = useAjax();
   const [selectedUser, setSelectedUser] = useState({});
 
 
   const handleInputChange = (event) => {
     if(event.target.name) setSelectedUser({...selectedUser ,[event.target.name]:event.target.value});
-    else  setSelectedUser(event.target.value);
+    // else  setSelectedUser(event.target.value);
     console.log(selectedUser);
   }; 
 
@@ -27,33 +27,20 @@ function AdminEditUser (props) {
     if(event) event.preventDefault();
     event.target.reset();
     console.log(selectedUser);
-    // editUser (event.target.value);
+    editUser(selectedUser, userInfo._id);
   };
   
-  const handleChange = (event) => {
-    setName(String(event.target.value) || '');
-  };
-  
-  const handleClickOpen = () => {
-    setOpen(true);
-  };
-  
-  const handleClose = () => {
-    setOpen(false);
-  };
-
   useEffect(()=>{
-    console.log('adminAddUser'); 
-    getUsers().then(dbUsers => setUsers(dbUsers) );
-  },[getUsers]);
+    setSelectedUser({'username':userInfo.username, 'email':userInfo.email, 'role':userInfo.role, 'position': userInfo.position});
+  },[]);
 
   return(
     <>
-      <br></br>            <br></br>            <br></br>            <br></br>
+      <br></br>            <br></br>            <br></br>
       <div className="container box rounded bg-white mt-5">
         <div className="row-edit">
           <div className="col-md-4 edit border-right">
-            <div className="d-flex flex-column align-items-center text-center p-3 py-5 edit-sec"><img className="edit-image mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="200" alt='' /> <br></br><h3 className="font-weight-bold">John Doe</h3><span className="text-black-50">john_doe12@bbb.com</span></div>
+            <div className="d-flex flex-column align-items-center text-center p-3 py-5 edit-sec"><img className="edit-image mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="200" alt='' /> <br></br><h3 className="font-weight-bold">{userInfo.username}</h3><span className="text-black-50">{userInfo.email}</span></div>
           </div>
           <div className="col-md-8 edit">
             <div className="p-3 py-5">
@@ -66,33 +53,30 @@ function AdminEditUser (props) {
                 {/* <h6 className="text-right">Edit Profile</h6> */}
               </div>
               <br></br>
-              <div className="row-edit mt-2">
-                <div className="col-md-6"><label>Full Name</label></div>
+
+              <form className='adminEdit' onSubmit={handleSubmit}>
                 
-                <div className="col-md-6"> 
-                  <input type="text" className="form-control" placeholder=""
-                    value=""></input></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><label> E-mail</label></div>
-                <div className="col-md-6"><input type="text" className="form-control"  value="" placeholder=""/></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><label>Role</label></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="" placeholder=""/></div>
-              </div>
-              <div className="row-edit mt-3">
-                <div className="col-md-6"><label>Position </label></div>
-                <div className="col-md-6"><input type="text" className="form-control" value="" placeholder=""/></div>
-              </div>
-              <div className="mt-5 text-right">
-                <Link to='/administration'>
-                  <Button className="admin-edit-btn" variant="warning">
+                <div className="row-edit mt-3">
+                  <div className="col-md-6"><label> E-mail</label></div>
+                  <div className="col-md-6"><input type="text" className="form-control" name='email' defaultValue={selectedUser.email} onChange={handleInputChange}/></div>
+                </div>
+                <div className="row-edit mt-3">
+                  <div className="col-md-6"><label>Role</label></div>
+                  <div className="col-md-6"><input type="text" className="form-control" name='role' defaultValue={selectedUser.role} onChange={handleInputChange}/></div>
+                </div>
+                <div className="row-edit mt-3">
+                  <div className="col-md-6"><label>Position </label></div>
+                  <div className="col-md-6"><input type="text" className="form-control" name='position' defaultValue={selectedUser.position} onChange={handleInputChange}/></div>
+                </div>
+                <div className="mt-5 text-right">
+                  <Link to='/administration'>
+                    <Button className="admin-edit-btn" variant="warning">
                           Back
-                  </Button>
-                </Link>
-                <Button variant="warning" className="btn-edit" type="button">Save Profile</Button>
-              </div>
+                    </Button>
+                  </Link>
+                  <Button variant="warning" className="btn-edit" type="submit">Save Profile</Button>
+                </div>
+              </form>
             </div>
           </div>
         </div>
@@ -100,5 +84,7 @@ function AdminEditUser (props) {
     </>
   );
 }
+
+
 
 export default AdminEditUser;

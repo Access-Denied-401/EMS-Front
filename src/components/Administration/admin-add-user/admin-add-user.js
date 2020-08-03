@@ -1,10 +1,9 @@
 /* eslint-disable no-unused-vars */
-import React, {useState, useEffect} from 'react';
-import {connect} from 'react-redux';
+/* eslint-disable react-hooks/exhaustive-deps */
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
 
-import {userSignIn} from '../../../store/actions';
 import useAjax from '../../hooks/ajaxHook';
 import './admin-add-user.scss';
 
@@ -22,11 +21,6 @@ function AdminAddUser(props) {
     console.log(addUser);
     addUser(newUser);
   }
-
-  useEffect(()=> {
-    console.log('acceptUser');
-    props.userSignIn();
-  },[props]);
 
   return (
     <>
@@ -65,7 +59,5 @@ function AdminAddUser(props) {
   );
 }
 
-const mapDisPatchToprops = {userSignIn};
 
-
-export default connect(null, mapDisPatchToprops) (AdminAddUser);
+export default AdminAddUser;
