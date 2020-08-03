@@ -1,3 +1,11 @@
+@media (max-width: 767px) {
+    .JqueryPart {
+        width: 223%;
+        margin-top: 36%;
+        margin-left: 29%;
+    }
+}
+@media (min-width: 768px) {
 .card-vacation {
     position: relative;
     display: flex;
@@ -58,3 +66,8 @@ button.alret-button.btn.btn-primary:hover {
     margin-left: 81%;
     width: 150%;
 }
+.card-body.contact.text-center.h-100.white-text {
+    color: #79acc3e3;
+}
+}
+

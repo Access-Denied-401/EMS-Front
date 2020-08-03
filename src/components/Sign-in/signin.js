@@ -98,10 +98,10 @@ function Signin(props) {
                     <div className="login">
                       <div className="group"> <label htmlFor="user" className="label">User Name</label> <input onChange={_changeSignInInput} name='username' id="user" type="text" className="input" placeholder="Enter your email"/> </div>
                       <div className="group"> <label htmlFor="pass" className="label">Password</label> <input onChange={_changeSignInInput} name='password' id="pass" type="password" className="input" data-type="password" placeholder="Enter your password"/> </div>
-                      <div className="group"> <input id="check" type="checkbox" className="check"/> <label htmlFor="check"><span className="icon"></span> Keep me Signed in</label> </div>
+                      <div className="group"> <input id="check" type="checkbox" className="check"/> <label className="keep-me" htmlFor="check"><span className="icon"></span> Keep me Signed in</label> </div>
                       <div className="group"> <input type="submit" className="button" value="Sign In"/> </div>
                       <div className="hr"></div>
-                      <div className="foot"> <a href="/">Forgot Password?</a> </div>
+                      <div className="foot"> <a className="forget" href="/">Forgot Password?</a> </div>
                     </div>
                   </form>
 
