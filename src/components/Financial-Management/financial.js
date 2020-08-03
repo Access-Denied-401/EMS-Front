@@ -101,7 +101,7 @@ const FinancialManagement = (props) => {
                 <div className="col"> Net Salary </div>
               </div>
             </div>
-            <div className="back-to-shop"> <Link lasName="text-muted" to="#">&#8592;</Link>
+            <div className="back-to-shop"> <Link clasName="text-muted" to="#">&#8592;</Link>
             </div>
           </div>
           <div className="col-md-4-finincial summary">
