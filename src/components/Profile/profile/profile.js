@@ -15,7 +15,9 @@ const Profile = (props) => {
   useEffect (() => {
     console.log('userProfile');
     userSignIn();
-    getUserProfile().then(dbUsers => setUsers(dbUsers) );
+    getUserProfile().then(dbUsers =>{ 
+      setUsers(dbUsers);
+    });
   },[userSignIn, getUserProfile]);
   return (
     <>
@@ -70,7 +72,7 @@ const Profile = (props) => {
 };
 
 
-const mapDispatchToProps = { userSignIn};
+const mapDispatchToProps = {userSignIn};
 
 const mapStateToProps = (state) => ({
   logInReducer: state.logInReducer,
