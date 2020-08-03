@@ -20,16 +20,14 @@ function Signin(props) {
     if(cookieToken !== 'null'){
       Swal.fire({
         icon:'success',
-        title: 'We got your request',
-        text: 'Successfully Signed',
+        title: 'Successfully Signed in',
       }).then(function() {
         history.push('/');
       });
     } else {
       Swal.fire({
         icon:'error',
-        title: 'We got your request',
-        text: 'Wrong username or password',
+        title: 'Wrong username or password',
       });
     }
   }
@@ -37,8 +35,8 @@ function Signin(props) {
   function alertSignUp() {
     Swal.fire({
       icon:'success',
-      title: 'We got your request',
-      text: 'Successfully Signed',
+      title: 'Sign up Application',
+      text: 'An E-mail will be sent to you once you are accepted',
     }).then(function() {
       history.push('/');
     });
