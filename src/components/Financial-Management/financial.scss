@@ -1,9 +1,30 @@
+@media(max-width:767px) {
+    .col-md-4-finincial {
+        
+            flex: 0 0 100.333333%;
+            max-width: 114.333333%;
+        
+
+}
+ }
+    .summary {
+        border-top-right-radius: unset;
+        border-bottom-left-radius: 1rem;
+    }
+    .cardFinancial {
+        margin: 3vh auto ;
+        margin-top: 193px;
+    }
+    .cart {
+        padding: 4vh;
+        border-bottom-left-radius: unset;
+        border-top-right-radius: 1rem
+    }
+
 .title {
     margin-bottom: 5vh
 }
-
 .cardFinancial {
-   
     margin: 10% auto;
     margin-bottom: 6%;
     max-width: 950px;
@@ -11,30 +32,12 @@
     box-shadow: 0 6px 20px 0 rgba(0, 0, 0, 0.19);
     border-radius: 1rem;
     border: transparent;
-   
 }
-
-
-@media(max-width:767px) {
-    .cardFinancial {
-        margin: 3vh auto ;
-        margin-top: 193px;
-    }
-}
-
 .cart {
     background-color: #fff;
     padding: 4vh 5vh;
     border-bottom-left-radius: 1rem;
     border-top-left-radius: 1rem
-}
-
-@media(max-width:767px) {
-    .cart {
-        padding: 4vh;
-        border-bottom-left-radius: unset;
-        border-top-right-radius: 1rem
-    }
 }
 
 .summary {
@@ -47,73 +50,50 @@
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Fira Sans', sans-serif;
-
-}
-
-
-@media(max-width:767px) {
-    .summary {
-        border-top-right-radius: unset;
-        border-bottom-left-radius: 1rem
-    }
-}
-
-.summary .col-2 {
+} 
+.summary .col-2max {
     padding: 0
 }
-
 .summary .col-10 {
     padding: 0
 }
-
 // .row {
 //     margin: 0
 // }
-
 .title b {
     font-size: 1.5rem
 }
-
 .main {
     margin: 0;
     padding: 2vh 0;
     width: 100%
 }
-
 .col-2,
 .col {
     padding: 0 1vh
 }
-
 a {
     padding: 0 1vh
 }
-
 .close {
     margin-left: auto;
     font-size: 0.7rem
 }
-
 img {
     width: 3.5rem
 }
-
 .back-to-shop {
     margin-top: 4.5rem
 }
-
 h5 {
     margin-top: 4vh
 }
-
 hr {
     margin-top: 1.25rem
 }
-
 form {
     padding: 2vh 0
 }
-
 select {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1.5vh 1vh;
@@ -122,7 +102,6 @@ select {
     width: 100%;
     background-color: rgb(247, 247, 247)
 }
-
 input {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
@@ -131,11 +110,9 @@ input {
     width: 100%;
     background-color: rgb(247, 247, 247)
 }
-
 input:focus::-webkit-input-placeholder {
     color: transparent
 }
-
 .btn-financial {
     background-color: #d99e15;
     border-color: #d99e1530;
@@ -148,7 +125,6 @@ input:focus::-webkit-input-placeholder {
     width: 39%;
     margin-left: 33%;
 }
-
 .btn-financial:focus {
     box-shadow: none;
     outline: none;
@@ -158,20 +134,16 @@ input:focus::-webkit-input-placeholder {
     -webkit-user-select: none;
     transition: none
 }
-
 .btn-financial:hover {
     color: white
 }
-
 a {
     color: black
 }
-
 a:hover {
     color: black;
     text-decoration: none
 }
-
 #code {
     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
     background-repeat: no-repeat;
@@ -183,18 +155,22 @@ a:hover {
      padding: 2vh 0;
 }
 .colcol{padding-left:0;}
-
 .main{
     height: auto;
 }
-
-
  .f-input  {
-        
         font-family: 'Quicksand', sans-serif;
     }
 .rowFinanc{
     margin: 0;
     display: flex;
     flex-wrap: wrap;
+}
+
+@media (min-width: 768px) {
+
+.col-md-4-finincial {
+    flex: 0 0 39.333333%;
+    max-width: 33.333333%;
+}
 }

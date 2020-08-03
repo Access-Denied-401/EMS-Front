@@ -104,7 +104,7 @@ const FinancialManagement = (props) => {
             <div className="back-to-shop"> <Link lasName="text-muted" to="#">&#8592;</Link>
             </div>
           </div>
-          <div className="col-md-4 summary">
+          <div className="col-md-4-finincial summary">
             <div>
               <h5><b>Salary Slip</b></h5>
             </div>
