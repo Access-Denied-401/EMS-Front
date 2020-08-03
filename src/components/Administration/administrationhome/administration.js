@@ -60,11 +60,11 @@ const AdministrationHome = (props) => {
       <div className="admin-home-search-div">
         <input className="admin-home-search" placeholder='Search Bar' onChange= {handleChange} />
       </div>
-      <Link to='/administration/edituser'>
+      {/* <Link to='/administration/edituser'>
         <Button className="admin-home" variant="warning">
           Edit User Profile
         </Button>
-      </Link>
+      </Link> */}
      
       <Link to='/administration/adduser'>
         <Button className="admin-home" variant="warning">
@@ -86,13 +86,13 @@ const AdministrationHome = (props) => {
               <th> <span className="ml-2"></span> E-mail </th>
               <th> <span className="ml-2"></span> Position </th>
               <th> <span className="ml-2">Role</span> </th>
-              <th> <span className="ml-2">Action</span> </th>
+              <th> <span className="ml-2">Edit</span> </th>
             </tr>
           </thead>
           <tbody>
             {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
-                <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold" value={value}>
+                <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold admin-list" value={value}>
                   {value.username} 
                 </li></span></div> </div>
               </td>
@@ -109,9 +109,10 @@ const AdministrationHome = (props) => {
               </td>
               <td>
                 <Link to='/administration/edituser'>
-                  <Button variant="warning">
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  {/* <Button variant="warning">
           Edit User Profile
-                  </Button>
+                  </Button> */}
                 </Link>
               </td>
             </tr>, 
