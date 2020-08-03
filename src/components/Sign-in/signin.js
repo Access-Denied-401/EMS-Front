@@ -79,11 +79,6 @@ function Signin(props) {
     }    
   };
 
-  useEffect (() => {
-    console.log('signIn');
-    userSignIn();
-  },[userSignIn]);
-
   return (
     <>
       <div className="row">

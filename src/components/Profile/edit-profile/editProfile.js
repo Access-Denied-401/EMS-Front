@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import './editProfile.scss';
 import {connect} from 'react-redux';
 import useAjax from '../../hooks/ajaxHook';
-import {userSignIn} from '../../../store/actions';
 import {storage} from '../../../firebase/';
 
 
@@ -40,17 +41,13 @@ const EditProfile = (props) => {
   const handleSubmit = (event) => {
     if(event) event.preventDefault();
     // event.target.reset();
-    console.log(users);
-    console.log(users,'event.target.value');
     userEditHisProfile(users);
   };
   useEffect (() => {
-    userSignIn();
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers); 
     });
-  },[getUserProfile]);
-  console.log(props);
+  },[]);
   return (
     <>
       <div className="container containerdiv">
@@ -210,11 +207,9 @@ const EditProfile = (props) => {
   );
 };
 
-const mapDispatchToProps = {userSignIn};
-
 const mapStateToProps = (state) => ({
   savedUser: state.loginReducer,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);
+export default connect(mapStateToProps, null)(EditProfile);
 
