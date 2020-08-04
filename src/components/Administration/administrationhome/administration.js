@@ -48,12 +48,8 @@ const AdministrationHome = (props) => {
     <>
       <h1 className='administrationHome'>Administration</h1>
       
-      <div className="d-flex justify-content-center h-100">
-        <div className="searchbar">
-          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
-          <a href="!#" className="search_icon"><i className="fas fa-search"></i></a>
-        </div>
-      </div>
+      
+      
 
       <Link to='/administration/adduser'>
         <Button className="admin-home" variant="warning">
@@ -66,6 +62,13 @@ const AdministrationHome = (props) => {
           Accept Users
         </Button>
       </Link>
+
+      <div className="d-flex justify-content-center h-100">
+        <div className="searchbar">
+          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
+          <a href className="search_icon"><i className="fas fa-search"></i></a>
+        </div>
+      </div>
 
       <div className="container mt-5 box table-admin">
         <Table responsive >
