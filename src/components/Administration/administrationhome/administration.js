@@ -79,13 +79,13 @@ const AdministrationHome = (props) => {
               <th> <span className="ml-2"></span> E-mail </th>
               <th> <span className="ml-2"></span> Position </th>
               <th> <span className="ml-2">Role</span> </th>
-              <th> <span className="ml-2">Action</span> </th>
+              <th> <span className="ml-2">Edit</span> </th>
             </tr>
           </thead>
           <tbody>
             {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
-                <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold" value={value}>
+                <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold admin-list" value={value}>
                   {value.username} 
                 </li></span></div> </div>
               </td>
@@ -107,9 +107,7 @@ const AdministrationHome = (props) => {
                     user: value,
                   },
                 }}>
-                  <Button variant="warning">
-          Edit User Profile
-                  </Button>
+                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
               </td>
             </tr>, 
