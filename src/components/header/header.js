@@ -14,44 +14,44 @@ const Header = (props) => {
       <nav className="navbar navbar-expand-lg navbar-light bg-light shadow fixed-top">
         <div className="container">
           <img id="logo" src="../../../assest/ems.png" alt="logo" />
-          <a className="navbar-brand brand" href="/">EMS</a>
+          <a className="navbar-brand brand ems" href="/">EMS</a>
           <button className="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
             <span className="navbar-toggler-icon"></span>
           </button>
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className="nav-link">Home</Link>
+                <Link to="/" className=" btnAll-r btn-5-r aar">Home</Link>
               </li>
               <Auth capability='manage'>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/Administration">Administration</Link>
+                  <Link className=" btnAll-r btn-5-r aar" to="/Administration">Administration</Link>
                 </li>
               </Auth>
               <Auth capability='account'>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/financialmanagement">Financial Management</Link>
+                  <Link className=" btnAll-r btn-5-r aar" to="/financialmanagement">Financials</Link>
                 </li>
               </Auth>
 
               <Auth capability='read'>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/profile">Profile</Link>
+                  <Link className=" btnAll-r btn-5-r aar" to="/profile">Profile</Link>
                 </li>
               </Auth>
 
               <Show condition={!props.savedUser.loggedIn}>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/signin">Sign In</Link>
+                  <Link className=" btnAll-r btn-5-r aar" to="/signin">Sign In</Link>
                 </li>
               </Show>
               <Show condition={props.savedUser.loggedIn}>
                 <li className="nav-item">
-                  <Link className="nav-link" to="/" onClick={props.userSignOut}>Sign Out</Link>
+                  <Link className=" btnAll-r btn-5-r aar" to="/" onClick={props.userSignOut}>Sign Out</Link>
                 </li>
               </Show>
               <li className="nav-item">
-                <Link className="nav-link" to="/about-us">About Us</Link>
+                <Link className=" btnAll-r btn-5-r aar" to="/about-us">About Us</Link>
               </li>
             </ul>
           </div>
