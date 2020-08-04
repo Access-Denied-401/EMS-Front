@@ -124,25 +124,25 @@ $white: #fff;
 
 //base styles
 
-* {
-  box-sizing: inherit;
-  transition-property: all;
-  transition-duration: .6s;
-  transition-timing-function: ease;
-}
+// * {
+//   box-sizing: inherit;
+//   transition-property: all;
+//   transition-duration: .6s;
+//   transition-timing-function: ease;
+// }
 
-html,
-body {
-  box-sizing: border-box;
-  height: 100%;
-  width: 100%;
-}
+// html,
+// body {
+//   box-sizing: border-box;
+//   height: 100%;
+//   width: 100%;
+// }
 
-body {
-  background: $red;
-  font-family: 'Roboto', sans-serif;
-  font-weight: 400;
-}
+// body {
+//   background: $red;
+//   font-family: 'Roboto', sans-serif;
+//   font-weight: 400;
+// }
 
 // Main wrap
 .buttons {
@@ -155,59 +155,59 @@ body {
 }
 
 // Button wrap
-.container { 
-    align-items: center;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    padding: 1em;
-    text-align: center; 
+// .container { 
+//     align-items: center;
+//     display: flex;
+//     flex-direction: column;
+//     justify-content: center;
+//     padding: 1em;
+//     text-align: center; 
     
-    @media (min-width: 600px) {
-        flex-direction: row;
-        justify-content: space-between;
-    }
-}
+//     @media (min-width: 600px) {
+//         flex-direction: row;
+//         justify-content: space-between;
+//     }
+// }
 
-h1 {
-  color: $white;
-  font-size: 1.25em;
-  font-weight: 900;
-  margin: 0 0 2em;
+// h1 {
+//   color: $white;
+//   font-size: 1.25em;
+//   font-weight: 900;
+//   margin: 0 0 2em;
   
-  @media (min-width: 450px) {
-    font-size: 1.75em;
-  }
+//   @media (min-width: 450px) {
+//     font-size: 1.75em;
+//   }
   
-  @media (min-width: 760px) {
-    font-size: 3.25em;
-  }
+//   @media (min-width: 760px) {
+//     font-size: 3.25em;
+//   }
   
-  @media (min-width: 900px) {
-    font-size: 5.25em;
-    margin: 0 0 1em;
-  }
-}
+//   @media (min-width: 900px) {
+//     font-size: 5.25em;
+//     margin: 0 0 1em;
+//   }
+// }
 
-p {
-  color: $white;
-  font-size: 12px;
+// p {
+//   color: $white;
+//   font-size: 12px;
   
-  @media(min-width: 600px) {
-    left: 50%;
-    position: absolute; 
-    transform: translate(-50%, 0);
-    top: 90%;
-  }
+//   @media(min-width: 600px) {
+//     left: 50%;
+//     position: absolute; 
+//     transform: translate(-50%, 0);
+//     top: 90%;
+//   }
   
-  @media(max-height: 500px) {
-    left: 0;
-    position: relative;
-    top: 0;
-    transform: translate(0, 0);
-  }
+  // @media(max-height: 500px) {
+  //   left: 0;
+  //   position: relative;
+  //   top: 0;
+  //   transform: translate(0, 0);
+  // }
   
-  a {
+  aa {
     background: rgba($white, 0);
     border-bottom: 1px solid;
     color: $white;
@@ -220,7 +220,7 @@ p {
       color: $red;
     }
   }
-}
+// }
 //button styles
 
 
