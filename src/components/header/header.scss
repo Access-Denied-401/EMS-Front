@@ -1,11 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 @media (max-width: 767px) {
-    body {
-        background: #f8f9fa;
-        width: 100%;
-        padding-right: 0; 
-        padding-left: 0;
-    }
+    // body {
+    //     background: #f8f9fa;
+    //     width: 100%;
+    //     padding-right: 0; 
+    //     padding-left: 0;
+    // }
     #logo {
         width: 31px;
         margin-left: -72%;
@@ -23,11 +23,11 @@
     }
   }
 @media (min-width: 768px) {
-  h1 {
-    font-size: 2.5rem;
-    color: #746c69;
-    font-family: 'Fira Sans', sans-serif;
-}
+//   h1 {
+//     font-size: 2.5rem;
+//     color: #746c69;
+//     font-family: 'Fira Sans', sans-serif;
+// }
 .navbar-light .navbar-nav .nav-link {
     color: rgba(0,0,0,.5);
     font-family: 'Fira Sans', sans-serif;

@@ -151,6 +151,32 @@ const useAjax = () => {
     return data;
   };
 
+    const userStartWork = async () => {
+    const response = await fetch(`${API}/userstart`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
+    const userEndWork = async () => {
+    const response = await fetch(`${API}/userend`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
   const userSignUp = async (user) => {
     try {
       await fetch( `${API}/signup`, {
@@ -171,7 +197,7 @@ const useAjax = () => {
     }
   };
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile};
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile,userStartWork,userEndWork};
 };
 
 export default useAjax;
