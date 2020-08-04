@@ -14,6 +14,21 @@ import './signin.scss';
 
 function Signin(props) {
   const history = useHistory();
+  let URL = 'https://www.linkedin.com/oauth/v2/authorization';
+
+  let options = {
+    response_type:'code',
+    client_id:'77wcte95rcnlli',
+    redirect_uri:'https://ems-access-denied.herokuapp.com/oauth',
+    scope:'r_emailaddress r_liteprofile',
+  };
+
+  let QueryString = Object.keys(options).map((key) => {
+    return `${key}=` + encodeURIComponent(options[key]);
+  }).join('&');
+
+  let authURL = `${URL}?${QueryString}`;
+
 
   function alertSign() {
     const cookieToken = cookie.load('auth');
@@ -91,10 +106,10 @@ function Signin(props) {
                     <div className="login">
                       <div className="group"> <label htmlFor="user" className="label">User Name</label> <input onChange={_changeSignInInput} name='username' id="user" type="text" className="input" placeholder="Enter your email"/> </div>
                       <div className="group"> <label htmlFor="pass" className="label">Password</label> <input onChange={_changeSignInInput} name='password' id="pass" type="password" className="input" data-type="password" placeholder="Enter your password"/> </div>
-                      <div className="group"> <input id="check" type="checkbox" className="check"/> <label className="keep-me" htmlFor="check"><span className="icon"></span> Keep me Signed in</label> </div>
+                      {/* <div className="group"> <input id="check" type="checkbox" className="check"/> <label className="keep-me" htmlFor="check"><span className="icon"></span> Keep me Signed in</label> </div> */}
                       <div className="group"> <input type="submit" className="button" value="Sign In"/> </div>
                       <div className="hr"></div>
-                      <div className="foot"> <a className="forget" href="/">Forgot Password?</a> </div>
+                      <div className="foot"> <a className="forget" id="oauth" href={authURL}>Sign up with Linked&nbsp;<i class="fab fa-linkedin"></i></a> </div>
                     </div>
                   </form>
 
@@ -107,6 +122,7 @@ function Signin(props) {
                       {/* <div className="group"> <label htmlFor="pass" className="label">Repeat Password</label> <input id="pass" type="password" className="input" data-type="password" placeholder="Repeat your password"/> </div> */}
                       <div className="group"> <button className="button" value="Sign Up">SIGN UP</button> </div>
                       <div className="hr"></div>
+                      <div className="foot"> <a className="forget" id="oauth" href={authURL}>Sign up with Linked&nbsp;<i class="fab fa-linkedin"></i></a> </div>
                     </div>
                   </form>
                 </div>

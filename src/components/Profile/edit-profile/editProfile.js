@@ -5,12 +5,13 @@ import './editProfile.scss';
 import {connect} from 'react-redux';
 import useAjax from '../../hooks/ajaxHook';
 import {storage} from '../../../firebase/';
-
+import Swal from 'sweetalert2';
+import { useHistory} from 'react-router-dom';
 
 const EditProfile = (props) => {
   const [users, setUsers] = useState({});
   const {getUserProfile, userEditHisProfile} = useAjax();
-
+  const history = useHistory();
 
   const handleImageChange = (event) => {
     if(event.target.files[0]){
@@ -29,7 +30,15 @@ const EditProfile = (props) => {
     }
   };
 
-
+  function alertEditProfile() {
+    Swal.fire({
+      icon:'success',
+      title: 'Sign up Application',
+      text: 'An E-mail will be sent to you once you are accepted',
+    }).then(function() {
+      history.push('/profile/EditProfile');
+    });
+  }
   
   const handleInputChange = (event) => {
     
@@ -41,19 +50,25 @@ const EditProfile = (props) => {
   const handleSubmit = (event) => {
     if(event) event.preventDefault();
     // event.target.reset();
+    console.log(users);
+    console.log(users,'event.target.value');
     userEditHisProfile(users);
+    alertEditProfile();
+
   };
   useEffect (() => {
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers); 
     });
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
+  console.log(props);
   return (
     <>
       <div className="container containerdiv">
         <div className="row flex-lg-nowrap">
-          <div className="col-12 col-lg-auto mb-3 F1Div">
-            <div className="card p-3">
+          {/* <div className="col-12 col-lg-auto mb-3 F1Div">
+            <div className="card p-3 smallCardDiv" >
               <div className="e-navlist e-navlist--active-bg">
                 <ul className="nav">
                   <li className="nav-item"><a className="nav-link px-2 active" href="./"><i className="fa fa-fw fa-bar-chart mr-1"></i><span>Profile</span></a></li>
@@ -62,13 +77,13 @@ const EditProfile = (props) => {
                 </ul>
               </div>
             </div>
-          </div>
+          </div> */}
 
           <div className="col">
             <div className="row">
               <div className="col mb-3">
-                <div className="card">
-                  <div className="card-body">
+                <div className="card cardBorder">
+                  <div className="card-body ">
                     <div className="e-profile">
                       <div className="row">
                         <div className="col-12 col-sm-auto mb-3">
@@ -84,11 +99,11 @@ const EditProfile = (props) => {
                             <p className="mb-0">@{users.username}</p>
                             <div className="text-muted"><small>Last seen 2 hours ago</small></div>
                             <div className="mt-2">
-                              <button className="btn btn-primary" type="button">
-                                <input type="file"  onChange = {handleImageChange} />
+                              <button className="btn btn-primary buttonR" type="button">
+                                <input type="file" className="inputImage" onChange = {handleImageChange} size="60" />
                                 <i className="fa fa-fw fa-camera"></i>
                                 <span>Change Photo</span>
-                              </button>
+                              </button>                          
                             </div>
                           </div>
                           <div className="text-center text-sm-right">
@@ -131,7 +146,7 @@ const EditProfile = (props) => {
                                   <div className="col mb-3">
                                     <div className="form-group">
                                       <label>About</label>
-                                      <textarea className="form-control" rows="5" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
+                                      <textarea className="form-control" rows="3" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
                                     </div>
                                   </div>
                                 </div>
@@ -152,7 +167,7 @@ const EditProfile = (props) => {
                                   <div className="col">
                                     <div className="form-group">
                                       <label>New Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••" name="password" onChange={handleInputChange} defaultValue={123}/>
+                                      <input className="form-control" type="password" placeholder="••••••••••••" name="password" onChange={handleInputChange} />
                                     </div>
                                   </div>
                                 </div>
@@ -187,9 +202,9 @@ const EditProfile = (props) => {
                                 </div>
                               </div> */}
                             </div>
-                            <div className="row">
+                            <div className="row buttonRelative">
                               <div className="col d-flex justify-content-end">
-                                <button className="btn btn-primary" type="submit" onClick={handleSubmit}>Save Changes</button>
+                                <button className="btn btn-primary buttonEP" type="submit" onClick={handleSubmit}>Save Changes</button>
                               </div>
                             </div>
                           </form>
