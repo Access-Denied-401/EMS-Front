@@ -39,6 +39,7 @@ const useAjax = () => {
 
 
   const acceptUser = async (user) =>{
+    console.log(user);
     let myUser = { 
       '_id':`${user._id}`,
       'username': `${user.username}`,
