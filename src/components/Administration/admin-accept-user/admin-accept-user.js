@@ -3,15 +3,22 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { Button } from 'react-bootstrap';
-
 import useAjax from '../../hooks/ajaxHook';
 import './admin-accept-user.scss';
+import Paginate from '../../paginate/paginate';
 
 
 function AdminAcceptUser (props) {
   
   let [users, setUsers] = useState([]);
   const {getTempUsers, acceptUser, rejectUser} = useAjax();
+  
+  const itemsPerPage = 5;
+  const [currentPage,setCurrentPage] = useState(1);
+  const indexOfLastPost = currentPage * itemsPerPage;
+  const indexOfFirstPage = indexOfLastPost - itemsPerPage;
+  const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
+  
   
 
   useEffect(()=> {
@@ -77,10 +84,30 @@ function AdminAcceptUser (props) {
             </tbody> 
           </div>
         </table>
+        <nav aria-label="Page navigation example">
+          <ul class="pagination pagination-accept">
+            <li class="page-item">
+              <a class="page-link" href="!#" aria-label="Previous">
+                <span aria-hidden="true">&laquo;</span>
+                <span class="sr-only">Previous</span>
+              </a>
+            </li>
+            <Paginate setCurrentPage={setCurrentPage} users={users} itemsPerPage={itemsPerPage} />
+            <li class="page-item">
+              <a class="page-link" href="!#" aria-label="Next">
+                <span aria-hidden="true">&raquo;</span>
+                <span class="sr-only">Next</span>
+              </a>
+            </li>
+          </ul>
+        </nav>
         <Link className="we-accept" to='/administration'>
           <Button className=" we-accept-btn">Back</Button>
         </Link>
       </div>
+
+
+
     </>
   );
 }

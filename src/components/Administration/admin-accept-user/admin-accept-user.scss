@@ -59,6 +59,7 @@
   background-color: #f7be16;
   border-color: #f7be16;
   margin: 1%;
+  margin-left: 0%;
   border-radius: 25px;
 }
 .fa-check {
@@ -69,4 +70,26 @@
 
 .text-danger{
   cursor: pointer;
+}
+
+// pagenation
+.ul-paginate {
+  display: inline-flex;
+}
+.li-paginate {
+  border-top-right-radius: .25rem;
+  border-bottom-right-radius: .25rem;
+  position: relative;
+  display: block;
+  padding: .5rem .75rem;
+  margin-left: -1px;
+  line-height: 1.30;
+  color: #007bff;
+  background-color: #fff;
+  cursor: pointer;
+  border: 1px solid #dee2e6;
+
+}
+ul.pagination.pagination-accept {
+  margin-left: 0%;
 }

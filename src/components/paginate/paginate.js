@@ -13,10 +13,10 @@ function Paginate(props) {
 
   return (
     <nav>
-      <ul>
+      <ul className="ul-paginate">
         {pageNumbers.map((number) => {
           return (
-            <li key={number}>
+            <li className="li-paginate" key={number}>
               <a href onClick = {() => { props.setCurrentPage(number);}}>{number}</a>
             </li>
           );
