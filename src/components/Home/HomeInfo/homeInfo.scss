@@ -20,6 +20,9 @@
     .row.justify-content-center {
         background-color: #f8f9fa;
     }
+    img.right-img.box.res-width.right-i.aos-init.aos-animate {
+        margin-top: 10%;
+    }
  
 
 }
@@ -40,7 +43,7 @@
 }
 p.left-p {
     margin-left: 8%;
-    margin-top: 5%;
+    margin-top: 6%;
     background-color: white;
     padding: 2%;
     float: left;
@@ -52,13 +55,13 @@ img.right-i {
 }
 img.left-i {
     margin-left: 4%;
-    margin-top: 3%;
+    margin-top: 0%;
     float:left;
 }
 
 p.right-p {
     margin-left: 4%;
-    margin-top: 4%;
+    margin-top: 8%;
     background-color: white;
     padding: 2%;
 
@@ -85,7 +88,7 @@ p.left-p:hover {
     border-radius: 5px;
   }
 .sec-div {
-    margin-top: 8%;
+    margin-top: 12%;
 }
 
 }

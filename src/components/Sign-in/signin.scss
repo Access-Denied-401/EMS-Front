@@ -227,6 +227,11 @@ label.keep-me {
     color: #fff;
     border-color: #f2bd14;
 }
-.group.sign-btn {
+.group.signup-btn {
     margin-top: 9%;
+}
+.login-space .group .input, .login-space .group.signup-btn {
+    border: none;
+    padding: 8px 20px;
+    border-radius: 25px;
 }

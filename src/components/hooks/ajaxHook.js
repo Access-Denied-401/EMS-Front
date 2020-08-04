@@ -115,6 +115,7 @@ const useAjax = () => {
         'gender': `${users.gender}`,
         'birthday': `${users.birthday}`,        
         'bio': `${users.bio}`,
+        'mobile': `${users.mobile}`,
       }),
     }); 
   };

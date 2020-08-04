@@ -21,37 +21,37 @@ const Header = (props) => {
           <div className="collapse navbar-collapse" id="navbarResponsive">
             <ul className="navbar-nav">
               <li className="nav-item">
-                <Link to="/" className=" btnAll-r btn-5-r aar">Home</Link>
+                <Link to="/" className=" btnAll-r btn-1-r aar">Home</Link>
               </li>
               <Auth capability='manage'>
                 <li className="nav-item">
-                  <Link className=" btnAll-r btn-5-r aar" to="/Administration">Administration</Link>
+                  <Link className=" btnAll-r btn-1-r aar" to="/Administration">Administration</Link>
                 </li>
               </Auth>
               <Auth capability='account'>
                 <li className="nav-item">
-                  <Link className=" btnAll-r btn-5-r aar" to="/financialmanagement">Financials</Link>
+                  <Link className=" btnAll-r btn-1-r aar" to="/financialmanagement">Financial Management</Link>
                 </li>
               </Auth>
 
               <Auth capability='read'>
                 <li className="nav-item">
-                  <Link className=" btnAll-r btn-5-r aar" to="/profile">Profile</Link>
+                  <Link className=" btnAll-r btn-1-r aar" to="/profile">Profile</Link>
                 </li>
               </Auth>
 
               <Show condition={!props.savedUser.loggedIn}>
                 <li className="nav-item">
-                  <Link className=" btnAll-r btn-5-r aar" to="/signin">Sign In</Link>
+                  <Link className=" btnAll-r btn-1-r aar" to="/signin">Sign In</Link>
                 </li>
               </Show>
               <Show condition={props.savedUser.loggedIn}>
                 <li className="nav-item">
-                  <Link className=" btnAll-r btn-5-r aar" to="/" onClick={props.userSignOut}>Sign Out</Link>
+                  <Link className=" btnAll-r btn-1-r aar" to="/" onClick={props.userSignOut}>Sign Out</Link>
                 </li>
               </Show>
               <li className="nav-item">
-                <Link className=" btnAll-r btn-5-r aar" to="/about-us">About Us</Link>
+                <Link className=" btnAll-r btn-1-r aar" to="/about-us">About Us</Link>
               </li>
             </ul>
           </div>
