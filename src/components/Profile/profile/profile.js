@@ -2,9 +2,7 @@
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-import {connect} from 'react-redux';
 import useAjax from '../../hooks/ajaxHook';
-import {userSignIn} from '../../../store/actions';
 import Swal from 'sweetalert2';
 import { useHistory} from 'react-router-dom';
 import './profile.scss';
@@ -21,7 +19,6 @@ let hourSalary = {
 
 const Profile = (props) => {
   const [users, setUsers] = useState({});
-  const {userSignIn} = props;
   const {getUserProfile,userStartWork,userEndWork} = useAjax();
   const history = useHistory(); 
 
@@ -156,7 +153,7 @@ const Profile = (props) => {
           
             <div className="F1DivP">
               <div className="row-md-4">
-                <h5><i className="fas fa-funnel-dollar"></i>&nbsp;Net Salary</h5><small>{(users.workHours*12).toFixed(2)}JD</small>
+                <h5><i className="fas fa-funnel-dollar"></i>&nbsp;Net Salary</h5><small>{(users.workHours*hourSalary[users.position]).toFixed(2)}JD</small>
               </div>
               <hr className="line" /> 
               <div className="row-md-4">
@@ -200,11 +197,5 @@ const Profile = (props) => {
 };
 
 
-
-
-const mapStateToProps = (state) => ({
-  savedUser: state.logInReducer,
-});
-
-export default connect(mapStateToProps, null)(Profile);
+export default Profile;
 
