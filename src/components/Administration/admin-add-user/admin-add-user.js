@@ -3,6 +3,7 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import Swal from 'sweetalert2';
 
 import useAjax from '../../hooks/ajaxHook';
 import './admin-add-user.scss';
@@ -15,11 +16,17 @@ function AdminAddUser(props) {
     setNewUser({...newUser, [event.target.name]: event.target.value });
   };
 
+  function alertAddUser() {
+    Swal.fire({
+      icon:'success',
+      title: 'A new User has been added',
+    });
+  }
+
   function handleSubmit(event){
     if(event) event.preventDefault();
     event.target.reset();
-    console.log(addUser);
-    addUser(newUser);
+    addUser(newUser).then(()=> alertAddUser());
   }
 
   return (
@@ -42,13 +49,11 @@ function AdminAddUser(props) {
             <input name='role' onChange={handleInputChage} type="text" id="defaultLoginFormRole" className="form-control mb-4" placeholder="Enter Role" />
             <div className="d-flex justify-content-left">
             </div>
-            <Button className="btn-add btn-info btn-block " type="submit">ADD NEW USER</Button>
+            <Button className="btn-add btn-info btn-block" type="submit">ADD NEW USER</Button>
             <Link className="we" to='/administration'>
               <Button className="btn-add btn-info btn-block">Back</Button>
             </Link>
           </form>
-
-          
         </div>
         
         <div className="col-sm-8 xyz text-center" > <i className="fa fa-user-circle fa-5x" aria-hidden="true"></i>
