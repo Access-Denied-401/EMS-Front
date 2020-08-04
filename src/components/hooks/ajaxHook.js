@@ -150,7 +150,7 @@ const useAjax = () => {
     return data;
   };
 
-    const userStartWork = async () => {
+  const userStartWork = async () => {
     const response = await fetch(`${API}/userstart`, {
       method: 'GET',
       headers: {
@@ -163,7 +163,7 @@ const useAjax = () => {
     return data;
   };
 
-    const userEndWork = async () => {
+  const userEndWork = async () => {
     const response = await fetch(`${API}/userend`, {
       method: 'GET',
       headers: {
