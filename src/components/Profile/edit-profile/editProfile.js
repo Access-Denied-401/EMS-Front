@@ -65,7 +65,7 @@ const EditProfile = (props) => {
   console.log(props);
   return (
     <>
-      <div className="container containerdiv">
+      <div className="container containerdiv box">
         <div className="row flex-lg-nowrap">
           {/* <div className="col-12 col-lg-auto mb-3 F1Div">
             <div className="card p-3 smallCardDiv" >

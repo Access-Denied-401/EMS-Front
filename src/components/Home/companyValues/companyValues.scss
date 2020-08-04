@@ -30,7 +30,7 @@ a.navbar-brand.brand {
 }
 }
 
-@media (min-width: 1281px) {
+@media (min-width: 768px) {
 
         p .bold{
             font-size: 14px;
@@ -87,7 +87,7 @@ a.navbar-brand.brand {
             margin-bottom: -6%;
         }
         .img-fluid-logo {
-            width: 4vw;
+            width: 1vw;
         }
         .second-card {
             border: solid #7a9d96b5;
@@ -115,7 +115,7 @@ a.navbar-brand.brand {
             margin-bottom: 8rem!important;
         }
         .img-fluid-logo {
-            width: 4vw;
+            width: 2.5vw;
             margin-bottom: 27%;
         }
         span.carousel-control-next-icon {
@@ -131,7 +131,10 @@ a.navbar-brand.brand {
         .white {
             background-color: #f8f9fa!important;
         }
-
+        .img-fluid {
+            margin-left: 8%;
+            margin-top: -5%;
+        }
   }
 
 
