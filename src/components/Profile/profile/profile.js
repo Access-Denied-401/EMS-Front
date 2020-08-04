@@ -183,8 +183,8 @@ const Profile = (props) => {
             <Link to="/profile/Feedback" className=" btnAll btn-5"><span>Vacation</span>
               {/* <button className="profile_button px-5">Vacation Request</button> */}
             </Link>
-            <a onClick={handelStart} class="btnAll btn-5 aa"><span>Start shift</span></a> 
-            <a onClick={handelEnd} class="btnAll btn-5 aa"><span>End shift</span></a> 
+            <a href onClick={handelStart} class="btnAll btn-5 aa"><span>Start shift</span></a> 
+            <a href onClick={handelEnd} class="btnAll btn-5 aa"><span>End shift</span></a> 
           </div>
           {/* <div className="profile mt-2"> */}
           {/* <a onClick={handelStart} class="btn btn-5"><span>Start shift</span></a> 
