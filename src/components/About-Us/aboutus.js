@@ -9,7 +9,7 @@ const About = (props) => {
         <div class="row justify-content-center">
           <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
             <div class="card" >
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png"alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
             </div>
             <div class="arrow-down"></div>
             <div class="row d-flex justify-content-center">
@@ -24,7 +24,7 @@ const About = (props) => {
         <div class="row justify-content-center">
           <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
             <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
             </div>
             <div class="arrow-down"></div>
             <div class="row d-flex justify-content-center">
@@ -39,7 +39,7 @@ const About = (props) => {
         <div class="row justify-content-center">
           <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
             <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
             </div>
             <div class="arrow-down"></div>
             <div class="row d-flex justify-content-center">
@@ -54,7 +54,7 @@ const About = (props) => {
         <div class="row justify-content-center">
           <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
             <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt=""/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"/></span> </p>
+              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt=""/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
             </div>
             <div class="arrow-down"></div>
             <div class="row d-flex justify-content-center">
