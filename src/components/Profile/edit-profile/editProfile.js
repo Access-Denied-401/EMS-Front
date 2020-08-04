@@ -154,7 +154,7 @@ const EditProfile = (props) => {
                                   <div className="col">
                                     <div className="form-group">
                                       <label className="bold">Current Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••"/>
+                                      <input className="form-control" type="password" placeholder="••••••••"/>
                                     </div>
                                   </div>
                                 </div>
@@ -162,7 +162,7 @@ const EditProfile = (props) => {
                                   <div className="col">
                                     <div className="form-group">
                                       <label className="bold">New Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••••••••" name="password" onChange={handleInputChange} />
+                                      <input className="form-control" type="password" placeholder="••••••••" name="password" onChange={handleInputChange} />
                                     </div>
                                   </div>
                                 </div>
