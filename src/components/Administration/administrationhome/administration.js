@@ -8,7 +8,6 @@ import Table from 'react-bootstrap/Table';
 
 import useAjax from '../../hooks/ajaxHook';
 import useSearch from '../../hooks/searchHook';
-import Paginate from '../../paginate/paginate';
 import './administration.scss';
 
 
@@ -26,11 +25,11 @@ const AdministrationHome = (props) => {
     console.log(searchName);
   };
 
-  const itemsPerPage = 5;
-  const [currentPage,setCurrentPage] = useState(1);
-  const indexOfLastPost = currentPage * itemsPerPage;
-  const indexOfFirstPage = indexOfLastPost - itemsPerPage;
-  const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
+  // const itemsPerPage = 5;
+  // const [currentPage,setCurrentPage] = useState(1);
+  // const indexOfLastPost = currentPage * itemsPerPage;
+  // const indexOfFirstPage = indexOfLastPost - itemsPerPage;
+  // const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
   
   
 
@@ -49,12 +48,8 @@ const AdministrationHome = (props) => {
     <>
       <h1 className='administrationHome'>Administration</h1>
       
-      <div className="d-flex justify-content-center h-100">
-        <div className="searchbar">
-          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
-          <a href="!#" className="search_icon"><i className="fas fa-search"></i></a>
-        </div>
-      </div>
+      
+      
 
       <Link to='/administration/adduser'>
         <Button className="admin-home" variant="warning">
@@ -68,6 +63,13 @@ const AdministrationHome = (props) => {
         </Button>
       </Link>
 
+      <div className="d-flex justify-content-center h-100">
+        <div className="searchbar">
+          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
+          <a href className="search_icon"><i className="fas fa-search"></i></a>
+        </div>
+      </div>
+
       <div className="container mt-5 box table-admin">
         <Table responsive >
           <thead>
@@ -80,7 +82,7 @@ const AdministrationHome = (props) => {
             </tr>
           </thead>
           <tbody>
-            {handleSearch(currentPost, searchName).map (value =><tr key={value._id} className="border-bottom"> 
+            {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
                 <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold admin-list" value={value}>
                   {value.username} 
