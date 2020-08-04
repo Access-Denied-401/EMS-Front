@@ -1,8 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import './editProfile.scss';
 import {connect} from 'react-redux';
 import useAjax from '../../hooks/ajaxHook';
-import {userSignIn} from '../../../store/actions';
 import {storage} from '../../../firebase/';
 import Swal from 'sweetalert2';
 import { useHistory} from 'react-router-dom';
@@ -51,12 +52,11 @@ const EditProfile = (props) => {
     // event.target.reset();
     console.log(users);
     console.log(users,'event.target.value');
-    userEditHisProfile(users)
-      alertEditProfile()
+    userEditHisProfile(users);
+    alertEditProfile();
 
   };
   useEffect (() => {
-    userSignIn();
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers); 
     });
@@ -99,10 +99,10 @@ const EditProfile = (props) => {
                             <p className="mb-0">@{users.username}</p>
                             <div className="text-muted"><small>Last seen 2 hours ago</small></div>
                             <div className="mt-2">
-                               <button className="btn btn-primary buttonR" type="button">
-                              <input type="file" className="inputImage" onChange = {handleImageChange} size="60" />
-                              <i className="fa fa-fw fa-camera"></i>
-                              <span>Change Photo</span>
+                              <button className="btn btn-primary buttonR" type="button">
+                                <input type="file" className="inputImage" onChange = {handleImageChange} size="60" />
+                                <i className="fa fa-fw fa-camera"></i>
+                                <span>Change Photo</span>
                               </button>                          
                             </div>
                           </div>
@@ -222,11 +222,9 @@ const EditProfile = (props) => {
   );
 };
 
-const mapDispatchToProps = {userSignIn};
-
 const mapStateToProps = (state) => ({
   savedUser: state.loginReducer,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(EditProfile);
+export default connect(mapStateToProps, null)(EditProfile);
 

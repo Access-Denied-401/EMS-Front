@@ -77,7 +77,7 @@ const useAjax = () => {
 
   const addUser = async (user) => {
     fetch( `${API}/adduser`, {
-      method: 'post',
+      method: 'POST',
       mode: 'cors',
       cache: 'no-cache',
       headers: {
@@ -97,7 +97,6 @@ const useAjax = () => {
   };
 
   const userEditHisProfile = (users) => {
-    console.log(users);
     fetch( `${API}/usereditprofile`, {
       method: 'PATCH',
       mode: 'cors',
@@ -120,9 +119,9 @@ const useAjax = () => {
     }); 
   };
 
-  const editUser = async (user) => {
-    fetch( `${API}/adminedit/${user._id}`, {
-      method: 'patch',
+  const editUser = async (user, userId) => {
+    fetch( `${API}/adminedit/${userId}`, {
+      method: 'PATCH',
       mode: 'cors',
       cache: 'no-cache',
       headers: {

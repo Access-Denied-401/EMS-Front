@@ -94,11 +94,6 @@ let authURL = `${URL}?${QueryString}`;
     }    
   };
 
-  useEffect (() => {
-    console.log('signIn');
-    userSignIn();
-  },[userSignIn]);
-
   return (
     <>
       <div className="row">

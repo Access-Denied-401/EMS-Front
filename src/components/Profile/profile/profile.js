@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import {connect} from 'react-redux';
@@ -85,8 +86,6 @@ const Profile = (props) => {
   }
 
   useEffect (() => {
-    console.log('userProfile');
-    userSignIn();
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers);
     });
@@ -201,11 +200,11 @@ const Profile = (props) => {
 };
 
 
-const mapDispatchToProps = {userSignIn};
+
 
 const mapStateToProps = (state) => ({
-  logInReducer: state.logInReducer,
+  savedUser: state.logInReducer,
 });
 
-export default connect(mapStateToProps, mapDispatchToProps)(Profile);
+export default connect(mapStateToProps, null)(Profile);
 

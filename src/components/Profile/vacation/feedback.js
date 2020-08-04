@@ -16,8 +16,8 @@ const Feedback = (props) => {
       imageHeight: 200,
       imageAlt: 'Custom image',
     });
-
   }
+  
   return (
     <>
       <section className="contact-section my-5 sectionVa">
