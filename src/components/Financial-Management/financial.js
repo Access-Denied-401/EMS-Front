@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
 import useAjax from '../hooks/ajaxHook';
@@ -12,7 +13,7 @@ const FinancialManagement = (props) => {
   useEffect(()=>{
     console.log('adminAddUser'); 
     getUsers().then(dbUsers => setUsers(dbUsers) );
-  },[getUsers]);
+  },[]);
 
   return (
     <>
