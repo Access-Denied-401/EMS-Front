@@ -20,7 +20,7 @@ const Feedback = (props) => {
   }
   return (
     <>
-      <section className="contact-section my-5">
+      <section className="contact-section my-5 sectionVa">
         <div className="card-vacation">
           <div className="row">
             <div className="col-lg-8">

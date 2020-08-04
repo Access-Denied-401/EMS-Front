@@ -1,11 +1,19 @@
 /* eslint-disable no-unused-vars */
-import React from 'react';
+import React, {useState, useEffect} from 'react';
 import { Link } from 'react-router-dom';
-
+import useAjax from '../hooks/ajaxHook';
 import './financial.scss';
 
 
 const FinancialManagement = (props) => {
+  const {/**editUser */ getUsers} = useAjax();
+  const [users, setUsers] = useState([]);
+
+  useEffect(()=>{
+    console.log('adminAddUser'); 
+    getUsers().then(dbUsers => setUsers(dbUsers) );
+  },[getUsers]);
+
   return (
     <>
       <div className="cardFinancial">
@@ -19,106 +27,38 @@ const FinancialManagement = (props) => {
                 </div>
               </div>
             </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                <div className="col">  </div>
-                <div className="col">Net Salary </div>
-              </div>
-            </div>
-            <div className="row">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                <div className="col"> </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                
-                <div className="col">  </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                
-                <div className="col">  </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                
-                <div className="col">  </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                
-                <div className="col">  </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
-            <div className="row border-top border-bottom">
-              <div className="row main align-items-center">
-                <div className="col-2"><img className="img-fluid" src="https://www.milcorp.com/assets/employee-placeholder-male.jpg" alt='' /></div>
-                <div className="col">
-                  <div className="row text-muted">IT department</div>
-                  <div className="row">Amer</div>
-                </div>
-                
-                <div className="col">  </div>
-                <div className="col"> Net Salary </div>
-              </div>
-            </div>
+            <div>
+              {users.map (value =>
+                <div className="row border-top border-bottom">
+                  <div className="row main align-items-center">
+                    <div className="col-2"><img className="img-fluid" src={value.image} alt='' /></div>
+                    <div className="col">
+                      <div className="row text-muted">{value.position}</div>
+                      <div className="row">{value.username}</div>
+                    </div>
+                    <div className="col">  </div>
+                    <div className="col">{value.workHours} </div>
+                  </div>
+                </div>,
+              )}           
+            </div>            
             <div className="back-to-shop"> <Link lasName="text-muted" to="#">&#8592;</Link>
             </div>
           </div>
-          <div className="col-md-4 summary">
+          <div className="col-md-4-finincial summary">
             <div>
-              <h5><b>Salary Slip</b></h5>
+              <h5 className="h5fin"><b>Salary Slip</b></h5>
             </div>
-            
-            
-            <form>
+                        
+            <form className="formFin">
               
               <div className="f-input">
-                <label>Basic Salary</label> <input id="code" placeholder=""/>
-                <label >Working Hours</label> <input id="code" placeholder=""/>
-                <label>Over time</label> <input id="code" placeholder=""/>
-                <label>Living Allownace</label> <input id="code" placeholder=""/>
-                <label>Rewards</label> <input id="code" placeholder=""/>
-                <label>Social Security</label> <input id="code" placeholder=""/>
+                <label>Basic Salary</label> <input className="inputFin" id="code" placeholder=""/>
+                <label >Working Hours</label> <input className="inputFin" id="code" placeholder=""/>
+                <label>Over time</label> <input className="inputFin" id="code" placeholder=""/>
+                <label>Living Allownace</label> <input className="inputFin" id="code" placeholder=""/>
+                <label>Rewards</label> <input className="inputFin" id="code" placeholder=""/>
+                <label>Social Security</label> <input className="inputFin" id="code" placeholder=""/>
               </div>
             </form>
             <div className="row rowrow">

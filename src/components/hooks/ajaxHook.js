@@ -96,6 +96,30 @@ const useAjax = () => {
     }); 
   };
 
+  const userEditHisProfile = (users) => {
+    console.log(users);
+    fetch( `${API}/usereditprofile`, {
+      method: 'PATCH',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify({ 
+        '_id':`${users._id}`,
+        'username':`${users.username}`,
+        'password':`${users.password}`,
+        'email': `${users.email}`,
+        'image': `${users.image}`,
+        'gender': `${users.gender}`,
+        'birthday': `${users.birthday}`,        
+        'bio': `${users.bio}`,
+      }),
+    }); 
+  };
+
   const editUser = async (user) => {
     fetch( `${API}/adminedit/${user._id}`, {
       method: 'patch',
@@ -127,6 +151,32 @@ const useAjax = () => {
     return data;
   };
 
+    const userStartWork = async () => {
+    const response = await fetch(`${API}/userstart`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
+    const userEndWork = async () => {
+    const response = await fetch(`${API}/userend`, {
+      method: 'GET',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+    });
+    const data = await response.json();
+    return data;
+  };
+
   const userSignUp = async (user) => {
     try {
       await fetch( `${API}/signup`, {
@@ -147,7 +197,7 @@ const useAjax = () => {
     }
   };
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp};
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile,userStartWork,userEndWork};
 };
 
 export default useAjax;
