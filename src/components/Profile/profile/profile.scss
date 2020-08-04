@@ -87,6 +87,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 4%;
+    color: #000000d9;
 }
 .F1DivP{
     display:flex;
@@ -320,6 +322,7 @@ $white: #fff;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
   outline-color: rgba(255, 255, 255, .5);
+  color: white;
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -330,5 +333,14 @@ $white: #fff;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388; 
+  // text-shadow: 1px 1px 2px #427388; 
+  color: #F7BE16;
+
+}
+img.rounded-circle {
+  margin-right: 3%;
+  margin-top: -2%;
+}
+.upper {
+  text-transform: uppercase;
 }
