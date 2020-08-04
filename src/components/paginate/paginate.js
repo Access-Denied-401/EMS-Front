@@ -13,7 +13,6 @@ function Paginate(props) {
   }
 
   return (
-  
     <nav>
       <ul>
         {pageNumbers.map((number) => {
@@ -25,7 +24,6 @@ function Paginate(props) {
         })}
       </ul>
     </nav>
-
   );
 }
 
