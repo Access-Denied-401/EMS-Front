@@ -3,15 +3,32 @@
 import React, { useEffect, useState } from 'react';
 import {Link} from 'react-router-dom';
 import { Button } from 'react-bootstrap';
+import Swal from 'sweetalert2';
+
 import useAjax from '../../hooks/ajaxHook';
 import './admin-accept-user.scss';
 import Paginate from '../../paginate/paginate';
-
 
 function AdminAcceptUser (props) {
   
   let [users, setUsers] = useState([]);
   const {getTempUsers, acceptUser, rejectUser} = useAjax();
+
+  function alertAccept() {
+    Swal.fire({
+      icon:'success',
+      title: 'Accepted',
+      text: '',
+    });
+  }
+  function alertReject() {
+    Swal.fire({
+      icon:'success',
+      title: 'Rejected',
+      text: '',
+    });
+  }
+
   
   const itemsPerPage = 5;
   const [currentPage,setCurrentPage] = useState(1);
@@ -29,6 +46,7 @@ function AdminAcceptUser (props) {
       console.error(error);
     }
   },[]);
+
 
   return(
     <>
@@ -74,8 +92,8 @@ function AdminAcceptUser (props) {
                     <button onClick={()=> rejectUser(value)}>Remove User</button> </div> */}
 
                   <div className="p-2 icons">
-                    <i className="fa fa-check" aria-hidden="true" onClick={()=> acceptUser(value)}><span>Accept</span></i> 
-                    <i className="fa fa-adjust text-danger" onClick={()=> rejectUser(value)} ><span>Reject</span></i> 
+                    <i className="fa fa-check" aria-hidden="true" onClick={()=> acceptUser(value).then(()=>alertAccept())}><span>Accept</span></i> 
+                    <i className="fa fa-adjust text-danger" onClick={()=> rejectUser(value).then(()=>alertReject())} ><span>Reject</span></i> 
                   </div>
                 </td>
               </tr>, 
