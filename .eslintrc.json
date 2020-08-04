@@ -28,5 +28,6 @@
     "semi": [ "error", "always" ],
     "no-unused-vars": [1, {"vars": "local", "args": "none"}]
   },
-  "parser": "babel-eslint"
+  "parser": "babel-eslint",
+  "plugins": ["react", "react-hooks"]
 }
