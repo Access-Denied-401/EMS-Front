@@ -104,7 +104,7 @@ function Signin(props) {
             <div className="login-space">
               <form onSubmit={_handleSignin}>
                 <div className="login">
-                  <div className="group"> <label htmlFor="user" className="label">User Name</label> <input onChange={_changeSignInInput} name='username' id="user" type="text" className="input" placeholder="Enter your email"/> </div>
+                  <div className="group"> <label htmlFor="user" className="label">User Name</label> <input onChange={_changeSignInInput} name='username' id="user" type="text" className="input" placeholder="Enter your username"/> </div>
                   <div className="group"> <label htmlFor="pass" className="label">Password</label> <input onChange={_changeSignInInput} name='password' id="pass" type="password" className="input" data-type="password" placeholder="Enter your password"/> </div>
                   {/* <div className="group"> <input id="check" type="checkbox" className="check"/> <label className="keep-me" htmlFor="check"><span className="icon"></span> Keep me Signed in</label> </div> */}
                   <br/>
@@ -121,9 +121,10 @@ function Signin(props) {
                   <div className="group"> <label htmlFor="pass" className="label">Image</label> <input onChange={_changeSignUpInput} name='image' id="pass" type="text" className="input" placeholder="Enter Your Image"/> </div>
                   <div className="group"> <label htmlFor="pass" className="label">Password</label> <input onChange={_changeSignUpInput} name='password' id="pass" type="password" className="input" data-type="password" placeholder="Create your password"/> </div>
                   {/* <div className="group"> <label htmlFor="pass" className="label">Repeat Password</label> <input id="pass" type="password" className="input" data-type="password" placeholder="Repeat your password"/> </div> */}
-                  <div className="group"> <button className="button" value="Sign Up">SIGN UP</button> </div>
+                  <div className="group signup-btn "> <button className="button" value="Sign Up">SIGN UP</button> </div>
+                  
                   <div className="hr"></div>
-                  <div className="foot"> <a className="forget" id="oauth" href={authURL}>Sign up with Linked&nbsp;<i class="fab fa-linkedin"></i></a> </div>
+                  <div className="foot height-signin"> <a className="forget" id="oauth" href={authURL}>Sign up with Linked&nbsp;<i class="fab fa-linkedin"></i></a> </div>
                 </div>
               </form>
             </div>

@@ -48,9 +48,6 @@ const AdministrationHome = (props) => {
   return (
     <>
       <h1 className='administrationHome'>Administration</h1>
-      {/* <div className="admin-home-search-div">
-        <input className="admin-home-search" placeholder='Search Bar' onChange= {handleChange} />
-      </div>      */}
       
       <div className="d-flex justify-content-center h-100">
         <div className="searchbar">
@@ -115,7 +112,6 @@ const AdministrationHome = (props) => {
           </tbody>
         </Table>
       </div>
-      <Paginate setCurrentPage={setCurrentPage} users={users} itemsPerPage={itemsPerPage} />
     </>
   );
 };
