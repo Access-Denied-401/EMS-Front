@@ -1,12 +1,11 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
 import useAjax from '../hooks/ajaxHook';
 import useSearch from '../hooks/searchHook';
 import Swal from 'sweetalert2';
 import { useHistory} from 'react-router-dom';
-import Paginate from '../paginate/paginate';
+// import Paginate from '../paginate/paginate';
 import './financial.scss';
 import jsPDF from 'jspdf';
 let id='';
@@ -27,11 +26,11 @@ const FinancialManagement = (props) => {
     console.log(searchName);
   };
 
-  const itemsPerPage = 1000;
-  const [currentPage,setCurrentPage] = useState(1);
-  const indexOfLastPost = currentPage * itemsPerPage;
-  const indexOfFirstPage = indexOfLastPost - itemsPerPage;
-  const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
+  // const itemsPerPage = 5;
+  // const [currentPage,setCurrentPage] = useState(1);
+  // const indexOfLastPost = currentPage * itemsPerPage;
+  // const indexOfFirstPage = indexOfLastPost - itemsPerPage;
+  // const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
   
   function alertUserStartWork() {
     Swal.fire({
@@ -139,7 +138,7 @@ const FinancialManagement = (props) => {
               </div>
             </div>
             <div className="hiGuys">
-              {handleSearch(currentPost, searchName).map (value =>
+              {handleSearch(users, searchName).map (value =>
                 <div className="row border-top border-bottom " onClick={e => selectUser(value._id)} id={value._id} key={value._id}>
                   <div className="row main align-items-center">
                     <div className="col-2"><img className="img-fluid imgfin" onError ={(e)=>{console.log(value); e.target.onerror = null ;e.target.src = 'https://www.jayone.org/assets/profiles/user-default.png';}} src={value.image || 'https://www.jayone.org/assets/profiles/user-default.png' } alt='' /></div>
@@ -165,9 +164,9 @@ const FinancialManagement = (props) => {
                 {/* <label >Working Hours</label> <input className="inputFin" id="code" name='workingHours' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 {/* <label>Over time</label> <input className="inputFin" id="code" name='overTime' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 <label className="bold">Living Allowance</label> <input className="inputFin" id="code" name='Living Allowance' onChange={handleInputChange} placeholder='livingAllownace'/>
-                <label className="bold">Rewards</label> <input className="inputFin" id="code" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^'/>
-                <label className="bold">Start Date</label> <input type="date" className="inputFin" id="code" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period'/>
-                <label className="bold">End Date</label> <input type="date" className="inputFin" id="code" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period'/>
+                <label className="bold">Rewards</label> <input className="inputFin" id="code2" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^'/>
+                <label className="bold">Start Date</label> <input type="date" className="inputFin" id="code3" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period'/>
+                <label className="bold">End Date</label> <input type="date" className="inputFin" id="code4" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period'/>
                 {/* <label>Social Security</label> <input className="inputFin" id="code" name='username' onChange={handleInputChange} placeholder='Enter your name'/> */}
               </div>
             </form>
