@@ -129,11 +129,13 @@ const FinancialManagement = (props) => {
                 </div>
               </div>
             </div>
-            {/* <h6><b>* Select user to calculate salary </b></h6> */}
-            <div className="d-flex justify-content-center ">
-              <div className="searchbar">
-                <input className="search_input" type="text" name="" placeholder="Select user to calculate salary..." onChange= {handleChange}/>
-                <a href="!#" className="search_icon"><i className="fas fa-search"></i></a>
+            <div className="searchbarAndTxt">
+              <h6><b>* Select user to calculate salary </b></h6>
+              <div className="d-flex justify-content-center davdovy">
+                <div className="searchbar">
+                  <input className="search_input" type="text" name="" placeholder="Select user to calculate salary..." onChange= {handleChange}/>
+                  <a href="!#" className="search_icon"><i className="fas fa-search"></i></a>
+                </div>
               </div>
             </div>
             <div className="hiGuys">
