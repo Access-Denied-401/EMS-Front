@@ -1,11 +1,5 @@
 @import url('https://fonts.googleapis.com/css2?family=Fira+Sans&display=swap');
 @media (max-width: 767px) {
-    // body {
-    //     background: #f8f9fa;
-    //     width: 100%;
-    //     padding-right: 0; 
-    //     padding-left: 0;
-    // }
     #logo {
         width: 31px;
         margin-left: -72%;
@@ -54,8 +48,8 @@
     margin-left: -5%;
 }
 .navbar-expand-lg .navbar-nav {
-    flex-direction: row;
-    margin-left: 43%;
+  flex-direction: row;
+  margin-left: 30%;
 }
 a.navbar-brand {
     margin-left: -1%;
@@ -63,7 +57,7 @@ a.navbar-brand {
 .navbar-expand-lg .navbar-collapse {
     display: flex!important;
     flex-basis: auto;
-    // padding: 2%;
+    justify-content: flex-end;
 }
 li.nav-item {
     font-size: 15px;

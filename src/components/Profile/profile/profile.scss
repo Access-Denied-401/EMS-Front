@@ -8,17 +8,16 @@
 }
 
 .neo-button {
-    width: 40px;
-    height: 40px;
-    outline: 0 !important;
-    cursor: pointer;
-    color: #fff;
-    font-size: 15px;
-    border: none;
-    margin-right: 10px;
-    border-radius: 50%;
-    background: #dba82a;
-    // box-shadow: inset 20px 20px 60px #913ca0, inset -20px -20px 60px #c552d8
+  width: 45px;
+  height: 40px;
+  outline: 0 !important;
+  cursor: pointer;
+  color: #fff;
+  font-size: 15px;
+  border: none;
+  margin-right: 10px;
+  border-radius: 7px;
+  background: #ffc107;
 }
 
 .num {
@@ -72,7 +71,7 @@
 }
 .card-Profile {
     color: #fff;
-    width: 590px;
+    width: 75%;
     border-radius: 10px;
     background: linear-gradient(145deg, #13903fb5, #13303fc7);
     box-shadow: 20px 20px 60px #13303f73, -20px -20px 60px #13303f94;
@@ -87,6 +86,8 @@
     display: flex;
     flex-direction: column;
     align-items: flex-start;
+    margin-left: 4%;
+    color: white;
 }
 .F1DivP{
     display:flex;
@@ -320,6 +321,7 @@ $white: #fff;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, 0);
   outline: 1px solid;
   outline-color: rgba(255, 255, 255, .5);
+  color: white;
   outline-offset: 0px;
   text-shadow: none;
   transition: all 1250ms cubic-bezier(0.19, 1, 0.22, 1);
@@ -330,5 +332,14 @@ $white: #fff;
   box-shadow: inset 0 0 20px rgba(255, 255, 255, .5), 0 0 20px rgba(255, 255, 255, .2);
   outline-color: rgba(255, 255, 255, 0);
   outline-offset: 15px;
-  text-shadow: 1px 1px 2px #427388; 
+  // text-shadow: 1px 1px 2px #427388; 
+  color: #F7BE16;
+
+}
+img.rounded-circle {
+  margin-right: 3%;
+  margin-top: -2%;
+}
+.upper {
+  text-transform: uppercase;
 }

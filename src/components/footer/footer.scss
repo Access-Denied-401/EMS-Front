@@ -1,9 +1,10 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100&display=swap');
 footer .main-footer{
 	padding: 1px 0;
-	padding-top: 2%;
+	padding-top: 1%;
     background: linear-gradient(145deg, #13503fb5, #13303fc7);
 	font-family: 'Noto Sans TC', sans-serif;
+	margin-bottom: -1%;
 	}
 footer ul{
 	padding-left: 0;
@@ -12,8 +13,8 @@ footer ul{
 }
 /* Copy Right Footer */
 .footer-copyright {	
-	background: linear-gradient(145deg, #13503fb5, #13303fc7);
-	padding: 5px 0;
+	// background: linear-gradient(145deg, #13503fb5, #13303fc7);
+	// padding: 5px 0;
 	font-family: 'Noto Sans TC', sans-serif;
 }
 .footer-copyright .logo {
@@ -44,6 +45,7 @@ footer ul{
 .footer-copyright p {	
 	color: #f9f9f9;	
 	margin: 2px 0 0;
+	font-size: 75px;
 }
 /* Footer Top */
 .footer-top{	
@@ -79,11 +81,12 @@ footer.light .footer-copyright{
 	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
 .widget.subscribe p{	margin-bottom: 18px;}
 .widget li a {
-    color: #FBA100;
+    color: #f3c010;
     padding: 1%;
     font-size: smaller;
 }
-.widget li a:hover{	color: #FBA100	;}
+.widget li a:hover{	    color: #f3c010;
+}
 .widget-title {
 	margin-bottom: 20px;
 	font-size: 16px;
@@ -104,9 +107,8 @@ footer.light .footer-copyright{
 .typo-light small{	color: #fff;}
 ul.social-footer2 {	margin: 0;padding: 0;	width: auto;}
 ul.social-footer2 li {display: inline-block;padding: 0;}
-ul.social-footer2 li a:hover {background-color:#F7BE16;}
-ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
-.btn{background-color: #F7BE16; color:#fff;}
+// ul.social-footer2 li a {display: block;	height:30px;width: 30px;text-align: center;}
+// .btn{background-color: #F7BE16; color:#fff;}
 .btn:hover, .btn:focus, .btn.active {background: #99a5b1;color: #fff;
 -webkit-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
 -moz-box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
@@ -124,14 +126,53 @@ transition: all 250ms ease-in-out 0s;
     margin-top: 3%;
     font-size: 9px;
     margin: 2px 0 0;
-	font-size: 9px;
+	font-size: 13px;
 	font-family: 'Noto Sans TC', sans-serif;
 }
 .a-footer:hover {
-    color: #FBA100;
+    color: #f3c010;
     text-decoration: none;
 }
 .nav-link {
     display: block;
     padding: 6px;
 }
+
+
+
+iframe {
+    width: 160px;
+    height: 150px;
+}
+.started{
+	margin-right: -10px;
+}
+
+ul.social-footer2 li a {
+    display: block;
+    height: 30px;
+    width: 30px;
+    text-align: center;
+    size: 80px;
+    border-radius: 50%;
+	// background-color: white;
+	margin-top: 2px;
+	padding-left: 10px;
+}
+
+	
+
+
+ul.social-footer2 li .fa-github{
+color: black;
+
+}
+ul.social-footer2 li .fa-facebook{
+	color: #6697fd;
+	
+	}
+	
+	ul.social-footer2 li .fa-phone{
+		color: #92cacc;
+		
+		}

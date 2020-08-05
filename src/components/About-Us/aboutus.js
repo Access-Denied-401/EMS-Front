@@ -5,71 +5,10 @@ import './aboutus.scss';
 const About = (props) => {
   return (
     <>
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
-            <div class="card" >
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
-            </div>
-            <div class="arrow-down"></div>
-            <div class="row d-flex justify-content-center">
-              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UT41K4Y1X-a36a1e48bdef-512" alt="img"/> </div>
-              <p class="profile-name">Raghad Al-Quran</p>
-            </div>
-          </div>
-        </div>
-      </div>
 
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
-            <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
-            </div>
-            <div class="arrow-down"></div>
-            <div class="row d-flex justify-content-center">
-              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UT2ND0MV1-0e252aa28dee-512" alt="img"/> </div>
-              <p class="profile-name">Abdallah Obaid</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
-            <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
-            </div>
-            <div class="arrow-down"></div>
-            <div class="row d-flex justify-content-center">
-              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UTGDK1NLE-19fdf2afc718-512" alt="img"/> </div>
-              <p class="profile-name">Amer Majdi</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container-fluid">
-        <div class="row justify-content-center">
-          <div class=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" data-aos-delay="1000">
-            <div class="card">
-              <p class="post"> <span><img class="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt=""/></span> <span class="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img class="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
-            </div>
-            <div class="arrow-down"></div>
-            <div class="row d-flex justify-content-center">
-              <div class=""> <img class="profile-pic fit-image" src="https://ca.slack-edge.com/TNGRRLUMA-UTE74KE5B-a7172b3e3315-512" alt=""/> </div>
-              <p class="profile-name">Ahlam Alefishat</p>
-            </div>
-          </div>
-        </div>
-      </div>
-      <section className="team section">
+      <section className="team section-about box-shad">
         <div className="container-about">
-          <h1 className="section-title">Our Team Section</h1>
-          <div className="title-div"><h3>Introducing our superstar developer team!</h3>
-            <h4>Our team draws on broad industry experience and networks to create the most powerful outcomes for our clients.</h4></div>
-          {/* <img className="img-logo" src="../../../assest/ems.png" alt="logo" /> */}
+          <h1 className="section-title  bold">Introducing our superstar <span className="dev">DEVELOPER</span> team!</h1>
           <div className="row">
             <div className="col-md-4 col-sm-6 col-xs-12">
               <div className="team-item">
@@ -92,7 +31,7 @@ const About = (props) => {
             <div className="col-md-4 col-sm-6 col-xs-12">
               <div className="team-item">
                 <figure>
-                  <img className="about-img" src="https://ca.slack-edge.com/TNGRRLUMA-UTE74KE5B-a7172b3e3315-512" alt="img"/>
+                  <img className="about-img" src="https://ca.slack-edge.com/TNGRRLUMA-UTE74KE5B-2f56ed894c66-512" alt="img"/>
                   <figcaption>
                     <div className="info">
                       <h3>Ahlam Alefishat</h3>
@@ -128,7 +67,7 @@ const About = (props) => {
             <div className="col-md-4 col-sm-6 col-xs-12">
               <div className="team-item">
                 <figure>
-                  <img className="about-img raghad" src="https://ca.slack-edge.com/TNGRRLUMA-UT41K4Y1X-a36a1e48bdef-512" alt="img"/>
+                  <img className="about-img raghad  " src="https://ca.slack-edge.com/TNGRRLUMA-UT41K4Y1X-a36a1e48bdef-512" alt="img"/>
                   <figcaption>
                     <div className="info">
                       <h3>Raghad Al-Quran</h3>
@@ -147,6 +86,105 @@ const About = (props) => {
         </div>
         
       </section>
+      <div className="container-fluid-about raghad someone">
+        <div className="row justify-content-center">
+          <div className=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
+            <div className="card-about" >
+              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span className="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
+            </div>
+            <div className="arrow-down"></div>
+            <div className="row d-flex justify-content-center">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                   
+                  </div>
+                  <div className="flip-card-back">
+                    
+                    <img className="profile-pic " src="https://ca.slack-edge.com/TNGRRLUMA-UTE74KE5B-2f56ed894c66-512" alt="Avatar"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid-about right">
+        <div className="row justify-content-center">
+          <div className=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
+            <div className="card-about">
+              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span className="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
+            </div>
+            <div className="arrow-down"></div>
+            <div className="row d-flex justify-content-center">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                  </div>
+                  <div className="flip-card-back">
+                    
+                    <img className="profile-pic " src="https://ca.slack-edge.com/TNGRRLUMA-UTGDK1NLE-19fdf2afc718-512" alt="Avatar"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid-about raghad">
+        <div className="row justify-content-center">
+          <div className=" col-sm-11 col-md-9 col-lg-8 col-xl-7 about-div" data-aos="fade-up" >
+            <div className="card-about">
+              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span className="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
+            </div>
+            <div className="arrow-down"></div>
+            <div className="row d-flex justify-content-center">
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                    
+                  </div>
+                  <div className="flip-card-back">
+                    
+                    <img className="profile-pic " src="https://ca.slack-edge.com/TNGRRLUMA-UT2ND0MV1-0e252aa28dee-512" alt="Avatar"/>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div className="container-fluid-about right ahlam ">
+        <div className="row justify-content-center">
+          <div className=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up" >
+            <div className="card-about">
+              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt=""/></span> <span className="post-txt">I upgraded my Dribble account to the Pro version. Absolutely loving the super clean look of the Playbook feature </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png" alt=""/></span> </p>
+            </div>
+            <div className="arrow-down"></div>
+            <div className="row d-flex justify-content-center">
+
+            
+              <div className="flip-card">
+                <div className="flip-card-inner">
+                  <div className="flip-card-front">
+                
+                  </div>
+                  <div className="flip-card-back">
+                    
+                    <img className="profile-pic " src="https://ca.slack-edge.com/TNGRRLUMA-UT41K4Y1X-a36a1e48bdef-512" alt="Avatar"/>
+                  </div>
+                </div>
+              </div>
+
+
+            </div>
+          </div>
+        </div>
+      </div>
+     
 
     </>
   ); 

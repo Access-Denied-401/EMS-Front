@@ -22,6 +22,8 @@
 }
 .imgProfile{
     max-width: 100%;
+    margin-top: 26%;
+
 }
 .form1{
     margin-right: 14%;
@@ -43,8 +45,42 @@
   };
 .cardBorder{
     border-radius: 0.75rem 0.75rem 0.75rem 0.75rem;
+    margin: -2%;
+
 }  
 
 .smallCardDiv{
     border-radius: 0.25rem 0rem 0rem 0.25rem;
+}
+span.badge.badge-warning.hi {
+    padding: 26%;
+    text-transform: uppercase;
+}
+.change-pass {
+    margin-left: -5%;
+
+}
+.bold {
+    font-size: 18px;
+    font-weight: bold;
+}
+a.active.nav-link.bold.setting {
+    margin-top: 37%;
+
+}
+.space-img {
+    padding: 10px;
+}
+button.btn.btn-warning.buttonEP {
+    margin-right: -13%;
+}
+.div-hi {
+    margin-right: 5%;
+
+}
+
+
+button.back-prof.btn-block.btn.btn-warning.btn.btn-primary {
+    margin-left: -98%;
+    margin-top: -110%;
 }

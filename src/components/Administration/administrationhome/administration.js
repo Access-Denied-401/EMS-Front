@@ -8,7 +8,6 @@ import Table from 'react-bootstrap/Table';
 
 import useAjax from '../../hooks/ajaxHook';
 import useSearch from '../../hooks/searchHook';
-import Paginate from '../../paginate/paginate';
 import './administration.scss';
 
 
@@ -24,14 +23,7 @@ const AdministrationHome = (props) => {
   const handleChange = event => {
     setName(String(event.target.value) || '');
     console.log(searchName);
-  };
-
-  const itemsPerPage = 5;
-  const [currentPage,setCurrentPage] = useState(1);
-  const indexOfLastPost = currentPage * itemsPerPage;
-  const indexOfFirstPage = indexOfLastPost - itemsPerPage;
-  const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
-  
+  };  
   
 
   useEffect(()=>{
@@ -49,13 +41,6 @@ const AdministrationHome = (props) => {
     <>
       <h1 className='administrationHome'>Administration</h1>
       
-      <div className="d-flex justify-content-center h-100">
-        <div className="searchbar">
-          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
-          <a href="!#" className="search_icon"><i className="fas fa-search"></i></a>
-        </div>
-      </div>
-
       <Link to='/administration/adduser'>
         <Button className="admin-home" variant="warning">
          Add New User
@@ -67,6 +52,13 @@ const AdministrationHome = (props) => {
           Accept Users
         </Button>
       </Link>
+
+      <div className="d-flex justify-content-center h-100">
+        <div className="searchbar">
+          <input className="search_input" type="text" name="" placeholder="Search by User Name..." onChange= {handleChange}/>
+          <a href className="search_icon"><i className="fas fa-search"></i></a>
+        </div>
+      </div>
 
       <div className="container mt-5 box table-admin">
         <Table responsive >
@@ -80,7 +72,7 @@ const AdministrationHome = (props) => {
             </tr>
           </thead>
           <tbody>
-            {handleSearch(currentPost, searchName).map (value =><tr key={value._id} className="border-bottom"> 
+            {handleSearch(users, searchName).map (value =><tr key={value._id} className="border-bottom"> 
               <td>
                 <div className="p-2"> <span className="d-block-admin font-weight-bold"></span>  <div className="d-flex-admin flex-column ml-2"> <span className="d-block-admin font-weight-bold"> <li className="d-block-admin font-weight-bold admin-list" value={value}>
                   {value.username} 
@@ -104,7 +96,7 @@ const AdministrationHome = (props) => {
                     user: value,
                   },
                 }}>
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
               </td>
             </tr>, 

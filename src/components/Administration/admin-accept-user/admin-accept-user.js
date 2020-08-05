@@ -28,7 +28,7 @@ function AdminAcceptUser (props) {
     } catch (error) {
       console.error(error);
     }
-  },[]);
+  },[users]);
 
   return(
     <>
@@ -51,7 +51,7 @@ function AdminAcceptUser (props) {
               </tr>
             </thead>
             <tbody>
-              {users.map (value =><tr className="border-bottom"> 
+              {currentPost.map (value =><tr key={value._id} className="border-bottom"> 
                 <td>
                   <div className="p-2"> <span className="spanEdit font-weight-bold"><img src={value.image} width="40" className="rounded-circle" alt='' /></span> </div>
                 </td>
@@ -89,30 +89,26 @@ function AdminAcceptUser (props) {
             <li class="page-item">
               <a class="page-link" href="!#" aria-label="Previous">
                 <span aria-hidden="true">&laquo;</span>
-                <span class="sr-only">Previous</span>
+                <span className="sr-only">Previous</span>
               </a>
+              
             </li>
             <Paginate setCurrentPage={setCurrentPage} users={users} itemsPerPage={itemsPerPage} />
             <li class="page-item">
               <a class="page-link" href="!#" aria-label="Next">
                 <span aria-hidden="true">&raquo;</span>
-                <span class="sr-only">Next</span>
+                <span className="sr-only">Next</span>
               </a>
             </li>
           </ul>
         </nav>
         <Link className="we-accept" to='/administration'>
-          <Button className=" we-accept-btn">Back</Button>
+          <Button className="btn-warning accept">Back</Button>
         </Link>
       </div>
-
-
-
     </>
   );
 }
-
-
 
 
 export default AdminAcceptUser;

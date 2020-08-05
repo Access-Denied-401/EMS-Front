@@ -1,10 +1,10 @@
 /* eslint-disable no-unused-vars */
 import React from 'react';
-import './feedback.scss';
-import JqueryPart from './jquery/jquerytest';
 import Button from 'react-bootstrap/Button';
 import Swal from 'sweetalert2';
-// import Clock from '../../Home/clockPart/clock';
+
+import './feedback.scss';
+import { Link } from 'react-router-dom';
 
 const Feedback = (props) => {
   function alert() {
@@ -26,30 +26,26 @@ const Feedback = (props) => {
             <div className="col-lg-8">
               <div className="card-body form">
                 <h3 className="mt-4"><i className="fas fa-envelope pr-2"></i>Vacation Request</h3>
-
                 <div className="col">
-
                   <div className="col-md-6">
                     <div className="md-form mb-0">
-                      <label for="form-contact-name" className="">Your name</label>
+                      <label htmlFor="form-contact-name" className="">Your name</label>
                       <input type="text" id="form-contact-name" className="form-control" />
                     </div>
                   </div>
 
                   <div className="col-md-6">
                     <div className="md-form mb-0">
-                      <label for="form-contact-email" className="">Your email</label>
+                      <label htmlFor="form-contact-email" className="">Your email</label>
                       <input type="text" id="form-contact-email" className="form-control" />
                     </div>
                   </div>
-
                 </div>
 
                 <div className="col">
-
                   <div className="col-md-6">
                     <div className="md-form mb-0">
-                      <label for="form-contact-phone" className="">Your phone number</label>
+                      <label htmlFor="form-contact-phone" className="">Your phone number</label>
                       <input type="text" id="form-contact-phone" className="form-control" />
                     </div>
                   </div>
@@ -64,29 +60,24 @@ const Feedback = (props) => {
                 </div>
 
                 <div className="col">
-
                   <div className="col-md-12">
                     <div className="md-form mb-0">
-                      <label for="form-contact-message">Your message</label>
+                      <label htmlFor="form-contact-message">Your message</label>
                       <textarea id="form-contact-message" className="form-control md-textarea" rows="3"></textarea>
-                      {/* <a className="btn-floating btn-lg blue">
-                        <i className="far fa-paper-plane"></i>
-                      </a> */}
                     </div>
                   </div>
 
-                  <div className="JqueryPart">
-                    <Button className="alret-button" onClick={alert}>Send</Button>
+                  <div className="send-vac">
+                    <Button className=" btn btn-warning" onClick={alert}>Send</Button>
+                    <Link to='/profile'><Button className=" btn back-btn btn-warning">Back</Button></Link>
                   </div>
-
+                  
                 </div>
               </div>
             </div>
 
             <div className="col-lg-4">
-
               <div className="card-body contact text-center h-100 white-text">
-
                 <h3 className="my-4 pb-2">Contact information</h3>
                 <ul className="text-lg-left list-unstyled ml-4">
                   <li>
@@ -117,15 +108,12 @@ const Feedback = (props) => {
                     </a>
                   </li>
                 </ul>
-
+                
               </div>
             </div>
           </div>
         </div>
       </section>
-
-      {/* < JqueryPart /> */}
-      {/* < Clock /> */}
     </>
   );
 };
