@@ -164,10 +164,10 @@ const FinancialManagement = (props) => {
                 {/* <label>Basic Salary</label> <input className="inputFin" id="code" name='basicSalary' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 {/* <label >Working Hours</label> <input className="inputFin" id="code" name='workingHours' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 {/* <label>Over time</label> <input className="inputFin" id="code" name='overTime' onChange={handleInputChange} placeholder='Enter your name'/> */}
-                <label>Living Allownace</label> <input className="inputFin" id="code" name='livingAllowance' onChange={handleInputChange} placeholder='livingAllownace'/>
-                <label>Rewards</label> <input className="inputFin" id="code" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^'/>
-                <label>Start Date</label> <input type="date" className="inputFin" id="code" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period'/>
-                <label>End Date</label> <input type="date" className="inputFin" id="code" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period'/>
+                <label className="bold">Living Allowance</label> <input className="inputFin" id="code" name='Living Allowance' onChange={handleInputChange} placeholder='livingAllownace'/>
+                <label className="bold">Rewards</label> <input className="inputFin" id="code" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^'/>
+                <label className="bold">Start Date</label> <input type="date" className="inputFin" id="code" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period'/>
+                <label className="bold">End Date</label> <input type="date" className="inputFin" id="code" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period'/>
                 {/* <label>Social Security</label> <input className="inputFin" id="code" name='username' onChange={handleInputChange} placeholder='Enter your name'/> */}
               </div>
             </form>
@@ -176,7 +176,7 @@ const FinancialManagement = (props) => {
               
             </div> <button className="btn-financial calculateButton" type="button" onClick={handleSubmit}>Calculate Salary Slip</button>
             <div id = 'result-div' className="finClass">
-              <p>Acountant Name:&nbsp;&nbsp; {result.acountantName}</p>
+              <p>Accountant Name:&nbsp;&nbsp; {result.acountantName}</p>
               <p>User Name:&nbsp;&nbsp; {result.userName}</p>
               <p>Position:&nbsp;&nbsp; {result.position}</p>
               <p>Hour Salary:&nbsp;&nbsp; {result.hourSalary}</p>

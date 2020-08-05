@@ -46,7 +46,7 @@
     border-bottom-right-radius: 1rem;
     padding: 4vh;
     color: rgb(65, 65, 65);
-    background-image: url("./new.png");
+    background-image: url("./new2.png");
     background-repeat: no-repeat;
     background-size: cover;
     font-family: 'Fira Sans', sans-serif;
@@ -187,8 +187,10 @@ margin-left: 5%;
 }
 
 .calculateButton {
-    width: 115px;
+    width: 50%;
     margin-top: 0%;
+    padding: 3%;
+    margin-left: 31%;
 }
 .socialSecurity{
     color:tomato;
@@ -212,6 +214,12 @@ margin-left: 5%;
     display: none; 
 }
 
-.davdovy{
-    margin-top: -34px;
+.davdovy {
+    margin-top: -86px;
+    margin-bottom: 5%;
+    margin-left: -18%;
+}
+div#5ef1f367590aac7330c9d9a6{
+    // background: linear-gradient(145deg, rgb(162 178 167), rgb(180, 168, 148));
+
 }
