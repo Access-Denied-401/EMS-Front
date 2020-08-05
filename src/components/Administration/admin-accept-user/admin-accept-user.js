@@ -28,7 +28,7 @@ function AdminAcceptUser (props) {
     } catch (error) {
       console.error(error);
     }
-  },[]);
+  },[users]);
 
   return(
     <>

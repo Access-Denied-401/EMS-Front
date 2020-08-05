@@ -235,6 +235,21 @@ const useAjax = () => {
     return result;
   };
 
+  // const userVacation = async (userId, userMessage) =>{
+  //   await fetch( `${API}/uservacation`, {
+  //     method: 'post',
+  //     mode: 'cors',
+  //     cache: 'no-cache',
+  //     headers: {
+  //       'Content-Type': 'application/json',
+  //       Accept: 'application/json',
+  //       'Authorization': `Bearer ${token}`,
+  //     },
+  //     body: JSON.stringify(userMessage),
+  //     user:userId,
+  //   }); 
+  // };
+
   return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile,userStartWork,userEndWork,accountantHandler};
 };
 
