@@ -142,7 +142,7 @@ const Profile = (props) => {
               </div>
               <hr className="line" /> 
               <div className="row-md-4">
-                <h5><i className="fas fa-calendar-day"></i>&nbsp;Birthdate</h5><small>27/10/1995</small>
+                <h5><i className="fas fa-calendar-day"></i>&nbsp;Birthdate</h5><small>{users.birthday}</small>
               </div>
             </div>
             <div className="vl"></div>

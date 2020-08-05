@@ -23,14 +23,7 @@ const AdministrationHome = (props) => {
   const handleChange = event => {
     setName(String(event.target.value) || '');
     console.log(searchName);
-  };
-
-  // const itemsPerPage = 5;
-  // const [currentPage,setCurrentPage] = useState(1);
-  // const indexOfLastPost = currentPage * itemsPerPage;
-  // const indexOfFirstPage = indexOfLastPost - itemsPerPage;
-  // const currentPost = users.slice(indexOfFirstPage, indexOfLastPost);
-  
+  };  
   
 
   useEffect(()=>{
@@ -48,9 +41,6 @@ const AdministrationHome = (props) => {
     <>
       <h1 className='administrationHome'>Administration</h1>
       
-      
-      
-
       <Link to='/administration/adduser'>
         <Button className="admin-home" variant="warning">
          Add New User

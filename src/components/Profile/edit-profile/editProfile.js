@@ -38,8 +38,7 @@ const EditProfile = (props) => {
   function alertEditProfile() {
     Swal.fire({
       icon:'success',
-      title: 'Sign up Application',
-      text: 'An E-mail will be sent to you once you are accepted',
+      title: 'Successfull Edit',
     }).then(function() {
       history.push('/profile/EditProfile');
     });
@@ -58,6 +57,7 @@ const EditProfile = (props) => {
 
   const handleSubmit = async (event) => {
     if(event) event.preventDefault();
+    console.log(currentPass, pass);
     let valid = await bcryptjs.compare(currentPass, pass);
     console.log('vvvvv',valid,'ccccc', currentPass, 'pass',pass);
     if(valid){
@@ -66,6 +66,7 @@ const EditProfile = (props) => {
     }else{
       alertFaild();
     }
+
   };
 
   useEffect (() => {
