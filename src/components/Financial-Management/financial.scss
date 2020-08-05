@@ -22,7 +22,7 @@
     }
 
 .title {
-    margin-bottom: 5vh
+    margin-bottom: 4vh
 }
 .cardFinancial {
     margin: 10% auto;
@@ -105,7 +105,7 @@
 .inputFin {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
-    margin-bottom: 4vh;
+    // margin-bottom: 4vh;
     outline: none;
     width: 100%;
     background-color: rgb(247, 247, 247)
@@ -144,12 +144,12 @@ input:focus::-webkit-input-placeholder {
 //     color: black;
 //     text-decoration: none
 // }
-#code {
-    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-    background-repeat: no-repeat;
-    background-position-x: 95%;
-    background-position-y: center
-}
+// #code {
+//     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
+//     background-repeat: no-repeat;
+//     background-position-x: 95%;
+//     background-position-y: center
+// }
 .rowrow{
     border-top: 1px solid rgba(0,0,0,.1);
      padding: 2vh 0;
@@ -173,4 +173,45 @@ input:focus::-webkit-input-placeholder {
     flex: 0 0 39.333333%;
     max-width: 33.333333%;
 }
+}
+.imgfin{
+margin-left: 5%;
+}
+
+.finClass {
+    width: 100%;
+    padding: 2%;
+    margin-top: 6%;
+    background: linear-gradient(145deg, #11503fb5, #13303fc7);
+    color: whitesmoke;
+}
+
+.calculateButton {
+    width: 115px;
+    margin-top: 0%;
+}
+.socialSecurity{
+    color:tomato;
+}
+.lineoranage{
+    background:orange;
+    margin: 0 auto;
+    margin-bottom: 5%;
+}
+#result-div{
+    display: none;
+}
+.hiGuys{
+    overflow-y: scroll;
+    overflow-x: hidden;
+    height: 946px;
+    padding-left: 2%;
+    // box-shadow: 1px 1px 8px #13303f73, 1px 1px 1px #13303f94;
+}
+::-webkit-scrollbar { 
+    display: none; 
+}
+
+.davdovy{
+    margin-top: -34px;
 }
