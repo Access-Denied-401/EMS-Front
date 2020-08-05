@@ -1,17 +1,22 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
-import './editProfile.scss';
+import { useHistory} from 'react-router-dom';
 import {connect} from 'react-redux';
+import Swal from 'sweetalert2';
+import bcryptjs from 'bcryptjs';
+import './editProfile.scss';
 import useAjax from '../../hooks/ajaxHook';
 import {storage} from '../../../firebase/';
-import Swal from 'sweetalert2';
-import { useHistory} from 'react-router-dom';
 
 const EditProfile = (props) => {
   const [users, setUsers] = useState({});
   const {getUserProfile, userEditHisProfile} = useAjax();
   const history = useHistory();
+  const [currentPass, setCurrentPass] = useState('');
+  const [pass, setPass] = useState('');
+
+
 
   const handleImageChange = (event) => {
     if(event.target.files[0]){
@@ -39,29 +44,43 @@ const EditProfile = (props) => {
       history.push('/profile/EditProfile');
     });
   }
-  
+  function alertFaild (){
+    Swal.fire({
+      icon:'error',
+      title: 'In-valid password',
+    });
+  }
   const handleInputChange = (event) => {
-    
     if(event.target.name) setUsers({...users ,[event.target.name]:event.target.value});
     else  setUsers(event.target.value);
     console.log(users,'usersusersusersusers');
   }; 
 
-  const handleSubmit = (event) => {
+  const handleSubmit = async (event) => {
     if(event) event.preventDefault();
-    // event.target.reset();
-    // console.log(users);
-    // console.log(users,'event.target.value');
-    userEditHisProfile(users);
-    alertEditProfile();
+    let valid = await bcryptjs.compare(currentPass, pass);
+    console.log('vvvvv',valid,'ccccc', currentPass, 'pass',pass);
+    if(valid){
+      userEditHisProfile(users);
+      alertEditProfile();
+    }else{
+      alertFaild();
+    }
   };
-  
+
   useEffect (() => {
-    getUserProfile().then(dbUsers =>{ 
+    getUserProfile().then(dbUsers =>{
+      setPass(dbUsers.password);
       setUsers(dbUsers); 
     });
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   },[]);
+  useEffect (() => {
+    getUserProfile().then(dbUsers =>{
+      setPass(dbUsers.password);
+      setUsers(dbUsers); 
+    });
+  },[pass]);
+  
   console.log(props);
   return (
     <>
@@ -127,7 +146,7 @@ const EditProfile = (props) => {
                                   <div className="col">
                                     <div className="form-group">
                                       <label className="bold">E-mail</label>
-                                      <input className="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your e-mail' defaultValue={users.email}/>
+                                      <input className="form-control" type="text" name='email' onChange={handleInputChange} placeholder='Enter your e-mail' defaultValue={users.email}/>
                                     </div>
                                   </div>
                                   <div className="col">
@@ -153,8 +172,8 @@ const EditProfile = (props) => {
                                 <div className="row">
                                   <div className="col">
                                     <div className="form-group">
-                                      <label className="bold">Current Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••••"/>
+                                      <label className="bold" >Current Password</label>
+                                      <input className="form-control" onChange={(e) => setCurrentPass(e.target.value) } type="password" placeholder="••••••••"/>
                                     </div>
                                   </div>
                                 </div>
