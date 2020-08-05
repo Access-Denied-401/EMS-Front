@@ -11,6 +11,7 @@ import Profile from './components/Profile/profile/profile';
 import EditProfile from './components/Profile/edit-profile/editProfile';
 import Feedback from './components/Profile/vacation/feedback';
 import Signin from './components/Sign-in/signin';
+import Chat from './components/chat/chat';
 import About from './components/About-Us/aboutus';
 
 
@@ -36,6 +37,8 @@ const Routes = (props) => {
       <Route path="/profile/Feedback" component={Feedback} exact />
 
       <Route path="/signin" component={Signin} exact />
+
+      <Route path="/chat" component={Chat} exact />
 
       <Route path="/about-us" component={About} exact />
     </>
