@@ -24,7 +24,8 @@ const FinancialManagement = (props) => {
     setName(String(event.target.value) || '');
     console.log(searchName);
   };
-  function alertUserStartWork() {
+
+  function alertEmptyForm() {
     Swal.fire({
       icon: 'error',
       title: 'Missing data',
@@ -92,7 +93,7 @@ const FinancialManagement = (props) => {
 
     } else {
       document.getElementById('result-div').style.display = 'none';
-      alertUserStartWork();
+      alertEmptyForm();
     }
   };
 
@@ -149,10 +150,10 @@ const FinancialManagement = (props) => {
                 {/* <label>Basic Salary</label> <input className="inputFin" id="code" name='basicSalary' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 {/* <label >Working Hours</label> <input className="inputFin" id="code" name='workingHours' onChange={handleInputChange} placeholder='Enter your name'/> */}
                 {/* <label>Over time</label> <input className="inputFin" id="code" name='overTime' onChange={handleInputChange} placeholder='Enter your name'/> */}
-                <label className="bold">Living Allowance</label> <input className="inputFin" id="code" name='Living Allowance' onChange={handleInputChange} placeholder='livingAllownace' />
-                <label className="bold">Rewards</label> <input className="inputFin" id="code2" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^' />
-                <label className="bold">Start Date</label> <input type="date" className="inputFin" id="code3" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period' />
-                <label className="bold">End Date</label> <input type="date" className="inputFin" id="code4" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period' />
+                <label className="bold">Living Allowance</label> <input className="inputFin" id="code" name='livingAllowance' onChange={handleInputChange} placeholder='livingAllownace'/>
+                <label className="bold">Rewards</label> <input className="inputFin" id="code2" name='rewards' onChange={handleInputChange} placeholder='Give him some reward ^^'/>
+                <label className="bold">Start Date</label> <input type="date" className="inputFin" id="code3" name='startDate' onChange={handleInputChange} placeholder='Enter the start of period'/>
+                <label className="bold">End Date</label> <input type="date" className="inputFin" id="code4" name='endDate' onChange={handleInputChange} placeholder='Enter the end of period'/>
                 {/* <label>Social Security</label> <input className="inputFin" id="code" name='username' onChange={handleInputChange} placeholder='Enter your name'/> */}
               </div>
             </form>
