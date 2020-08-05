@@ -91,6 +91,7 @@ function AdminAcceptUser (props) {
                 <span aria-hidden="true">&laquo;</span>
                 <span className="sr-only">Previous</span>
               </a>
+              
             </li>
             <Paginate setCurrentPage={setCurrentPage} users={users} itemsPerPage={itemsPerPage} />
             <li class="page-item">
@@ -102,7 +103,7 @@ function AdminAcceptUser (props) {
           </ul>
         </nav>
         <Link className="we-accept" to='/administration'>
-          <Button className="btn-warning">Back</Button>
+          <Button className="btn-warning accept">Back</Button>
         </Link>
       </div>
     </>

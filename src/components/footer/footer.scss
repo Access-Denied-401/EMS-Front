@@ -81,11 +81,12 @@ footer.light .footer-copyright{
 	box-shadow: none; -webkit-box-shadow: none; -moz-box-shadow: none; -ms-box-shadow: none; -o-box-shadow: none;}
 .widget.subscribe p{	margin-bottom: 18px;}
 .widget li a {
-    color: #fbd500f6;
+    color: #f3c010;
     padding: 1%;
     font-size: smaller;
 }
-.widget li a:hover{	color:#fbd500f6	;}
+.widget li a:hover{	    color: #f3c010;
+}
 .widget-title {
 	margin-bottom: 20px;
 	font-size: 16px;
@@ -129,7 +130,7 @@ transition: all 250ms ease-in-out 0s;
 	font-family: 'Noto Sans TC', sans-serif;
 }
 .a-footer:hover {
-    color: #fbd500f6;
+    color: #f3c010;
     text-decoration: none;
 }
 .nav-link {

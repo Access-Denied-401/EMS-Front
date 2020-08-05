@@ -68,8 +68,8 @@ const Feedback = (props) => {
                   </div>
 
                   <div className="send-vac">
-                    <Button className="alret-button" onClick={alert}>Send</Button>
-                    <Link to='/profile'><Button className="back-button">Back</Button></Link>
+                    <Button className=" btn btn-warning" onClick={alert}>Send</Button>
+                    <Link to='/profile'><Button className=" btn back-btn btn-warning">Back</Button></Link>
                   </div>
                   
                 </div>
