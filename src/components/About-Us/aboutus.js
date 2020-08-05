@@ -6,9 +6,9 @@ const About = (props) => {
   return (
     <>
 
-      <section className="team section-about box">
+      <section className="team section-about box-shad">
         <div className="container-about">
-          <h1 className="section-title  bold">Introducing our superstar developer team!</h1>
+          <h1 className="section-title  bold">Introducing our superstar <span className="dev">DEVELOPER</span> team!</h1>
           <div className="row">
             <div className="col-md-4 col-sm-6 col-xs-12">
               <div className="team-item">

@@ -3,8 +3,6 @@
         
             flex: 0 0 100.333333%;
             max-width: 114.333333%;
-        
-
 }
  }
     .summary {
@@ -41,7 +39,7 @@
 }
 
 .summary {
-    background-color: #ddd;
+    background-color: #959883;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 4vh;
@@ -72,9 +70,7 @@
 .col {
     padding: 0 1vh
 }
-// a {
-//     padding: 0 1vh
-// }
+
 .close {
     margin-left: auto;
     font-size: 0.7rem
@@ -88,24 +84,13 @@
 .h5fin {
     margin-top: 4vh
 }
-// hr {
-//     margin-top: 1.25rem
-// }
+
 .formFin {
     padding: 2vh 0
 }
-// select {
-//     border: 1px solid rgba(0, 0, 0, 0.137);
-//     padding: 1.5vh 1vh;
-//     margin-bottom: 4vh;
-//     outline: none;
-//     width: 100%;
-//     background-color: rgb(247, 247, 247)
-// }
 .inputFin {
     border: 1px solid rgba(0, 0, 0, 0.137);
     padding: 1vh;
-    // margin-bottom: 4vh;
     outline: none;
     width: 100%;
     background-color: rgb(247, 247, 247)
@@ -114,15 +99,11 @@ input:focus::-webkit-input-placeholder {
     color: transparent
 }
 .btn-financial {
-    background-color: #d99e15;
-    border-color: #d99e1530;
     width: 100%;
     font-size: 0.7rem;
     margin-top: 4vh;
-    color: white;
     padding: 1vh;
-    border-radius: 25px;
-    width: 39%;
+    width: 45%;
     margin-left: 33%;
 }
 .btn-financial:focus {
@@ -137,19 +118,6 @@ input:focus::-webkit-input-placeholder {
 .btn-financial:hover {
     color: white
 }
-// a {
-//     color: black
-// }
-// a:hover {
-//     color: black;
-//     text-decoration: none
-// }
-// #code {
-//     background-image: linear-gradient(to left, rgba(255, 255, 255, 0.253), rgba(255, 255, 255, 0.185)), url("https://img.icons8.com/small/16/000000/long-arrow-right.png");
-//     background-repeat: no-repeat;
-//     background-position-x: 95%;
-//     background-position-y: center
-// }
 .rowrow{
     border-top: 1px solid rgba(0,0,0,.1);
      padding: 2vh 0;
@@ -219,7 +187,6 @@ margin-left: 5%;
     margin-bottom: 5%;
     margin-left: -18%;
 }
-div#5ef1f367590aac7330c9d9a6{
-    // background: linear-gradient(145deg, rgb(162 178 167), rgb(180, 168, 148));
-
+.row.main.align-items-center:hover {
+    background-color: #959883;
 }

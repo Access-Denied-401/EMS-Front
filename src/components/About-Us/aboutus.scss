@@ -1,13 +1,10 @@
-
 .card-about {
     position: relative;
     border: solid 1px #2d60649c;
     padding: 45px 50px 25px 60px;
-    // margin-top: 95px;
-    background-color: #2d606471;
-    border-radius: 10px;
+    background-color: #2d606491;
+    border-radius: 50px;
     color: #fff;
-    // height: 30%;
 }
 
 .post-txt {
@@ -44,15 +41,6 @@
 }
 
 .profile-pic {
-    // position: absolute;
-    // width: 120px;
-    // height: 120px;
-    // border-radius: 100%;
-    // left: 65px;
-    // margin-top: 15px;
-//     transition: transform 0.6s;
-//   transform-style: preserve-3d;
-//   box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 border-radius: 100px;
 
   width:120px;height:120px;
@@ -66,10 +54,6 @@ border-radius: 100px;
     left: 210px;
     color: #616161
 }
-
-
-
-
 .team {
     text-align: center
 }
@@ -247,7 +231,7 @@ border-radius: 100px;
   }
   
   .flip-card-front {
-    background-color: #bbb;
+    background-color: #ffc107;
     color: black;
   }
   
@@ -269,4 +253,11 @@ border-radius: 100px;
   }
   section.team.section-about.box {
     border-radius: 130px;
+}
+.box-shad {
+    box-shadow: -8px 7px 155px -6px rgba(66,62,66,0.67);
+
+}
+span.dev{
+    color: #ffc107;
 }

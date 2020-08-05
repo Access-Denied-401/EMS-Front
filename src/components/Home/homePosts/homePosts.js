@@ -43,7 +43,7 @@ const HomePosts = (props) => {
             </div>
           </div>
         </div>
-      </div>;
+      </div>
     </>
   );
 };

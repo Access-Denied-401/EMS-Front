@@ -49,9 +49,9 @@ function AdminAddUser(props) {
             <input name='role' onChange={handleInputChage} type="text" id="defaultLoginFormRole" className="form-control mb-4" placeholder="Enter Role" />
             <div className="d-flex justify-content-left">
             </div>
-            <Button className="btn-add btn-info btn-block" type="submit">ADD NEW USER</Button>
+            <Button className="btn-add  btn-block btn-warning" type="submit">ADD NEW USER</Button>
             <Link className="we" to='/administration'>
-              <Button className="btn-add btn-info btn-block">Back</Button>
+              <Button className="btn-add btn-block btn-warning">Back</Button>
             </Link>
           </form>
         </div>

@@ -102,7 +102,7 @@ function AdminAcceptUser (props) {
           </ul>
         </nav>
         <Link className="we-accept" to='/administration'>
-          <Button className=" we-accept-btn">Back</Button>
+          <Button className="btn-warning">Back</Button>
         </Link>
       </div>
     </>
