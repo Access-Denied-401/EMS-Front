@@ -54,8 +54,8 @@ const EditProfile = (props) => {
     console.log(users,'event.target.value');
     userEditHisProfile(users);
     alertEditProfile();
-
   };
+  
   useEffect (() => {
     getUserProfile().then(dbUsers =>{ 
       setUsers(dbUsers); 

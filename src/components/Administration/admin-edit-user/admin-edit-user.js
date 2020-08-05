@@ -74,7 +74,7 @@ function AdminEditUser (props) {
                           Back
                     </Button>
                   </Link>
-                  <Button variant="warning" className="btn-edit" type="submit">Save Profile</Button>
+                  <Button variant="warning" className="btn-edit" type="submit" onClick={handleSubmit}>Save Profile</Button>
                 </div>
               </form>
             </div>

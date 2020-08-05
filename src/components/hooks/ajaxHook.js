@@ -196,7 +196,44 @@ const useAjax = () => {
     }
   };
 
-  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile,userStartWork,userEndWork};
+  const accountantHandler = async (user) =>{
+    console.log(user);
+    console.log(user.startDate, typeof(user.startDate));
+    let startDate1=user.startDate;
+    let endDate1=user.endDate;
+    startDate1 = startDate1.split('-').reverse().join('/');
+    endDate1 = endDate1.split('-').reverse().join('/');
+    console.log(endDate1, startDate1,'date');
+    let data = { 
+      // '_id':`${user._id}`,
+      'livingAllowance': Number(user.livingAllowance),
+      'rewards': Number(user.rewards),
+      'startDate': startDate1,
+      'endDate': endDate1,
+    };
+    //   { "rewards":12,
+    //   "livingAllowance":40,
+    //  "startDate":"2020/08/06",
+    //  "endDate":"2020/08/07"
+    //        }
+    console.log(data,'useruseruseruser');
+    const response = await fetch( `${API}/accountantmain/${user._id}`, {
+      method: 'post',
+      mode: 'cors',
+      cache: 'no-cache',
+      headers: {
+        'Content-Type': 'application/json',
+        Accept: 'application/json',
+        'Authorization': `Bearer ${token}`,
+      },
+      body: JSON.stringify(data),
+    }); 
+    const result = await response.json();
+    console.log(result);
+    return result;
+  };
+
+  return {getUsers, editUser, addUser, acceptUser, rejectUser, getTempUsers, getUserProfile, userSignUp, userEditHisProfile,userStartWork,userEndWork,accountantHandler};
 };
 
 export default useAjax;
