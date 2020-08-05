@@ -39,7 +39,6 @@
 }
 
 .summary {
-    background-color: #959883;
     border-top-right-radius: 1rem;
     border-bottom-right-radius: 1rem;
     padding: 4vh;
@@ -148,12 +147,11 @@ margin-left: 5%;
 
 .finClass {
     width: 100%;
-    padding: 2%;
+    padding: 13%;
     margin-top: 6%;
-    background: linear-gradient(145deg, #11503fb5, #13303fc7);
-    color: whitesmoke;
+    background: #1e494ef2;
+    color: antiquewhite;
 }
-
 .calculateButton {
     width: 50%;
     margin-top: 0%;
@@ -189,4 +187,8 @@ margin-left: 5%;
 }
 .row.main.align-items-center:hover {
     background-color: #959883;
+}
+button.btn-financial.btn-block.btn.btn-warning {
+    width: 52%;
+    margin-left: 21%;
 }
