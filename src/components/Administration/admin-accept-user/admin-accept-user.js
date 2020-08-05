@@ -51,7 +51,7 @@ function AdminAcceptUser (props) {
               </tr>
             </thead>
             <tbody>
-              {users.map (value =><tr key={value._id} className="border-bottom"> 
+              {currentPost.map (value =><tr key={value._id} className="border-bottom"> 
                 <td>
                   <div className="p-2"> <span className="spanEdit font-weight-bold"><img src={value.image} width="40" className="rounded-circle" alt='' /></span> </div>
                 </td>
