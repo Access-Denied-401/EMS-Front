@@ -40,17 +40,15 @@ function AdminEditUser (props) {
       <div className="container box rounded bg-white mt-5">
         <div className="row-edit">
           <div className="col-md-4 edit border-right">
-            <div className="d-flex flex-column align-items-center text-center p-3 py-5 edit-sec"><img className="edit-image mt-5" src="https://i.imgur.com/0eg0aG0.jpg" width="200" alt='' /> <br></br><h3 className="font-weight-bold">{userInfo.username}</h3><span className="text-black-50">{userInfo.email}</span></div>
+            <div className="d-flex flex-column align-items-center text-center p-3 py-5 edit-sec"><img className="edit-image mt-5" src={userInfo.image} width="200" alt='' /> <br></br><h3 className="font-weight-bold">{userInfo.username}</h3><span className="text-black-50">{userInfo.email}</span></div>
           </div>
           <div className="col-md-8 edit">
             <div className="p-3 py-5">
               <div className="d-flex justify-content-between align-items-center mb-3">
                 <div className="d-flex flex-row align-items-center back "><i className="fa fa-long-arrow-left mr-1 mb-1"></i>
                   <Link to="/profile">
-                    {/* <h6>Back to profile</h6> */}
                   </Link>
                 </div>
-                {/* <h6 className="text-right">Edit Profile</h6> */}
               </div>
               <br></br>
 

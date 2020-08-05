@@ -50,8 +50,8 @@ const EditProfile = (props) => {
   const handleSubmit = (event) => {
     if(event) event.preventDefault();
     // event.target.reset();
-    console.log(users);
-    console.log(users,'event.target.value');
+    // console.log(users);
+    // console.log(users,'event.target.value');
     userEditHisProfile(users);
     alertEditProfile();
   };
@@ -65,20 +65,8 @@ const EditProfile = (props) => {
   console.log(props);
   return (
     <>
-      <div className="container containerdiv">
+      <div className="container containerdiv box">
         <div className="row flex-lg-nowrap">
-          {/* <div className="col-12 col-lg-auto mb-3 F1Div">
-            <div className="card p-3 smallCardDiv" >
-              <div className="e-navlist e-navlist--active-bg">
-                <ul className="nav">
-                  <li className="nav-item"><a className="nav-link px-2 active" href="./"><i className="fa fa-fw fa-bar-chart mr-1"></i><span>Profile</span></a></li>
-                  <li className="nav-item"><a className="nav-link px-2" href="/profile/Feedback"><i className="fa fa-fw fa-th mr-1"></i><span>Feedback</span></a></li>
-                  <li className="nav-item"><a className="nav-link px-2" href="/profile/EditProfile"><i className="fa fa-fw fa-cog mr-1"></i><span>Edit profile</span></a></li>
-                </ul>
-              </div>
-            </div>
-          </div> */}
-
           <div className="col">
             <div className="row">
               <div className="col mb-3">
@@ -99,21 +87,21 @@ const EditProfile = (props) => {
                             <p className="mb-0">@{users.username}</p>
                             <div className="text-muted"><small>Last seen 2 hours ago</small></div>
                             <div className="mt-2">
-                              <button className="btn btn-primary buttonR" type="button">
+                              <button className="btn btn-warning buttonR" type="button">
                                 <input type="file" className="inputImage" onChange = {handleImageChange} size="60" />
                                 <i className="fa fa-fw fa-camera"></i>
-                                <span>Change Photo</span>
+                                <span className="space-img">Change Photo</span>
                               </button>                          
                             </div>
                           </div>
-                          <div className="text-center text-sm-right">
-                            <span className="badge badge-secondary">{users.role}</span>
+                          <div className="text-center text-sm-right div-hi">
+                            <span className="badge badge-warning hi">{users.role}</span>
                             <div className="text-muted"><small>{users.signUpDate}</small></div>
                           </div>
                         </div>
                       </div>
                       <ul className="nav nav-tabs">
-                        <li className="nav-item"><a href="/profile/EditProfile" className="active nav-link">Settings</a></li>
+                        <li className="nav-item"><a href="/profile/EditProfile" className="active nav-link bold setting">Settings</a></li>
                       </ul>
                       <div className="tab-content pt-3">
                         <div className="tab-pane active">
@@ -123,29 +111,36 @@ const EditProfile = (props) => {
                                 <div className="row">
                                   <div className="col">
                                     <div className="form-group">
-                                      <label>Full Name</label>
+                                      <label className="bold">Full Name</label>
                                       <input className="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your name' defaultValue={users.username}/>
                                     </div>
                                   </div>
                                   <div className="col">
                                     <div className="form-group">
-                                      <label>Mobile</label>
+                                      <label className="bold">Mobile</label>
                                       <input className="form-control" type="text" name='mobile' onChange={handleInputChange} placeholder='Enter your mobile' defaultValue={users.mobile}/>
                                     </div>
                                   </div>
+
                                 </div>
                                 <div className="row">
                                   <div className="col">
                                     <div className="form-group">
-                                      <label>Email</label>
-                                      <input className="form-control" type="text" name='email' onChange={handleInputChange} placeholder="Email" defaultValue={users.email} />
+                                      <label className="bold">E-mail</label>
+                                      <input className="form-control" type="text" name='username' onChange={handleInputChange} placeholder='Enter your e-mail' defaultValue={users.email}/>
+                                    </div>
+                                  </div>
+                                  <div className="col">
+                                    <div className="form-group">
+                                      <label className="bold">Birthdate</label>
+                                      <input className="form-control" type="text" name='birthday' onChange={handleInputChange} placeholder='Enter your birthdate' defaultValue={users.birthday}/>
                                     </div>
                                   </div>
                                 </div>
                                 <div className="row">
                                   <div className="col mb-3">
                                     <div className="form-group">
-                                      <label>About</label>
+                                      <label className="bold" >Bio</label>
                                       <textarea className="form-control" rows="3" name='bio' onChange={handleInputChange} placeholder='Enter your bio' defaultValue={users.bio}></textarea>
                                     </div>
                                   </div>
@@ -154,20 +149,20 @@ const EditProfile = (props) => {
                             </div>
                             <div className="row">
                               <div className="col-12 col-sm-6 mb-3">
-                                <div className="mb-2"><b>Change Password</b></div>
-                                {/* <div className="row">
-                                  <div className="col">
-                                    <div className="form-group">
-                                      <label>Current Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••"/>
-                                    </div>
-                                  </div>
-                                </div> */}
+                                <div className="mb-2 change-pass bold"><b>Change Password</b></div>
                                 <div className="row">
                                   <div className="col">
                                     <div className="form-group">
-                                      <label>New Password</label>
-                                      <input className="form-control" type="password" placeholder="••••••••••••" name="password" onChange={handleInputChange} />
+                                      <label className="bold">Current Password</label>
+                                      <input className="form-control" type="password" placeholder="••••••••"/>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div className="row">
+                                  <div className="col">
+                                    <div className="form-group">
+                                      <label className="bold">New Password</label>
+                                      <input className="form-control" type="password" placeholder="••••••••" name="password" onChange={handleInputChange} />
                                     </div>
                                   </div>
                                 </div>
@@ -179,32 +174,10 @@ const EditProfile = (props) => {
                                   </div>
                                 </div> */}
                               </div>
-                              {/* <div className="col-12 col-sm-5 offset-sm-1 mb-3">
-                                <div className="mb-2"><b>Keeping in Touch</b></div>
-                                <div className="row">
-                                  <div className="col">
-                                    <label>Email Notifications</label>
-                                    <div className="custom-controls-stacked px-2">
-                                      <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="notifications-blog" checked=""/>
-                                        <label className="custom-control-label" for="notifications-blog">Blog posts</label>
-                                      </div>
-                                      <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="notifications-news" checked=""/>
-                                        <label className="custom-control-label" for="notifications-news">Newsletter</label>
-                                      </div>
-                                      <div className="custom-control custom-checkbox">
-                                        <input type="checkbox" className="custom-control-input" id="notifications-offers" checked=""/>
-                                        <label className="custom-control-label" for="notifications-offers">Personal Offers</label>
-                                      </div>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div> */}
                             </div>
                             <div className="row buttonRelative">
                               <div className="col d-flex justify-content-end">
-                                <button className="btn btn-primary buttonEP" type="submit" onClick={handleSubmit}>Save Changes</button>
+                                <button className="btn btn-warning buttonEP" type="submit" onClick={handleSubmit}>Save Changes</button>
                               </div>
                             </div>
                           </form>

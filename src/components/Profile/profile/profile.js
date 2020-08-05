@@ -1,7 +1,7 @@
 /* eslint-disable no-unused-vars */
 /* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
-import { Link } from 'react-router-dom';
+import { Link, NavLink } from 'react-router-dom';
 import useAjax from '../../hooks/ajaxHook';
 import Swal from 'sweetalert2';
 import { useHistory} from 'react-router-dom';
@@ -24,7 +24,6 @@ const Profile = (props) => {
 
   function alertUserStartWork() {
     Swal.fire({
-      icon:'success',
       title: 'You had start your work',
       text: 'We hope you will enjoy your new day ^_^',
     }).then(function() {
@@ -34,9 +33,8 @@ const Profile = (props) => {
 
   function alertUserStartBefore() {
     Swal.fire({
-      icon:'error',
-      title: 'إنتا إبتستعبط يلا',
-      text: 'مش علينا يا مندلينا',
+      title: 'You had start your work',
+      text: 'We hope you will enjoy your new day ^_^',
     }).then(function() {
       history.push('/profile');
     });
@@ -44,7 +42,6 @@ const Profile = (props) => {
 
   function alertUserEndWork() {
     Swal.fire({
-      icon:'success',
       title: 'You had finish your work',
       text: 'Enjoy in the rest of your day ^_^',
     }).then(function() {
@@ -54,9 +51,8 @@ const Profile = (props) => {
 
   function alertUserEndBefore() {
     Swal.fire({
-      icon:'error',
-      title: 'إنتا إبتستعبط يلا',
-      text: 'مش علينا يا مندلينا',
+      title: 'You had finish your work',
+      text: 'Enjoy in the rest of your day ^_^',
     }).then(function() {
       history.push('/profile');
     });
@@ -94,10 +90,10 @@ const Profile = (props) => {
           <div className="F1">
             <img src={users.image} /**className="text-center" */ width="100" className="rounded-circle" alt='' />
             <div className="F2">
-              <h3 className="mt-2 mb-0"><i className="far fa-id-card"></i>&nbsp;{users.username} </h3> 
+              <h3 className="mt-2 mb-0 upper"><i className="far fa-id-card"></i>&nbsp;{users.username} </h3> 
               {/* <div className="col mt-3 mb-3"> */}
               <br/>
-              <h5><i className="fas fa-user-tag"></i>&nbsp;&nbsp;&nbsp;Position: {users.position}</h5>
+              <h5 className="upper"><i className="fas fa-user-tag bold"></i>&nbsp;&nbsp;&nbsp;Position:{users.position}</h5>
             </div>
           </div>
 
@@ -167,30 +163,23 @@ const Profile = (props) => {
           </div>
           <hr className="line" /> 
           <div className="row-md-4">
-            <h5><i className="fas fa-comment-dots"></i>&nbsp;About</h5><small>{users.bio}</small>
+            <h5><i className="fas fa-comment-dots"></i>&nbsp;Bio</h5><small>{users.bio}</small>
           </div>
             
           {/* </div> */}
           <hr className="line" /> 
-          <div className="social-buttons mt-4"> <button className="neo-button"><i className="fa fa-facebook fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-linkedin fa-1x"></i></button> <button className="neo-button"><i className="fa fa-google fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-youtube fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-twitter fa-1x"></i> </button> </div>
           <div className="profile mt-2">
-            <Link to="/profile/EditProfile" className=" btnAll btn-5"><span>Edit</span>
-              {/* <button className="profile_button px-5">Edit profile</button> */}
+            <Link to="/profile/EditProfile" className="btnAll btn-5"><span>Edit</span>
             </Link>
-            <Link to="/profile/Feedback" className=" btnAll btn-5"><span>Vacation</span>
-              {/* <button className="profile_button px-5">Vacation Request</button> */}
+            <Link to="/profile/Feedback" className="btnAll btn-5"><span>Vacation</span>
             </Link>
-            <a href onClick={handelStart} class="btnAll btn-5 aa"><span>Start shift</span></a> 
-            <a href onClick={handelEnd} class="btnAll btn-5 aa"><span>End shift</span></a> 
+            <Link onClick={handelStart} className="btnAll btn-5"><span>Start Shift</span></Link> 
+            <Link onClick={handelEnd} className="btnAll btn-5"><span>End Shift</span></Link> 
           </div>
-          {/* <div className="profile mt-2"> */}
-          {/* <a onClick={handelStart} class="btn btn-5"><span>Start shift</span></a> 
-                        <a onClick={handelEnd} class="btn btn-5"><span>End shift</span></a>  */}
-          {/* <button className="profile_button px-5" onClick={handelStart}>Start shift</button>
-            <button className="profile_button px-5" onClick={handelEnd}>End shift</button> */}
-          {/* </div> */}
-          {/* </div> */}
+          <div className="social-buttons mt-4"> <button className="neo-button"><i className="fa fa-facebook fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-linkedin fa-1x"></i></button> <button className="neo-button"><i className="fa fa-google fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-youtube fa-1x"></i> </button> <button className="neo-button"><i className="fa fa-twitter fa-1x"></i> </button> </div>
+
         </div>
+        
       </div>
     </>
   );
