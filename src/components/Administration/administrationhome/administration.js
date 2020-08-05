@@ -106,7 +106,7 @@ const AdministrationHome = (props) => {
                     user: value,
                   },
                 }}>
-                  <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
+                  <i className="fa fa-pencil-square-o" aria-hidden="true"></i>
                 </Link>
               </td>
             </tr>, 

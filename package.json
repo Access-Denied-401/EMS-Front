@@ -8,6 +8,9 @@
   "license": "MIT",
   "dependencies": {
     "aos": "^3.0.0-beta.6",
+    "aws-sdk": "^2.726.0",
+    "bcrypt": "^5.0.0",
+    "bcryptjs": "^2.4.3",
     "bootstrap": "^4.5.0",
     "firebase": "^7.17.1",
     "gh-pages": "^3.1.0",
