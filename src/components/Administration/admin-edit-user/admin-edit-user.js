@@ -31,8 +31,7 @@ function AdminEditUser (props) {
     editUser(selectedUser, userInfo._id).then(()=> {
       Swal.fire({
         icon:'success',
-        title: 'Sign up Application',
-        text: 'An E-mail will be sent to you once you are accepted',
+        title: 'The changes have been saved',
       });
     });
   };

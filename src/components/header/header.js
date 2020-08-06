@@ -1,4 +1,5 @@
 /* eslint-disable no-unused-vars */
+/* eslint-disable react-hooks/exhaustive-deps */
 import React, {useState, useEffect} from 'react';
 import {connect} from 'react-redux';
 import useAjax from '../hooks/ajaxHook';
@@ -65,7 +66,6 @@ const Header = (props) => {
               </li>
               <Show condition={props.savedUser.loggedIn}>
                 <li className="nav-item">
-                  {console.log(props.savedUser.user)}
                   <Link className=" btnAll-r btn-1-r aar" to="/" onClick={props.userSignOut}>Sign Out</Link>
                   <img className="signInImage" onError={(e) => { e.target.onerror = null; e.target.src = 'https://www.jayone.org/assets/profiles/user-default.png'; }} src={users.image || 'https://www.jayone.org/assets/profiles/user-default.png'} alt='' />
                 </li>
