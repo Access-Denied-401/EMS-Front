@@ -90,7 +90,7 @@ const About = (props) => {
         <div className="row justify-content-center">
           <div className=" col-sm-11 col-md-9 col-lg-8 col-xl-7" data-aos="fade-up">
             <div className="card-about" >
-              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span className="post-txt">"Guys hurry up we really don't have time ....."  </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
+              <p className="post"> <span><img className="quote-img" src="https://motivationfactor.com/wp-content/uploads/2014/06/quote.png" alt="img"/></span> <span className="post-txt">"Guys hurry up we really don't have time ......."  </span> <span><img className="nice-img" src="https://i.imgur.com/l5AkSHd.png"alt=""/></span> </p>
             </div>
             <div className="arrow-down"></div>
             <div className="row d-flex justify-content-center">
