@@ -7,7 +7,7 @@ const CompanyValues = (props) => {
     <>
       <div className="container-Info my-5 d-flex justify-content-center">
         <div className="flex-sm-row row justify-content-center b">
-          <div className="col-auto mx-sm-5">
+          <div className="col-auto mx-sm-5 homena">
             <div className="first-card"
               data-aos="fade-up"
               data-aos-offset="200"
